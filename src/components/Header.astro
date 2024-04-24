@@ -1,0 +1,86 @@
+---
+import ToggleTheme from "./ToggleTheme.astro";
+
+const navItems = [
+    {
+        label: "Experiencia",
+        url: "#",
+        title: "Experiencia",
+    },
+    {
+        label: "Proyectos",
+        url: "#",
+        title: "Proyectos",
+    },
+    {
+        label: "Sobre-mí",
+        url: "#",
+        title: "Sobre mí",
+    },
+    {
+        label: "Contacto",
+        url: "#",
+        title: "Contacto",
+    },
+];
+
+---
+
+<header class="flex gap-6 py-2 px-5 mt-2 rounded-lg items-center h-fit">
+    <div
+        style="--left: 250px; --top: 16px"
+        id="menu-backdrop"
+        class="absolute bg-green-700/30 dark:bg-green-500/20 5 backdrop-blur-lg rounded translate-x-[var(--left)] translate-y-[var(--top)] left-0 top-0 w-[var(--width)] h-[var(--height)] transition-all duration-500 ease-in-out opacity-0 -z-[1]"
+    >
+    </div>
+    <nav>
+        <ul class="size-full flex gap-4 dark:text-white/80 text-black/90">
+            {
+                navItems.map((link) => (                    
+                    <li>
+                        <a aria-label={link.label} href={link.url}>
+                            {link.title}
+                        </a>
+                    </li>
+                ))
+            }   
+        </ul>
+    </nav>
+    <ToggleTheme />
+</header>
+
+<style>
+    li {
+        @appl rounded;
+    }
+
+    a {
+        @apply px-2 py-1 size-full block text-inherit;
+    }
+</style>
+
+<script>
+    import { $, $$ } from "@/utils/DOM";
+
+    const listItem = $$("header li");
+    const menuBackDrop = $("#menu-backdrop") as HTMLElement;
+
+    listItem.forEach((item) => {
+        item.addEventListener("mouseenter", () => {
+            const { left, top, width, height } = item.getBoundingClientRect();
+
+            menuBackDrop.style.setProperty("--left", `${left}px`);
+            menuBackDrop.style.setProperty("--top", `${top}px`);
+            menuBackDrop.style.setProperty("--width", `${width}px`);
+            menuBackDrop.style.setProperty("--height", `${height}px`);
+
+            menuBackDrop.style.opacity = "1";
+            menuBackDrop.style.visibility = "visible";
+        });
+
+        item.addEventListener("mouseleave", () => {
+            menuBackDrop.style.opacity = "0";
+            menuBackDrop.style.visibility = "hidden";
+        });
+    });
+</script>
