@@ -1,8 +1,13 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "@/layouts/Layout.astro";
+import Hero from "@/components/Hero.astro";
+import Section from "@/components/Section.astro";
 ---
 
 <Layout title="Portafolio Cristian Morales">
-	<main>
-	</main>
+    <main class="mx-auto max-w-[950px]">
+        <Section class="flex-row" id='Hero' >
+            <Hero />
+        </Section>
+    </main>
 </Layout>
