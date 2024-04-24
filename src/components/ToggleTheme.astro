@@ -1,0 +1,132 @@
+---
+import MoonIcon from "@/icons/Moon.astro";
+import SunIcon from "@/icons/Sun.astro";
+---
+
+<div
+    class="toggle-theme bg-transparent rounded-full flex items-center justify-center relative cursor-pointer w-[var(--toggle-size)] h-[var(--toggle-size)]"
+    style="--toggle-size: 26px; --svg-size: 18px;"
+>
+    <div class="icon-theme sun">
+        <!-- <SunIcon /> -->
+    </div>
+    <div class="icon-theme moon absolute text-[#000c]">
+        <!-- <MoonIcon /> -->
+    </div>
+</div>
+
+<style is:inline>
+    svg {
+        width: var(--svg-size);
+        height: var(--svg-size);
+    }
+</style>
+
+<style>
+    .icon-theme {
+        @apply flex justify-center items-center bg-gray-600 size-full rounded-full p-2;
+
+        transition:
+            transform 0.3s,
+            opacity 0.3s,
+            box-shadow 0.5s;
+    }
+
+    .moon {
+        @apply bg-[#9d996f];
+        box-shadow:
+            inset -10px -5px 10px 0 #000b,
+            0 0 10px 0 #fff4,
+            0 0 10px 0 #fff2,
+            0 0 10px 0 #fff1;
+        transform: scale(0);
+    }
+
+    .sun {
+        background-color: #ffff00;
+        color: #000e;
+        box-shadow:
+            inset 0 0 10px 1px #f00c,
+            0 0 10px 0 #ffff00,
+            0 0 10px 0 #ffff0088,
+            0 0 15px 0 #f00;
+        transform: scale(0);
+    }
+
+    html.dark {
+        /* color-scheme: dark; */
+
+        .moon {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        .sun {
+            transform: scale(0);
+            opacity: 0;
+        }
+    }
+
+    html.light {
+        /* color-scheme: light; */
+
+        .moon {
+            transform: scale(0);
+            opacity: 0;
+        }
+
+        .sun {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+
+
+</style>
+
+<script is:inline>
+    const $toggleTheme = document.querySelector(".toggle-theme");
+    const matchMedia = window.matchMedia("(prefers-color-scheme: dark)");
+    const $root = document.documentElement;
+    let remove = null;
+
+    const getThemePreference = () => {
+        if (typeof localStorage !== "undefined") {
+            return localStorage.getItem("theme") ?? "system";
+        }
+
+        return window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light";
+    };
+
+    const updateTheme = () => {
+        if (remove != null) {
+            remove();
+        }
+        matchMedia.addEventListener("change", updateTheme);
+        remove = () => {
+            matchMedia.removeEventListener("change", updateTheme);
+        };
+    };
+
+    const themePreference = getThemePreference();
+    const isDark =
+        themePreference === "dark" ||
+        (themePreference === "system" && matchMedia.matches);
+
+    $root.classList.add(isDark ? "dark" : "light");
+
+    updateTheme();
+</script>
+
+<script is:inline>
+    $toggleTheme.addEventListener("click", () => {
+        const isDark = $root.classList.contains("dark");
+        
+        $root.classList.toggle("light");
+        $root.classList.toggle("dark");
+        localStorage.setItem("theme", (isDark ? "light" : "dark"))
+
+    });
+</script>
