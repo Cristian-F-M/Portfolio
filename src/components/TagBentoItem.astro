@@ -1,0 +1,30 @@
+---
+import PythonIcon from "@/icons/Python.astro";
+import JavaScriptIcon from "@/icons/JavaScript.astro";
+import MySQLIcon from "@/icons/MySQL.astro";
+import PostgreSQLIcon from "@/icons/PostgreSQL.astro";
+import SassIcon from "@/icons/Sass.astro";
+import HtmlIcon from "@/icons/Html.astro";
+
+const { class: className, tagName } = Astro.props;
+
+const tagIcons = {
+    Python: { icon: PythonIcon, iconClass: "size-7" },
+    JavaScript: { icon: JavaScriptIcon, iconClass: "size-4" },
+    MySQL: { icon: MySQLIcon, iconClass: "size-6" },
+    PostgreSQL: { icon: PostgreSQLIcon, iconClass: "size-5" },
+    Sass: { icon: SassIcon, iconClass: "size-6" },
+    Html: { icon: HtmlIcon, iconClass: "size-5" },
+};
+
+
+
+const { icon:Icon, iconClass } = tagIcons[tagName];
+---
+
+<span
+    class=` ${className} inline-flex items-center justify-center gap-2 px-4 py-1 text-gray-800 transition bg-gray-100 border border-gray-300 rounded-full dark:bg-gray-800 dark:border-gray-600 dark:text-white focus-visible:ring-yellow-500/80 text-md hover:bg-gray-900 hover:border-gray-700 group max-w-fit hover:text-white focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2 active:bg-black`
+>
+    <Icon class=`${iconClass}` />
+    {tagName}
+</span>
