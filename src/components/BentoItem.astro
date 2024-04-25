@@ -1,5 +1,6 @@
 ---
 import Tag from "@/components/TagBentoItem.astro";
+import Button from "@/components/ButtonBentoItem.astro";
 import GitHubIcon from "@/icons/GitHub.astro";
 import LinkIcon from "@/icons/Link.astro";
 
@@ -41,30 +42,22 @@ const {
         }
     </div>
 
-    <div class="code-preview absolute right-0 top-0 z-[80] mt-4 mr-4 flex gap-2">
+    <div
+        class="code-preview absolute right-0 top-0 z-[80] mt-4 mr-4 flex gap-2"
+    >
         {
             codeUrl && (
-                <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href={codeUrl}
-                    class="bg-white/20 backdrop-blur-sm text-black p-2 block rounded-2xl"
-                >
+                <Button url={codeUrl}>
                     <GitHubIcon class="size-6" />
-                </a>
+                </Button>
             )
         }
 
         {
             pageUrl && (
-                <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href={pageUrl}
-                    class="bg-white/20 backdrop-blur-sm text-black  p-2 block rounded-2xl"
-                >
+                <Button url={pageUrl}>
                     <LinkIcon class="size-6" />
-                </a>
+                </Button>
             )
         }
     </div>
