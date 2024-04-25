@@ -2,12 +2,17 @@
 import Layout from "@/layouts/Layout.astro";
 import Hero from "@/components/Hero.astro";
 import Section from "@/components/Section.astro";
+import Projects from "@/components/Projects.astro";
 ---
 
 <Layout title="Portafolio Cristian Morales">
     <main class="mx-auto max-w-[950px]">
-        <Section class="flex-row" id='Hero' >
+        <Section class="flex-row" id="Hero">
             <Hero />
+        </Section>
+
+        <Section class="flex flex-col mt-44" id="Proyectos">
+            <Projects />
         </Section>
     </main>
 </Layout>
