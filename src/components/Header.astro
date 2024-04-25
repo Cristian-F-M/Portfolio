@@ -23,10 +23,11 @@ const navItems = [
         title: "Contacto",
     },
 ];
-
 ---
 
-<header class="flex gap-6 py-2 px-5 mt-2 rounded-xl items-center h-fit sticky top-2 bg-black/10 dark:bg-white/10 backdrop-blur-sm z-[200]">
+<header
+    class="flex gap-6 py-2 px-5 mt-2 rounded-xl items-center h-fit sticky top-2 z-[200]"
+>
     <div
         style="--left: -110px; --top: 8px"
         id="menu-backdrop"
@@ -34,16 +35,16 @@ const navItems = [
     >
     </div>
     <nav>
-        <ul class="size-full flex gap-4 dark:text-white/80 text-black/90">
+        <ul class="size-full flex gap-4 dark:text-inherit text-inherit">
             {
-                navItems.map((link) => (                    
+                navItems.map((link) => (
                     <li>
                         <a aria-label={link.label} href={link.url}>
                             {link.title}
                         </a>
                     </li>
                 ))
-            }   
+            }
         </ul>
     </nav>
     <ToggleTheme />
@@ -57,6 +58,16 @@ const navItems = [
     a {
         @apply px-2 py-1 size-full block text-inherit;
     }
+    header {
+        animation: nav-shadown 1s linear both;
+        animation-timeline: scroll();
+        animation-range: 0 100px;
+    }
+    @keyframes nav-shadown {
+        to {
+            @apply dark:bg-[#fff] bg-gray-500/50  backdrop-blur-sm text-white/90;
+        }
+    }
 </style>
 
 <script>
@@ -68,17 +79,18 @@ const navItems = [
 
     listItem.forEach((item) => {
         item.addEventListener("mouseenter", () => {
-            const { left, top, width, height, x, y } = item.getBoundingClientRect();
-            const {left: headerLeft, top: headerTop} = header.getBoundingClientRect();
-            
-            const newLeft = left - headerLeft
-            const newTop = top - headerTop
+            const { left, top, width, height, x, y } =
+                item.getBoundingClientRect();
+            const { left: headerLeft, top: headerTop } =
+                header.getBoundingClientRect();
+
+            const newLeft = left - headerLeft;
+            const newTop = top - headerTop;
 
             menuBackDrop.style.setProperty("--left", `${newLeft}px`);
             menuBackDrop.style.setProperty("--top", `${newTop}px`);
             menuBackDrop.style.setProperty("--width", `${width}px`);
             menuBackDrop.style.setProperty("--height", `${height}px`);
-
 
             menuBackDrop.style.opacity = "1";
             menuBackDrop.style.visibility = "visible";
