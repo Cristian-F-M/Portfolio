@@ -28,7 +28,7 @@ const navItems = [
 
 <header class="flex gap-6 py-2 px-5 mt-2 rounded-xl items-center h-fit sticky top-2 bg-black/10 dark:bg-white/10 backdrop-blur-sm z-[200]">
     <div
-        style="--left: 250px; --top: 16px"
+        style="--left: -110px; --top: 8px"
         id="menu-backdrop"
         class="absolute bg-green-700/30 dark:bg-green-500/20 5 backdrop-blur-lg rounded translate-x-[var(--left)] translate-y-[var(--top)] left-0 top-0 w-[var(--width)] h-[var(--height)] transition-all duration-500 ease-in-out opacity-0 -z-[1]"
     >
@@ -64,15 +64,21 @@ const navItems = [
 
     const listItem = $$("header li");
     const menuBackDrop = $("#menu-backdrop") as HTMLElement;
+    const header = $("header") as HTMLElement;
 
     listItem.forEach((item) => {
         item.addEventListener("mouseenter", () => {
-            const { left, top, width, height } = item.getBoundingClientRect();
+            const { left, top, width, height, x, y } = item.getBoundingClientRect();
+            const {left: headerLeft, top: headerTop} = header.getBoundingClientRect();
+            
+            const newLeft = left - headerLeft
+            const newTop = top - headerTop
 
-            menuBackDrop.style.setProperty("--left", `${left}px`);
-            menuBackDrop.style.setProperty("--top", `${top}px`);
+            menuBackDrop.style.setProperty("--left", `${newLeft}px`);
+            menuBackDrop.style.setProperty("--top", `${newTop}px`);
             menuBackDrop.style.setProperty("--width", `${width}px`);
             menuBackDrop.style.setProperty("--height", `${height}px`);
+
 
             menuBackDrop.style.opacity = "1";
             menuBackDrop.style.visibility = "visible";
