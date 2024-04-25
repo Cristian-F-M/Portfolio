@@ -1,0 +1,77 @@
+---
+import BentoItem from "@/components/BentoItem.astro";
+
+const projects = [
+    {
+        name: "Recolección y envío de solicitudes SGVA",
+        imageUrl: "/images/projects/solicitud.avif",
+        description:
+            "Deseñada para para ingresar a la pagina SGVA (con credenciales del usuario) para extraer los correos de las empresas solicitantes de aprendiz, y envío de un correo a cada una de estas empresas solicitando el contrato de aprendizaje adjuntando su hoja de vida",
+        tags: ["Python", "PostgreSQL", "JavaScript", "Sass"],
+        class: "col-span-8 row-span-4",
+        codeUrl: "https://github.com/Cristian-F-M/solicitud-contrato-aprendizaje.git",
+        pageUrl: "",
+    },
+    {
+        name: "Votaciones python",
+        imageUrl: "/images/projects/votaciones.webp",
+        description:
+            "Gestión de votaciones de representandes de las jornadas en SENA - CGAO.",
+        tags: ["Python", "JavaScript", "Sass", "MySQL"],
+        class: "col-span-7 row-span-3",
+        codeUrl: "https://github.com/Cristian-F-M/Votaciones.git",
+        pageUrl: "",
+    },
+    {
+        name: "Hoja de vida",
+        imageUrl: "/images/projects/cv.avif",
+        description: "Hoja de vida con semejanza a un fisica.",
+        tags: ["Html", "Sass", "JavaScript"],
+        class: "col-span-7 row-span-4",
+        codeUrl: "https://github.com/Cristian-F-M/CV.git",
+        pageUrl: "https://cristian-f-m.github.io/CV/",
+    },
+    {
+        name: "",
+        imageUrl: "",
+        description: "",
+        tags: [],
+        class: "col-span-8 row-span-2 item-empty",
+        codeUrl: "",
+        pageUrl: "",
+    },
+];
+---
+
+<div class="bento grid gap-x-5 gap-y-7 w-full">
+    {
+        projects.map(
+            ({
+                name,
+                imageUrl,
+                class: className,
+                description,
+                tags,
+                codeUrl,
+                pageUrl,
+            }) => (
+                <BentoItem
+                    class={className}
+                    imageUrl={imageUrl}
+                    title={name}
+                    description={description}
+                    tags={tags}
+                    codeUrl={codeUrl}
+                    pageUrl={pageUrl}
+                />
+            )
+        )
+    }
+</div>
+
+<style>
+    .bento {
+        grid-template-columns: repeat(15, 1fr);
+        grid-auto-rows: minmax(100px, auto);
+    }
+</style>
