@@ -1,5 +1,8 @@
 ---
 import Badge from "@/components/Badge.astro";
+import Pill from "@/components/Pill.astro";
+import LinkedinIcon from "@/icons/Linkedin.astro";
+import EmailIcon from "@/icons/Email.astro";
 
 const me = {
     available: false,
@@ -42,5 +45,8 @@ const styles = me.available ? availableBadge : notavailableBadge;
         > Creando soliciones creativas e intuitivas para los usuarios, ubicado en
         Vélez, Colombia 🇨🇴.
     </p>
-    <div class="container-badges"></div>
+    <div class="my-5 flex gap-4">
+        <Pill href="https://www.linkedin.com/in/devcristianmorales/"><LinkedinIcon class="size-5" /> Linkedin</Pill>
+        <Pill href="mailto:cfmorales.diaz@gmail.com"><EmailIcon class="size-5" /> Contactar</Pill>
+    </div>
 </div>
