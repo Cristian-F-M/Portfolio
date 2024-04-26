@@ -1,0 +1,60 @@
+---
+import UserCode from "@/icons/UserCode.astro";
+---
+
+<h1 class="flex gap-3 items-center text-4xl">
+    <UserCode class="size-9" />
+    Sobre mí
+</h1>
+
+<main class="text-image flex items-center mt-4 gap-6">
+    <article class="flex flex-col gap-5">
+        <p>
+            Mi primer programa lo creé utilizando <strong>Scratch</strong> durante
+            un <strong>evento escolar</strong> cuando tenía 10 años. Además, en un
+            equipo de cuatro personas, <strong>desarrollamos un robot</strong> controlado
+            por un mando a distancia. Fue en ese momento cuando despertó mi interés
+            por el mundo de la programación.
+        </p>
+        <p>
+            Me gusta <strong>adquirir</strong> nuevos conocimientos y <strong
+                >compartirlos</strong
+            > con los demás. Disfruto explorando la programación y la tecnología,
+            y actualmente soy <strong>trainee</strong> en el campo del <strong
+                >desarrollo web</strong
+            >. Mi objetivo es seguir especializándome y avanzar hacia senior en
+            esta área.
+        </p>
+
+        <p>
+            Participé en un evento de desarrollo web donde obtuve el segundo
+            lugar. Durante este evento, <strong
+                >desarrollé un sistema de gestión para una biblioteca</strong
+            >, completando tanto el <strong>backend</strong> como el <strong
+                >frontend</strong
+            >, así como la configuración de la <strong>base de datos</strong> en
+            un lapso de 8 horas.
+        </p>
+    </article>
+
+    <figure>
+        <img
+            src="/images/foto.avif"
+            alt="A young person wearing sunglasses and a grey blazer, posing for a selfie with a scenic mountainous background."
+        />
+    </figure>
+</main>
+
+<style>
+    p {
+        @apply text-pretty font-normal;
+    }
+
+    html.dark figure {
+        filter: drop-shadow(0px 4px 4px #6666);
+    }
+
+    figure {
+        filter: drop-shadow(0px 4px 4px #0008);
+    }
+</style>
