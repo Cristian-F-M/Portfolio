@@ -3,7 +3,7 @@ import BentoItem from "@/components/BentoItem.astro";
 
 const projects = [
     {
-        name: "Recolección y envío de solicitudes SGVA",
+        title: "Recolección y envío de solicitudes SGVA",
         imageUrl: "/images/projects/solicitud.avif",
         description:
             "Deseñada para para ingresar a la pagina SGVA (con credenciales del usuario) para extraer los correos de las empresas solicitantes de aprendiz, y envío de un correo a cada una de estas empresas solicitando el contrato de aprendizaje adjuntando su hoja de vida",
@@ -13,7 +13,7 @@ const projects = [
         pageUrl: "",
     },
     {
-        name: "Votaciones python",
+        title: "Votaciones python",
         imageUrl: "/images/projects/votaciones.webp",
         description:
             "Gestión de votaciones de representandes de las jornadas en SENA - CGAO.",
@@ -23,7 +23,7 @@ const projects = [
         pageUrl: "",
     },
     {
-        name: "Hoja de vida",
+        title: "Hoja de vida",
         imageUrl: "/images/projects/cv.avif",
         description: "Hoja de vida con semejanza a un fisica.",
         tags: ["Html", "Sass", "JavaScript"],
@@ -32,7 +32,7 @@ const projects = [
         pageUrl: "https://cristian-f-m.github.io/CV/",
     },
     {
-        name: "",
+        title: "",
         imageUrl: "",
         description: "",
         tags: [],
@@ -46,24 +46,8 @@ const projects = [
 <div class="bento grid gap-x-5 gap-y-7 w-full">
     {
         projects.map(
-            ({
-                name,
-                imageUrl,
-                class: className,
-                description,
-                tags,
-                codeUrl,
-                pageUrl,
-            }) => (
-                <BentoItem
-                    class={className}
-                    imageUrl={imageUrl}
-                    title={name}
-                    description={description}
-                    tags={tags}
-                    codeUrl={codeUrl}
-                    pageUrl={pageUrl}
-                />
+            (project) => (
+                <BentoItem {...project}/>
             )
         )
     }
