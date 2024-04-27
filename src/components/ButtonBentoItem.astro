@@ -1,8 +1,9 @@
 ---
-const { url } = Astro.props;
+const { url, name } = Astro.props;
 ---
 
 <a
+    aria-label=`Ver código en GitHub del proyecto "${name}"`
     target="_blank"
     rel="noopener noreferrer"
     href={url}
