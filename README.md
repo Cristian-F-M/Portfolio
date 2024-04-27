@@ -17,7 +17,7 @@ If you have any feedback, please reach out to us at cfmorales.diaz@gmail.com
 
 
 ## 🚀 About Me
-Soy un Trainee desarrollardor con aspiración a ser senior desarrollador web
+Soy un Trainee desarrollador con aspiración a ser senior desarrollador web
 
 
 ## Tech Stack
