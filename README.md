@@ -1,6 +1,3 @@
-
-## Screenshots
-
 ![App Screenshot](./public/images/projects/portfolio.avif)
 
 
