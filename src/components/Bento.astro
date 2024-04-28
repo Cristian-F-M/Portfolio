@@ -9,7 +9,8 @@ const projects = [
             "Deseñada para para ingresar a la pagina SGVA (con credenciales del usuario) para extraer los correos de las empresas solicitantes de aprendiz, y envío de un correo a cada una de estas empresas solicitando el contrato de aprendizaje adjuntando su hoja de vida",
         tags: ["Python", "PostgreSQL", "JavaScript", "Sass"],
         class: "col-span-8 row-span-4",
-        codeUrl: "https://github.com/Cristian-F-M/solicitud-contrato-aprendizaje.git",
+        codeUrl:
+            "https://github.com/Cristian-F-M/solicitud-contrato-aprendizaje.git",
         pageUrl: "",
     },
     {
@@ -32,6 +33,16 @@ const projects = [
         pageUrl: "https://cristian-f-m.github.io/CV/",
     },
     {
+        title: "Registro de porteria SENA",
+        imageUrl: "/images/projects/registrocgao.avif",
+        description:
+            "Registro de la entrada y salida de aprendices teniendo el control de los aprendices que se encuentran en la sede, además de saber si se encuentran con una laptop en el centro.",
+        tags: ["Laravel", "Tailwind", "JavaScript", "PHP", "Sass"],
+        class: "col-start-1 col-end-10 row-span-3",
+        codeUrl: "https://github.com/Nicolas2840f/Registro-Almacen",
+        pageUrl: "",
+    },
+    {
         title: "",
         imageUrl: "",
         description: "",
@@ -44,13 +55,7 @@ const projects = [
 ---
 
 <div class="bento grid gap-x-5 gap-y-7 w-full">
-    {
-        projects.map(
-            (project) => (
-                <BentoItem {...project}/>
-            )
-        )
-    }
+    {projects.map((project) => <BentoItem {...project} />)}
 </div>
 
 <style>
