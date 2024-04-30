@@ -18,29 +18,39 @@ const {
 <div
     class=`${className} bento-item dark:bg-[#111213] bg-[#3c536933]/20 w-full h-full p-3 rounded-xl cursor-pointer relative flex justify-center overflow-hidden`
 >
-    <figure class="absolute inset-0 z-[50] transition-transform duration-300">
-        <img class="rounded-xl h-full w-full object-cover" src={imageUrl} alt="" style="" />
-    </figure>
+    {
+        imageUrl && (
+            <figure class="absolute inset-0 z-[50] transition-transform duration-300">
+                <img
+                    class="rounded-xl h-full w-full object-cover"
+                    src={imageUrl}
+                    alt=""
+                    style=""
+                />
+            </figure>
+        )
+    }
+    {
+        title && description && tags && (
+            <div
+                style="--h1-size: 76px; --information-size: 233px"
+                class="information absolute bg-black/60 backdrop-blur-sm px-6 py-4 bottom-0 text-white/100 flex flex-col h-fit w-full z-[100] opacity-0 transition-opacity duration-200"
+            >
+                <h1 class="font-semibold w-full h-fit mb-4 text-2xl">
+                    {title}
+                </h1>
+                <p>{description}</p>
 
-    <div
-        style="--h1-size: 76px; --information-size: 233px"
-        class="information absolute bg-black/60 backdrop-blur-sm px-6 py-4 bottom-0 text-white/100 flex flex-col h-fit w-full z-[100] opacity-0 transition-opacity duration-200"
-    >
-        <h1 class="font-semibold w-full h-fit mb-4 text-2xl">
-            {title}
-        </h1>
-        <p>{description}</p>
-
-        {
-            tags && (
-                <div class="tags flex mt-4 gap-2 flex-wrap">
-                    {tags.map((tag) => (
-                        <Tag tagName={tag} />
-                    ))}
-                </div>
-            )
-        }
-    </div>
+                {tags && (
+                    <div class="tags flex mt-4 gap-2 flex-wrap">
+                        {tags.map((tag) => (
+                            <Tag tagName={tag} />
+                        ))}
+                    </div>
+                )}
+            </div>
+        )
+    }
 
     <div
         class="code-preview absolute right-0 top-0 z-[80] mt-4 mr-4 flex gap-2"
@@ -67,10 +77,15 @@ const {
     .item-empty {
         @apply hidden;
 
-
         .code-preview {
             display: none;
         }
+    }
+
+    .item-glass {
+        @apply shadow-[0_8px_32px_0_rgba(_31,38,135,0.37_)] backdrop-blur-[_5.5px_];
+        background: rgba(255, 255, 255, 0.05);
+        -webkit-backdrop-filter: blur(5.5px);
     }
 
     html.light .bento-item {
