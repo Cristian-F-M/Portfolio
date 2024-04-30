@@ -14,6 +14,7 @@ import JavaIcon from "@/icons/Java.astro";
 import SQLiteIcon from "@/icons/SQLite.astro";
 import GitIcon from "@/icons/Git.astro";
 import GitHubIcon from "@/icons/GitHub.astro";
+import ReactIcon from "@/icons/React.astro";
 
 
 export const tagIcons = {
@@ -33,4 +34,5 @@ export const tagIcons = {
     SQLite : {icon: SQLiteIcon, iconClass: "size-7"},
     Git: {icon: GitIcon, iconClass: "size-5"},
     GitHub: {icon: GitHubIcon, iconClass: "size-5"},  
+    React: {icon: ReactIcon, iconClass: "size-5"},  
 };
