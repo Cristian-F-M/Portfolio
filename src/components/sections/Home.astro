@@ -1,0 +1,140 @@
+---
+import Logo from "@/src/assets/cm.svg";
+import Section from "@/components/sections/Section.astro";
+import Badge from "@/components/layout/Badge.astro";
+import { IconBrain, IconChevronCompactDown } from "@tabler/icons-react";
+---
+
+<Section id="home" class="flex flex-row justify-between items-center mt-10">
+	<section class="flex flex-col gap-8">
+		<Badge class="uppercase text-primary text-xs">
+			<span
+				class="flex items-center justify-center size-3 bg-primary rounded-full relative"
+			>
+				<span
+					class="block absolute size-5 bg-secondary/80 rounded-full -z-1 animate-ping"
+				></span>
+			</span>
+			available_for_hire
+		</Badge>
+		<div>
+			<h1 class="text-8xl font-space-grotesk text-gray-300 font-bold">
+				<span>Cristian</span>
+				<br />
+				<span class="gradient-text">Morales</span>
+			</h1>
+
+			<p class="text-gray-400 w-2/3">
+				I build high-quality, scalable and beautiful digital experiences at the
+				intersection of engineering and visual design.
+			</p>
+
+			<div class="mt-5 flex flex-row gap-5">
+				<a
+					href="#projects"
+					class="button-glow bg-primary px-4 py-2 rounded font-jet-brains"
+					>View projects</a
+				>
+				<a
+					href="#contact"
+					class="block px-4 py-2 rounded font-jet-brains bg-secondary/20 text-white"
+					>Contact me</a
+				>
+			</div>
+		</div>
+
+		<div class="achievements flex flex-row justify-between w-7/12">
+			<div>
+				<span class="gradient-text font-jet-brains font-bold">+7</span>
+				<span class="achievement-text">Years Experience</span>
+			</div>
+			<div>
+				<span class="gradient-text font-jet-brains font-bold">42+</span>
+				<span class="achievement-text">Porject shipped</span>
+			</div>
+			<div>
+				<span class="gradient-text font-jet-brains font-bold">12</span>
+				<span class="achievement-text">Desing Awards</span>
+			</div>
+		</div>
+	</section>
+	<section class="relative">
+		<Badge
+			class="absolute top-0 right-0 bg-neutral/30 p-2 animate-float animate-iteration-count-infinite animate-duration-3500 animate-delay-900 border-tertiary/40"
+		>
+			<Logo width={16} height={16} class="text-primary" />
+		</Badge>
+		<div class="w-96 rounded-full">
+			<div class="border border-gray-600 rounded-full size-full p-3">
+				<div class="border border-gray-600 rounded-full size-full p-8">
+					<img
+						src="/images/me.avif"
+						alt=""
+						class="rounded-full animate-float animate-iteration-count-infinite animate-duration-3500"
+					/>
+				</div>
+			</div>
+		</div>
+		<Badge
+			class="absolute bottom-0 left-0 bg-neutral/30 p-2 animate-float animate-iteration-count-infinite animate-duration-3500 animate-delay-1200 border-secondary/40"
+		>
+			<IconBrain width={16} height={16} className="text-secondary" />
+		</Badge>
+	</section>
+
+	<div class="fixed bottom-0 left-1/2 -translate-x-1/2 animate-hang animate-duration-2500 animate-iteration-count-infinite">
+		<IconChevronCompactDown width={30} height={30} className="text-primary" />
+	</div>
+</Section>
+
+<style>
+	.gradient-text {
+		background-image: linear-gradient(
+			45deg,
+			var(--color-primary),
+			var(--color-secondary)
+		);
+
+		background-clip: text;
+		-webkit-background-clip: text;
+
+		color: transparent;
+		-webkit-text-fill-color: transparent;
+	}
+</style>
+
+<style>
+	.button-glow {
+		background: var(--color-primary);
+		cursor: pointer;
+		transition: all 0.3s ease;
+
+		box-shadow:
+			0 0px 20px var(--color-primary),
+			0 0px 25px var(--color-secondary),
+			0 0px 30px var(--color-tertiary);
+	}
+
+	.button-glow:hover {
+		box-shadow:
+			0 0 10px var(--color-primary),
+			0 0 20px var(--color-secondary),
+			0 0 40px var(--color-tertiary);
+	}
+</style>
+
+<style>
+	@reference "../../styles/global.css";
+
+	.achievements {
+		@apply leading-none;
+
+		& div {
+			@apply flex flex-col gap-0;
+		}
+
+		& .achievement-text {
+			@apply text-xs text-gray-300;
+		}
+	}
+</style>
