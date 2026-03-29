@@ -1,0 +1,107 @@
+---
+import Logo from "@/assets/cm.svg";
+import Link from "@/components/layout/Link.astro";
+import { IconMenu2 } from "@tabler/icons-react";
+---
+
+<header
+	class="bg-neutral mx-auto mt-5 flex w-full flex-row items-center justify-between rounded px-4 py-3 text-white shadow shadow-gray-700/70"
+>
+	<a href="/#home" class="flex flex-row items-center gap-2 text-gray-400">
+		<Logo class="text-gray-400" />
+		<h4 class="font-jet-brains text-lg">cmorales</h4>
+	</a>
+
+	<div class="nav-container relative hidden md:block">
+		<nav class="flex flex-row items-center gap-4">
+			<Link href="#home" text="Home" />
+			<Link href="#projects" text="Projects" />
+			<Link href="#me" text="Me" />
+			<Link href="#contact" text="Contact" />
+		</nav>
+		<span
+			class="link-indicator bg-tertiary [[active]]:bg-primary pointer-events-none block h-0.5 w-(--indicator-w,0) translate-x-(--indicator-translate-x,0) scale-100 transition-all"
+		></span>
+	</div>
+
+	<button class="group cursor-pointer md:hidden">
+		<IconMenu2
+			className="text-primary group-hover:text-secondary transition-all"
+		/>
+	</button>
+</header>
+
+<script>
+	const $nav = document.querySelector("nav") as HTMLElement | null;
+	const $links = ($nav?.querySelectorAll("a") ??
+		[]) as NodeListOf<HTMLAnchorElement>;
+	const $navContainer = document.querySelector(
+		".nav-container",
+	) as HTMLDivElement | null;
+	const $indicator = $navContainer?.querySelector(
+		".link-indicator",
+	) as HTMLDivElement | null;
+	let activeLinkTimeout: number | undefined;
+	const navRect = $nav?.getBoundingClientRect();
+
+	window.moveLinkIndicator = function (a) {
+		const $navContainer = document.querySelector(
+			".nav-container",
+		) as HTMLDivElement | null;
+		const $indicator = $navContainer?.querySelector(
+			".link-indicator",
+		) as HTMLDivElement | null;
+
+		if (!$indicator || !navRect) return;
+
+		const { width, left } = a.getBoundingClientRect();
+
+		$indicator.style.setProperty("--indicator-w", `${width}px`);
+		$indicator.style.setProperty(
+			"--indicator-translate-x",
+			`${left - navRect.left}px`,
+		);
+		$indicator.removeAttribute("active");
+	};
+
+	$links.forEach((l) => {
+		l.addEventListener("mouseenter", (event) => {
+			clearTimeout(activeLinkTimeout);
+			activeLinkTimeout = undefined;
+
+			window.moveLinkIndicator(l);
+		});
+
+		l.addEventListener("mouseleave", (event) => {
+			activeLinkTimeout = setTimeout(() => {
+				window.setLinkActive?.();
+			}, 800);
+		});
+	});
+</script>
+
+<script>
+	window.setLinkActive = function setLinkActive() {
+		const hash = document.location.hash;
+		const $indicator = document.querySelector(
+			".link-indicator",
+		) as HTMLDivElement | null;
+		const $nav = document.querySelector("nav") as HTMLElement | null;
+		const $anchor = document.querySelector(
+			`a[href='${hash}']`,
+		) as HTMLAnchorElement | null;
+		const $anchors = $nav?.querySelectorAll("a") ?? [];
+
+		if (!$anchor || !$indicator || !$nav) return;
+
+		$anchors.forEach((a) => a.removeAttribute("active"));
+
+		$anchor.setAttribute("active", "");
+		window.moveLinkIndicator($anchor);
+		$indicator.setAttribute("active", "");
+	};
+
+	window.addEventListener("hashchange", setLinkActive);
+
+	setLinkActive();
+</script>
