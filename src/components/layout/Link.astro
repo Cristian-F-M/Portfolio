@@ -1,0 +1,37 @@
+---
+import { twMerge } from "tailwind-merge";
+
+interface Props {
+	href: string;
+	text: string;
+	class?: string;
+	variant?: "primary" | "secondary";
+	isActive?: boolean;
+}
+
+const {
+	href,
+	text,
+	class: className,
+	variant = "primary",
+	isActive = false,
+} = Astro.props;
+---
+
+<a
+	href={href}
+	class={twMerge(
+		"text-tertiary/80 text-shadow-2xs text-shadow-tertiary/30 p-1 peer transition-all text-sm",
+		className,
+	)}
+>
+	{text}
+</a>
+
+<style>
+	@reference "../../styles/global.css";
+
+	a[active] {
+		@apply text-primary text-shadow-2xs text-shadow-primary/80;
+	}
+</style>
