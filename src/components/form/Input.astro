@@ -5,9 +5,18 @@ interface Props {
 	label: string;
 	class?: string;
 	placeholder?: string;
+	name: string;
+	id: string;
 }
 
-const { label, class: className, placeholder } = Astro.props;
+const {
+	label,
+	class: className,
+	placeholder,
+	name,
+	id,
+	...props
+} = Astro.props;
 ---
 
 <label class={twMerge("flex flex-col gap-1 w-full", className)}>
@@ -18,7 +27,10 @@ const { label, class: className, placeholder } = Astro.props;
 
 	<input
 		class="border-b-2 border-border focus:border-primary outline-none caret-primary text-text-secondary text-sm h-8 transition-colors placeholder:text-xs placeholder:text-text-muted"
-		type="text"
-		placeholder={placeholder}
+		name={name}
+		id={id}
+		{...props}
 	/>
+
+	<span class="error text-sm text-red-600"></span>
 </label>
