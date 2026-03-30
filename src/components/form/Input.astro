@@ -1,0 +1,24 @@
+---
+import { twMerge } from "tailwind-merge";
+
+interface Props {
+	label: string;
+	class?: string;
+	placeholder?: string;
+}
+
+const { label, class: className, placeholder } = Astro.props;
+---
+
+<label class={twMerge("flex flex-col gap-1 w-full", className)}>
+	<span
+		class="text-xs text-gray-400 has-[+input:focus]:text-primary transition-colors uppercase"
+		>{label}</span
+	>
+
+	<input
+		class="border-b-2 border-gray-600 focus:border-primary outline-none caret-primary text-gray-400 text-sm h-8 transition-colors placeholder:text-xs placeholder:text-gray-600"
+		type="text"
+		placeholder={placeholder}
+	/>
+</label>
