@@ -7,6 +7,7 @@ interface Props {
 	class?: string;
 	variant?: "primary" | "secondary";
 	isActive?: boolean;
+	id: string;
 }
 
 const {
@@ -15,10 +16,12 @@ const {
 	class: className,
 	variant = "primary",
 	isActive = false,
+	id,
 } = Astro.props;
 ---
 
 <a
+	id={id}
 	href={href}
 	class={twMerge(
 		"text-text-muted text-shadow-2xs text-shadow-tertiary/30 p-1 peer transition-all text-sm",
