@@ -27,3 +27,4 @@ pnpm-debug.log*
 bun.lock
 
 .vscode/
+.vercel
