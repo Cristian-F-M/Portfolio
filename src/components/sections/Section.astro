@@ -9,6 +9,6 @@ interface Props {
 const { id, class: className } = Astro.props;
 ---
 
-<section id={id}  class={twMerge("mt-20 w-full", className)}>
+<section id={id} class={twMerge("mt-20 w-full", className)}>
 	<slot />
 </section>
