@@ -1,12 +1,11 @@
 ---
 import Logo from "@/assets/cm.svg";
 import Link from "@/components/layout/Link.astro";
-import { translations } from "@/i18n/utils";
+import { getLocaleUrl, translations } from "@/i18n/utils";
 import { IconMenu2 } from "@tabler/icons-react";
-import { getRelativeLocaleUrl } from "astro:i18n";
 
 const { t, lang } = translations(Astro.url);
-const link = (path: string) => getRelativeLocaleUrl(lang, path);
+const link = (path: string) => getLocaleUrl(lang, path);
 ---
 
 <header
@@ -28,19 +27,19 @@ const link = (path: string) => getRelativeLocaleUrl(lang, path);
 			<Link
 				class="link-projects"
 				id="link-projects"
-				href="#projects"
+				href={link("#projects")}
 				text={t("index.nav.links.projects")}
 			/>
 			<Link
 				class="link-me"
 				id="link-me"
-				href="#me"
+				href={link("#me")}
 				text={t("index.nav.links.me")}
 			/>
 			<Link
-				class="link-contacts"
+				class="link-contact"
 				id="link-contact"
-				href="#contact"
+				href={link("#contact")}
 				text={t("index.nav.links.contact")}
 			/>
 		</nav>
