@@ -1,11 +1,11 @@
 ---
 import Logo from "@/assets/cm.svg";
 import Link from "@/components/layout/Link.astro";
-import { useTranslations } from "@/i18n/utils";
+import { translations } from "@/i18n/utils";
 import { IconMenu2 } from "@tabler/icons-react";
 import { getRelativeLocaleUrl } from "astro:i18n";
-// biome-ignore lint/correctness/useHookAtTopLevel: It is .astro not .tsx
-const { t, lang } = useTranslations(Astro.url);
+
+const { t, lang } = translations(Astro.url);
 const link = (path: string) => getRelativeLocaleUrl(lang, path);
 ---
 
