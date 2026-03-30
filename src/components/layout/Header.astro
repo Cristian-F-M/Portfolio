@@ -24,7 +24,7 @@ import { IconMenu2 } from "@tabler/icons-react";
 		></span>
 	</div>
 
-	<button class="group cursor-pointer md:hidden">
+	<button class="group cursor-pointer">
 		<IconMenu2
 			className="text-text-secondary group-hover:text-primary transition-all"
 		/>
@@ -41,7 +41,7 @@ import { IconMenu2 } from "@tabler/icons-react";
 	const $indicator = $navContainer?.querySelector(
 		".link-indicator",
 	) as HTMLDivElement | null;
-	let activeLinkTimeout: number | undefined;
+	let activeLinkTimeout: NodeJS.Timeout | undefined;
 	const navRect = $nav?.getBoundingClientRect();
 
 	window.moveLinkIndicator = function (a) {
