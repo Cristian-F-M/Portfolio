@@ -1,7 +1,12 @@
 ---
 import Logo from "@/assets/cm.svg";
 import Link from "@/components/layout/Link.astro";
+import { useTranslations } from "@/i18n/utils";
 import { IconMenu2 } from "@tabler/icons-react";
+import { getRelativeLocaleUrl } from "astro:i18n";
+// biome-ignore lint/correctness/useHookAtTopLevel: It is .astro not .tsx
+const { t, lang } = useTranslations(Astro.url);
+const link = (path: string) => getRelativeLocaleUrl(lang, path);
 ---
 
 <header
@@ -14,10 +19,30 @@ import { IconMenu2 } from "@tabler/icons-react";
 
 	<div class="nav-container relative hidden md:block">
 		<nav class="flex flex-row items-center gap-4">
-			<Link href="#home" text="Home" />
-			<Link href="#projects" text="Projects" />
-			<Link href="#me" text="Me" />
-			<Link href="#contact" text="Contact" />
+			<Link
+				class="link-home"
+				id="link-home"
+				href={link("#home")}
+				text={t("index.nav.links.home")}
+			/>
+			<Link
+				class="link-projects"
+				id="link-projects"
+				href="#projects"
+				text={t("index.nav.links.projects")}
+			/>
+			<Link
+				class="link-me"
+				id="link-me"
+				href="#me"
+				text={t("index.nav.links.me")}
+			/>
+			<Link
+				class="link-contacts"
+				id="link-contact"
+				href="#contact"
+				text={t("index.nav.links.contact")}
+			/>
 		</nav>
 		<span
 			class="link-indicator bg-text-muted [[active]]:bg-primary pointer-events-none block h-0.5 w-(--indicator-w,0) translate-x-(--indicator-translate-x,0) scale-100 transition-all"
@@ -84,13 +109,13 @@ import { IconMenu2 } from "@tabler/icons-react";
 
 <script>
 	window.setLinkActive = function setLinkActive() {
-		const hash = document.location.hash;
+		const hash = document.location.hash.replace("#", "");
 		const $indicator = document.querySelector(
 			".link-indicator",
 		) as HTMLDivElement | null;
 		const $nav = document.querySelector("nav") as HTMLElement | null;
 		const $anchor = document.querySelector(
-			`a[href='${hash}']`,
+			`a.link-${hash}`,
 		) as HTMLAnchorElement | null;
 		const $anchors = $nav?.querySelectorAll("a") ?? [];
 
