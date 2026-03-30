@@ -1,0 +1,202 @@
+---
+import Section from "@/components/sections/Section.astro";
+import Input from "@/components/form/Input.astro";
+import {
+	IconArrowUpRight,
+	IconBrandGithub,
+	IconBrandLinkedin,
+	IconBrandTelegram,
+	IconBrandX,
+	IconExternalLink,
+	IconMail,
+	IconMapPin,
+} from "@tabler/icons-react";
+---
+
+<Section id="contact">
+	<header class="text-7xl">
+		<h2 class="text-white font-bold">
+			<span>LET'S BUILD</span>
+			<br />
+			<span class="gradient-text">SOMETHING GREAT</span>
+		</h2>
+
+		<p class="text-base text-gray-400 w-120 mt-8 pl-6 border-l border-primary">
+			Available for innovative collaborations and technical challenges. Drop a
+			message to start the architectural process.
+		</p>
+	</header>
+
+	<main class="flex flex-row items-center gap-10 mt-10">
+		<div
+			class="w-full bg-neutral p-8 border border-primary/20 rounded-lg relative self-start"
+		>
+			<div class="absolute top-1 right-1">
+				<IconMail width={70} height={70} className="text-gray-700" />
+			</div>
+			<form class="space-y-10" action="mailto:cfmorales.diaz@gmail.com">
+				<div class="flex flex-row items-center justify-between gap-6">
+					<Input label="Name" placeholder="John Doe" />
+					<Input label="Email" placeholder="john@gmail.com" />
+				</div>
+				<!-- <Input label="Message" /> -->
+				<label class="flex flex-col gap-1 w-full">
+					<span
+						class="text-xs text-gray-400 has-[+textarea:focus]:text-primary transition-colors"
+					>
+						MESSAGE
+					</span>
+					<textarea
+						name=""
+						id=""
+						placeholder="Describe the project parameters..."
+						class="border-b-2 border-gray-600 focus:border-primary outline-none caret-primary text-gray-400 text-sm transition-colors resize-none field-sizing-content min-h-24 max-h-36 placeholder:text-xs placeholder:text-gray-600"
+					></textarea>
+				</label>
+
+				<div>
+					<button
+						class="button-glow bg-primary px-4 py-2 rounded font-jet-brains text-sm flex flex-row items-cente gap-2"
+					>
+						INITIATE_CONTACT
+						<IconBrandTelegram
+							width={20}
+							height={20}
+							className="text-gray-800"
+						/>
+					</button>
+				</div>
+			</form>
+		</div>
+
+		<aside class="w-full">
+			<h3 class="text-white font-jet-brains tracking-widest">
+				VIRTUAL_PRESENCE
+			</h3>
+
+			<div class="space-y-4">
+				<a
+					href="https://github.com/Cristian-F-M/"
+					class="network-link"
+					target="_blank"
+				>
+					<IconBrandGithub width={28} height={28} />
+					<header>
+						<h6>GITHUB</h6>
+						<span>/Cristian-F-M</span>
+					</header>
+					<div class="external-link">
+						<IconArrowUpRight width={28} height={28} />
+					</div>
+				</a>
+				<a
+					href="https://linkedin.com/in/cmoralesdev/"
+					class="network-link"
+					target="_blank"
+				>
+					<IconBrandLinkedin width={28} height={28} />
+					<header>
+						<h6>LINKEDIN</h6>
+						<span>/cmoralesdev</span>
+					</header>
+					<div class="external-link">
+						<IconArrowUpRight width={28} height={28} />
+					</div>
+				</a>
+				<a
+					href="https://x.com/Morales_M20"
+					class="network-link"
+					target="_blank"
+				>
+					<IconBrandX />
+					<header>
+						<h6>TWITTER</h6>
+						<span>@Morales_M20</span>
+					</header>
+					<div class="external-link">
+						<IconArrowUpRight />
+					</div>
+				</a>
+			</div>
+
+			<a
+				href="https://maps.app.goo.gl/MhNHSXA28ABCf5zx7"
+				class="block mt-5 p-6 border-2 border-primary rounded bg-tertiary/5"
+				target="_blank"
+			>
+				<header class="flex flex-row items-center gap-2">
+					<IconMapPin
+						width={28}
+						height={28}
+						className="text-primary self-start"
+					/>
+					<div class="flex flex-col text-white">
+						<h5 class="font-jet-brains tracking-widest">COORDINATES</h5>
+						<span class="text-gray-400 text-xs">Remote / CMORALES</span>
+						<span class="text-gray-400 text-xs"
+							>Base: Bucaramanga, Colombia 🇨🇴</span
+						>
+					</div>
+				</header>
+				<div class="w-full h-32 aspect-video overflow-hidden rounded mt-6">
+					<img class="size-full object-cover" src="/images/mapa.avif" alt="" />
+				</div>
+			</a>
+		</aside>
+	</main>
+</Section>
+
+<style>
+	.button-glow {
+		background: var(--color-primary);
+		cursor: pointer;
+		transition: all 0.3s ease;
+
+		box-shadow:
+			0 0px 20px var(--color-primary),
+			0 0px 25px var(--color-secondary),
+			0 0px 30px var(--color-tertiary);
+	}
+
+	.button-glow:hover {
+		box-shadow:
+			0 0 10px var(--color-primary),
+			0 0 20px var(--color-secondary),
+			0 0 40px var(--color-tertiary);
+	}
+</style>
+
+<style>
+	@reference "../../styles/global.css";
+
+	.network-link {
+		@apply bg-tertiary/10 p-6 flex flex-row gap-4 rounded items-center transition-colors;
+	}
+
+	.network-link:hover {
+		@apply bg-tertiary/30;
+	}
+
+	.network-link > svg {
+		@apply text-primary;
+	}
+
+	.network-link header {
+		@apply font-jet-brains tracking-widest;
+	}
+
+	.network-link header h6 {
+		@apply text-sm text-gray-200;
+	}
+
+	.network-link header span {
+		@apply text-xs text-gray-400;
+	}
+
+	.network-link .external-link {
+		@apply ml-auto text-gray-600;
+	}
+</style>
+
+<!-- linkedin.com/in/cmoralesdev/ -->
+<!-- https://x.com/Morales_M20 -->
