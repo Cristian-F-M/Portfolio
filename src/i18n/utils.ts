@@ -8,12 +8,6 @@ export function getLangFromUrl(url: URL) {
 	return defaultLanguage
 }
 
-// export function translations(lang: keyof typeof ui) {
-// 	return function t(key: keyof (typeof ui)[typeof defaultLang]) {
-// 		return ui[lang][key] || ui[defaultLang][key]
-// 	}
-// }
-
 export function translations(url: URL) {
 	const langKey = getLangFromUrl(url)
 
