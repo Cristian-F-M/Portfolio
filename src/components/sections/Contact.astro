@@ -7,7 +7,6 @@ import {
 	IconBrandLinkedin,
 	IconBrandTelegram,
 	IconBrandX,
-	IconExternalLink,
 	IconMail,
 	IconMapPin,
 } from "@tabler/icons-react";
@@ -34,10 +33,15 @@ import {
 			<div class="absolute top-1 right-1">
 				<IconMail width={70} height={70} className="text-text-muted" />
 			</div>
-			<form class="space-y-10" action="mailto:cfmorales.diaz@gmail.com">
+			<form class="space-y-10" id="contact-form">
 				<div class="flex flex-row items-center justify-between gap-6">
-					<Input label="Name" placeholder="John Doe" />
-					<Input label="Email" placeholder="john@gmail.com" />
+					<Input id="name" name="name" label="Name" placeholder="John Doe" />
+					<Input
+						id="email"
+						name="email"
+						label="Email"
+						placeholder="john@gmail.com"
+					/>
 				</div>
 				<!-- <Input label="Message" /> -->
 				<label class="flex flex-col gap-1 w-full">
@@ -47,11 +51,12 @@ import {
 						MESSAGE
 					</span>
 					<textarea
-						name=""
-						id=""
+						name="message"
+						id="message"
 						placeholder="Describe the project parameters..."
 						class="border-b-2 border-border focus:border-primary outline-none caret-primary text-text-secondary text-sm transition-colors resize-none field-sizing-content min-h-24 max-h-36 placeholder:text-xs placeholder:text-text-muted"
 					></textarea>
+					<span class="error text-sm text-red-600"></span>
 				</label>
 
 				<div>
@@ -177,3 +182,121 @@ import {
 		@apply ml-auto text-text-muted;
 	}
 </style>
+
+<script>
+	export interface Issue {
+		expected: string;
+		code: string;
+		path: string[];
+		message: string;
+	}
+
+	import Toastify from "toastify-js";
+	import { actions } from "astro:actions";
+
+	const $form = document.getElementById(
+		"contact-form",
+	) as HTMLFormElement | null;
+
+	const toastifyCommonOptions = {
+		style: {
+			background: "var(--color-surface-soft)",
+		},
+		close: true,
+		gravity: "top",
+		position: "center",
+		stopOnFocus: true,
+		className: "rounded bg-surface-soft border border-border shadow-primary",
+		duration: 3000,
+	} satisfies Toastify.Options;
+
+	const t = Toastify({
+		...toastifyCommonOptions,
+		duration: -1,
+		text: "Sending...",
+	});
+
+	$form?.addEventListener("submit", async (event) => {
+		event.preventDefault();
+
+		t.showToast();
+		const form = event.currentTarget as HTMLFormElement;
+		const formData = new FormData(form);
+		const { error, data } = await actions.contact.sendEmail(formData);
+
+		t.hideToast();
+
+		if (error) {
+			const message = error.message.replace("Failed to validate: ", "");
+			const issues = JSON.parse(message) as Issue[];
+
+			issues.forEach(({ path, message }) => {
+				let $input = document.getElementById(path[0]) as
+					| HTMLInputElement
+					| HTMLTextAreaElement
+					| null;
+
+				if (!$input) return;
+
+				setInputError($input, message);
+			});
+
+			return;
+		}
+
+		if (data.succes) {
+			Toastify({
+				...toastifyCommonOptions,
+				text: data.message,
+			}).showToast();
+
+			return;
+		}
+
+		const callback = () => {
+			const name = formData.get("name");
+			const email = formData.get("email");
+			const message = formData.get("message");
+
+			const subject = "I want to get your development services";
+			const body = `${message}
+
+					\r${name}
+					\r${email}
+			`;
+
+			const url = `mailto:cfmorales.diaz@gmail.com?subject=${subject}&body=${body}`;
+
+			window.open(url, "_blank");
+		};
+
+		Toastify({
+			...toastifyCommonOptions,
+			text: `${data.message}, click here to open.`,
+			onClick: callback,
+		}).showToast();
+	});
+
+	const elements = $form?.elements;
+
+	Array.from(elements ?? []).forEach((e) => {
+		if (!(e instanceof HTMLInputElement) && !(e instanceof HTMLTextAreaElement))
+			return;
+
+		e.addEventListener("input", () => {
+			setInputError(e, "");
+		});
+	});
+
+	function setInputError(
+		input: HTMLInputElement | HTMLTextAreaElement,
+		message: string,
+	) {
+		const $label = input.parentElement;
+		const $error = $label?.querySelector(".error");
+
+		if (!$error) return;
+
+		$error.textContent = message;
+	}
+</script>
