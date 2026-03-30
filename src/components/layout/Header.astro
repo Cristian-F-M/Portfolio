@@ -5,10 +5,10 @@ import { IconMenu2 } from "@tabler/icons-react";
 ---
 
 <header
-	class="bg-neutral/60 mx-auto mt-5 flex w-full flex-row items-center justify-between rounded px-4 py-3 text-white shadow shadow-gray-700/70 sticky top-2 z-100 backdrop-blur-lg"
+	class="bg-surface/60 mx-auto mt-5 flex w-full flex-row items-center justify-between rounded px-4 py-3 text-text-primary shadow shadow-surface-soft sticky top-2 z-100 backdrop-blur-lg"
 >
-	<a href="/#home" class="flex flex-row items-center gap-2 text-gray-400">
-		<Logo class="text-gray-400" />
+	<a href="/#home" class="flex flex-row items-center gap-2 text-text-primary">
+		<Logo class="text-text-primary" />
 		<h4 class="font-jet-brains text-lg">cmorales</h4>
 	</a>
 
@@ -20,13 +20,13 @@ import { IconMenu2 } from "@tabler/icons-react";
 			<Link href="#contact" text="Contact" />
 		</nav>
 		<span
-			class="link-indicator bg-tertiary [[active]]:bg-primary pointer-events-none block h-0.5 w-(--indicator-w,0) translate-x-(--indicator-translate-x,0) scale-100 transition-all"
+			class="link-indicator bg-text-muted [[active]]:bg-primary pointer-events-none block h-0.5 w-(--indicator-w,0) translate-x-(--indicator-translate-x,0) scale-100 transition-all"
 		></span>
 	</div>
 
 	<button class="group cursor-pointer md:hidden">
 		<IconMenu2
-			className="text-primary group-hover:text-secondary transition-all"
+			className="text-text-secondary group-hover:text-primary transition-all"
 		/>
 	</button>
 </header>
@@ -61,7 +61,9 @@ import { IconMenu2 } from "@tabler/icons-react";
 			"--indicator-translate-x",
 			`${left - navRect.left}px`,
 		);
-		$indicator.removeAttribute("active");
+
+		if (a.getAttribute("active") === null) $indicator.removeAttribute("active");
+		else $indicator.setAttribute("active", "");
 	};
 
 	$links.forEach((l) => {

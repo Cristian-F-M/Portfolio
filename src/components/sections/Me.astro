@@ -16,19 +16,19 @@ import BentoBadge from "@/components/me/Badge.astro";
 <Section id="me" class="mb-24">
 	<section class="flex flex-row items-center justify-between gap-28">
 		<article class="space-y-6">
-			<Badge class="uppercase text-primary text-xs bg-neutral/60">
+			<Badge class="uppercase text-primary text-xs">
 				<span
 					class="flex items-center justify-center size-3 bg-primary rounded-full relative"
 				>
 					<span
-						class="block absolute size-5 bg-primary rounded-full -z-1 animate-ping"
+						class="block absolute size-5 bg-primary rounded-full animate-ping"
 					></span>
 				</span>
-				OPERATIONAL_STATUS: ACTIVE
+				OPERATIONAL_STATUS: <strong>ACTIVE</strong>
 			</Badge>
 
 			<h2 class="uppercase font-bold text-6xl mt-2">
-				<span class="text-white">WHO I</span>
+				<span class="text-text-primary">WHO I</span>
 				<span class="gradient-text">AM</span>
 			</h2>
 
@@ -39,14 +39,14 @@ import BentoBadge from "@/components/me/Badge.astro";
 			</p>
 
 			<div class="flex flex-row gap-2 items-center mt-5">
-				<div class="card border-primary">
+				<div class="card">
 					<h4>Philosophy</h4>
 					<p>
 						Code is a liability; systems are the asset. I build for longevity
 						and scalability.
 					</p>
 				</div>
-				<div class="card border-secondary">
+				<div class="card">
 					<h4>Focus</h4>
 					<p>
 						Obsessive optimization of critical paths and high-availability
@@ -56,8 +56,8 @@ import BentoBadge from "@/components/me/Badge.astro";
 			</div>
 		</article>
 		<article>
-			<div class="size-84 shadow-2xl shadow-primary/40 p-5">
-				<Logo class="size-full text-white" />
+			<div class="size-84 drop-shadow-2xl drop-shadow-primary/40 p-5">
+				<Logo class="size-full text-text-primary" />
 			</div>
 		</article>
 	</section>
@@ -65,14 +65,14 @@ import BentoBadge from "@/components/me/Badge.astro";
 	<section class="mt-20">
 		<header class="flex flex-row items-center justify-between">
 			<div>
-				<h2 class="text-white">TECHNICAL_STACK</h2>
-				<p class="text-gray-400 text-sm">
+				<h2 class="text-text-primary">TECHNICAL_STACK</h2>
+				<p class="text-sm">
 					Leveraging modern primitives to build resilient, distributed systems.
 				</p>
 			</div>
 
 			<div
-				class="font-space-grotesk text-gray-500 border-l border-primary pl-3 text-xs"
+				class="font-space-grotesk text-text-muted border-l border-primary pl-3 text-xs"
 			>
 				V_04 // DEPLOYED
 			</div>
@@ -135,23 +135,23 @@ import BentoBadge from "@/components/me/Badge.astro";
 						</p>
 					</div>
 					<div
-						class="flex flex-row gap-2 items-center [&_div]:p-2 [&_div]:bg-neutral [&_div]:rounded [&_div]:border [&_div]:border-tertiary/20"
+						class="flex flex-row gap-2 items-center [&_div]:p-2 [&_div]:bg-surface-soft [&_div]:rounded [&_div]:border [&_div]:border-border"
 					>
 						<div>
-							<IconCloud width={24} height={24} className="text-primary/70" />
+							<IconCloud width={24} height={24} className="text-primary" />
 						</div>
 						<div>
 							<IconShieldCheckeredFilled
 								width={24}
 								height={24}
-								className="text-primary/70"
+								className="text-primary"
 							/>
 						</div>
 						<div>
 							<IconBrandPowershell
 								width={24}
 								height={24}
-								className="text-primary/70"
+								className="text-primary"
 							/>
 						</div>
 					</div>
@@ -162,7 +162,7 @@ import BentoBadge from "@/components/me/Badge.astro";
 
 	<section class="mt-24">
 		<header class="flex flex-col items-center justify-center">
-			<h2 class="text-white text-6xl font-bold text-center">
+			<h2 class="text-text-primary text-6xl font-bold text-center">
 				<span>HOW I</span>
 				<span class="gradient-text">BUILD</span>
 			</h2>
@@ -198,19 +198,15 @@ import BentoBadge from "@/components/me/Badge.astro";
 <style>
 	@reference "../../styles/global.css";
 	.card {
-		@apply bg-neutral rounded-md p-4 border;
+		@apply bg-surface rounded-md p-4 border border-border;
 
 		h4 {
-			@apply uppercase text-primary;
+			@apply uppercase text-text-primary;
 		}
 
 		p {
-			@apply text-xs text-gray-400 w-10/12 mt-px;
+			@apply text-xs w-10/12 mt-px;
 		}
-	}
-
-	.card:nth-child(2) h4 {
-		@apply text-secondary;
 	}
 </style>
 
@@ -218,11 +214,11 @@ import BentoBadge from "@/components/me/Badge.astro";
 	@reference "../../styles/global.css";
 
 	.bento-card {
-		@apply bg-tertiary/5 p-6 shadow shadow-tertiary/30;
+		@apply bg-surface p-6 border border-border;
 	}
 
 	.bento-card header {
-		@apply flex flex-row items-center gap-1 text-white;
+		@apply flex flex-row items-center gap-1 text-text-primary;
 	}
 
 	.bento-card main {
@@ -244,18 +240,18 @@ import BentoBadge from "@/components/me/Badge.astro";
 	@reference "../../styles/global.css";
 
 	.build-card {
-		@apply bg-neutral w-full px-6 py-8 pb-6 rounded-lg relative border border-primary/20;
+		@apply bg-surface-soft w-full px-6 py-8 pb-6 rounded-lg relative border border-primary/20;
 	}
 
 	.build-card span {
-		@apply absolute -top-4 left-1/2 -translate-x-1/2 flex bg-tertiary/5 border border-primary/20 rounded-full size-8 items-center justify-center text-[10px] text-white backdrop-blur-2xl;
+		@apply absolute -top-4 left-1/2 -translate-x-1/2 flex bg-surface border border-primary/20 rounded-full size-8 items-center justify-center text-[10px] text-text-primary backdrop-blur-2xl;
 	}
 
 	.build-card header {
-		@apply text-center text-lg text-white font-jet-brains uppercase;
+		@apply text-center text-lg text-text-primary font-jet-brains uppercase;
 	}
 
 	.build-card main {
-		@apply text-center text-gray-400 text-xs mt-1;
+		@apply text-center text-text-secondary text-xs mt-1;
 	}
 </style>

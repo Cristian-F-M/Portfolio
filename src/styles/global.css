@@ -2,26 +2,46 @@
 @import "tailwind-animations";
 
 @theme {
-	--color-primary: #00d2ff;
-	--color-secondary: #9d50bb;
-	--color-tertiary: #3a61ff;
-	--color-neutral: #0b1220;
-
 	--font-inter: "Inter", var(--font-serif);
 	--font-jet-brains: "JetBrains", var(--font-mono);
 	--font-orbitron: "Orbitron", var(--font-serif);
 	--font-space-grotesk: "SpaceGrotesk", var(--font-serif);
+
+	--color-background: var(--background);
+	--color-surface: var(--surface);
+	--color-surface-soft: var(--surface-soft);
+	--color-border: var(--border);
+
+	--color-primary: var(--primary);
+	--color-primary-pressed: var(--primary-pressed);
+
+	--color-text-primary: var(--text-primary);
+	--color-text-secondary: var(--text-secondary);
+	--color-text-muted: var(--text-muted);
+
+	--color-overlay: var(--overlay);
+}
+
+:root {
+	--background: rgb(10, 16, 20);
+
+	--surface: rgb(24, 44, 48); /* menos verde, más azul/gris */
+	--surface-soft: rgb(32, 56, 60); /* más neutro */
+
+	--border: rgb(46, 80, 84);
+
+	--primary: rgb(20, 204, 140);
+	--primary-pressed: rgb(16, 163, 115);
+
+	--text-primary: rgb(236, 255, 249);
+	--text-secondary: rgb(170, 220, 215);
+	--text-muted: rgb(130, 170, 165); /* mucho menos verde */
+
+	--overlay: rgb(0, 0, 0);
 }
 
 body {
-	background: linear-gradient(
-		90deg,
-		#0b1220 0%,
-		#0b1220 20%,
-		#0f1b2e 30%,
-		#081425 55%,
-		#050d1a 100%
-	);
+	background: var(--color-background);
 	font-family:
 		"Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
 		Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
@@ -37,11 +57,15 @@ body {
 	@apply w-full md:max-w-11/12 mx-auto;
 }
 
+* {
+	@apply transition-all;
+}
+
 .gradient-text {
 	background-image: linear-gradient(
 		45deg,
 		var(--color-primary),
-		var(--color-secondary)
+		var(--color-text-secondary)
 	);
 
 	background-clip: text;
@@ -51,8 +75,28 @@ body {
 	-webkit-text-fill-color: transparent;
 }
 
+.button-glow {
+	background: var(--color-primary);
+	cursor: pointer;
+	transition: all 0.3s ease;
+
+	box-shadow:
+		0 0px 20px var(--color-primary),
+		0 0px 30px var(--color-text-muted);
+}
+
+.button-glow:hover {
+	box-shadow:
+		0 0 10px var(--color-primary),
+		0 0 40px var(--color-text-muted);
+}
+
 strong {
-	@apply text-primary font-bold;
+	@apply text-text-primary font-bold;
+}
+
+p {
+	@apply text-text-muted;
 }
 
 @font-face {
