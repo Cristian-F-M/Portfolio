@@ -11,6 +11,12 @@ import {
 	IconStack,
 } from "@tabler/icons-react";
 import BentoBadge from "@/components/me/Badge.astro";
+import { getLocaleUrl, translations } from "@/i18n/utils";
+import { ui } from "@/i18n/ui";
+
+const { t, lang } = translations(Astro.url);
+const link = (path: string) => getLocaleUrl(lang, path);
+const l = ui[lang];
 ---
 
 <Section id="me" class="mb-24">
@@ -24,35 +30,30 @@ import BentoBadge from "@/components/me/Badge.astro";
 						class="block absolute size-5 bg-primary rounded-full animate-ping"
 					></span>
 				</span>
-				OPERATIONAL_STATUS: <strong>ACTIVE</strong>
+				{t("index.me.operational_status")}: <strong>{t("status.active")}</strong
+				>
 			</Badge>
 
-			<h2 class="uppercase font-bold text-6xl mt-2">
-				<span class="text-text-primary">WHO I</span>
-				<span class="gradient-text">AM</span>
-			</h2>
+			<h2
+				class="uppercase font-bold text-6xl mt-2"
+				set:html={t("index.me.title")}
+			/>
 
 			<p class="text-gray-400 text-sm mt-1 w-150">
-				I architect digital ecosystems where performance meets precision. My
-				approach transcends simple coding—I solve complex structural challenges
-				with engineered solutions.
+				{t("index.me.description")}
 			</p>
 
 			<div class="flex flex-row gap-2 items-center mt-5">
-				<div class="card">
-					<h4>Philosophy</h4>
-					<p>
-						Code is a liability; systems are the asset. I build for longevity
-						and scalability.
-					</p>
-				</div>
-				<div class="card">
-					<h4>Focus</h4>
-					<p>
-						Obsessive optimization of critical paths and high-availability
-						architecture.
-					</p>
-				</div>
+				{
+					Object.values(l.index.me.cards).map((c) => {
+						return (
+							<div class="card">
+								<h4>{c.title}</h4>
+								<p>{c.description}</p>
+							</div>
+						);
+					})
+				}
 			</div>
 		</article>
 		<article>
@@ -65,9 +66,11 @@ import BentoBadge from "@/components/me/Badge.astro";
 	<section class="mt-20">
 		<header class="flex flex-row items-center justify-between">
 			<div>
-				<h2 class="text-text-primary">TECHNICAL_STACK</h2>
+				<h2 class="text-text-primary uppercase text-4xl font-bold">
+					{t("index.me.technical_stack.title")}
+				</h2>
 				<p class="text-sm">
-					Leveraging modern primitives to build resilient, distributed systems.
+					{t("index.me.technical_stack.description")}
 				</p>
 			</div>
 
@@ -84,7 +87,7 @@ import BentoBadge from "@/components/me/Badge.astro";
 					<div>
 						<IconStack width={25} height={25} />
 					</div>
-					<h3>FRONTEND_LAYER</h3>
+					<h3>{t("index.me.technical_stack.frontend_layer")}</h3>
 				</header>
 				<main>
 					{
@@ -99,7 +102,7 @@ import BentoBadge from "@/components/me/Badge.astro";
 					<div>
 						<IconDatabase width={25} height={25} />
 					</div>
-					<h3>CORE_ENGIE</h3>
+					<h3>{t("index.me.technical_stack.core_engine")}</h3>
 				</header>
 				<main>
 					{
@@ -114,7 +117,7 @@ import BentoBadge from "@/components/me/Badge.astro";
 					<div>
 						<IconDeviceMobile width={25} height={25} />
 					</div>
-					<h3>MOBILE</h3>
+					<h3>{t("index.me.technical_stack.mobile")}</h3>
 				</header>
 				<main>
 					{["REACT_NATIVE ", "EXPO"].map((t) => <BentoBadge text={t} />)}
@@ -125,13 +128,12 @@ import BentoBadge from "@/components/me/Badge.astro";
 					<div>
 						<IconBrandPowershell width={25} height={25} />
 					</div>
-					<h3>INFRASTRUCTURE</h3>
+					<h3>{t("index.me.technical_stack.infrastructure.title")}</h3>
 				</header>
-				<main class="justify-between">
-					<div class="flex flex-row gap-2 flex-wrap items-center">
+				<main class="flex flex-row justify-between">
+					<div class="flex flex-row gap-2 flex-wrap items-center w-8/12">
 						<p class="text-sm text-gray-400">
-							Automated pipelines and cloud-native deployments for zero-downtime
-							releases.
+							{t("index.me.technical_stack.infrastructure.description")}
 						</p>
 					</div>
 					<div
@@ -162,35 +164,28 @@ import BentoBadge from "@/components/me/Badge.astro";
 
 	<section class="mt-24">
 		<header class="flex flex-col items-center justify-center">
-			<h2 class="text-text-primary text-6xl font-bold text-center">
-				<span>HOW I</span>
-				<span class="gradient-text">BUILD</span>
-			</h2>
+			<h2
+				class="text-text-primary text-6xl font-bold text-center uppercase"
+				set:html={t("index.me.how_i_build.title")}
+			/>
 			<span class="block h-1 w-24 bg-primary rounded-[100%] mt-2 neon-line"
 			></span>
 		</header>
 
 		<main class="flex flex-row items-center gap-4 m-10">
-			<div class="build-card">
-				<span>01</span>
-				<header>PLANNING</header>
-				<main>Discovery, user journey mapping, and requirement scoping.</main>
-			</div>
-			<div class="build-card">
-				<span>02</span>
-				<header>ARCHITECTURE</header>
-				<main>System design, data modeling, and schema definition.</main>
-			</div>
-			<div class="build-card">
-				<span>03</span>
-				<header>DEVELOPMENT</header>
-				<main>Test-driven implementation with clean, documented code.</main>
-			</div>
-			<div class="build-card">
-				<span>04</span>
-				<header>OPTIMIZATION</header>
-				<main>Performance tuning, stress testing, and deployment.</main>
-			</div>
+			{
+				Object.values(l.index.me.how_i_build.cards).map((c, i) => {
+					return (
+						<div class="build-card">
+							<span>{String(i + 1).padStart(2, "0")}</span>
+							<header>{c.title}</header>
+							<main>
+								<p>{c.description}</p>
+							</main>
+						</div>
+					);
+				})
+			}
 		</main>
 	</section>
 </Section>
@@ -218,7 +213,7 @@ import BentoBadge from "@/components/me/Badge.astro";
 	}
 
 	.bento-card header {
-		@apply flex flex-row items-center gap-1 text-text-primary;
+		@apply flex flex-row items-center gap-1 text-text-primary uppercase;
 	}
 
 	.bento-card main {

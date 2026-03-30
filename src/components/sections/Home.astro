@@ -3,6 +3,11 @@ import Logo from "@/src/assets/cm.svg";
 import Section from "@/components/sections/Section.astro";
 import Badge from "@/components/layout/Badge.astro";
 import { IconBrain, IconChevronCompactDown } from "@tabler/icons-react";
+import { translations } from "@/i18n/utils";
+import { getLocaleUrl } from "@/i18n/utils";
+
+const { t, lang } = translations(Astro.url);
+const link = (path: string) => getLocaleUrl(lang, path);
 ---
 
 <Section id="home" class="flex flex-row justify-between items-center mt-10">
@@ -15,7 +20,7 @@ import { IconBrain, IconChevronCompactDown } from "@tabler/icons-react";
 					class="block absolute size-5 bg-text-muted rounded-full animate-ping"
 				></span>
 			</span>
-			available_for_hire
+			{t("index.home.available_for_hire")}
 		</Badge>
 		<div>
 			<h1 class="text-8xl font-space-grotesk text-text-primary font-bold">
@@ -25,20 +30,19 @@ import { IconBrain, IconChevronCompactDown } from "@tabler/icons-react";
 			</h1>
 
 			<p class="w-2/3">
-				I build high-quality, scalable and beautiful digital experiences at the
-				intersection of engineering and visual design.
+				{t("index.home.description")}
 			</p>
 
 			<div class="mt-5 flex flex-row gap-5">
 				<a
-					href="#projects"
+					href={link("#projects")}
 					class="button-glow bg-primary px-4 py-2 rounded font-jet-brains"
-					>View projects</a
+					>{t("index.home.view_projects")}</a
 				>
 				<a
-					href="#contact"
+					href={link("#contact")}
 					class="block px-4 py-2 rounded font-jet-brains bg-surface hover:bg-surface-soft text-text-primary"
-					>Contact me</a
+					>{t("index.home.contact_me")}</a
 				>
 			</div>
 		</div>
@@ -46,15 +50,21 @@ import { IconBrain, IconChevronCompactDown } from "@tabler/icons-react";
 		<div class="achievements flex flex-row justify-between w-7/12">
 			<div>
 				<span class="gradient-text font-jet-brains font-bold text-lg">+7</span>
-				<span class="achievement-text">Years Experience</span>
+				<span class="achievement-text"
+					>{t("index.home.achievements.years_experience")}</span
+				>
 			</div>
 			<div>
 				<span class="gradient-text font-jet-brains font-bold text-lg">42+</span>
-				<span class="achievement-text">Porject shipped</span>
+				<span class="achievement-text"
+					>{t("index.home.achievements.projects_done")}</span
+				>
 			</div>
 			<div>
 				<span class="gradient-text font-jet-brains font-bold text-lg">12</span>
-				<span class="achievement-text">Desing Awards</span>
+				<span class="achievement-text"
+					>{t("index.home.achievements.technologies_learned")}</span
+				>
 			</div>
 		</div>
 	</section>
@@ -69,7 +79,7 @@ import { IconBrain, IconChevronCompactDown } from "@tabler/icons-react";
 				<div class="border border-border rounded-full size-full p-8">
 					<img
 						src="/images/me.avif"
-						alt=""
+						alt={t("index.home.me_alt")}
 						class="rounded-full animate-float animate-iteration-count-infinite animate-duration-3500"
 					/>
 				</div>
