@@ -38,12 +38,12 @@ export async function sendEmail({
 		})
 
 		if (info.accepted) {
-			return { succes: true }
+			return { success: true }
 		}
 
-		return { succes: false }
+		return { success: false }
 	} catch (err) {
 		console.log(err)
-		return { succes: false }
+		return { success: false }
 	}
 }

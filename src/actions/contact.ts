@@ -17,10 +17,10 @@ export const contact = {
 		accept: 'form',
 		input: scheme,
 		handler: async ({ name, email, message }) => {
-			const { succes } = await sendEmail({ name, email, message })
+			const { success } = await sendEmail({ name, email, message })
 
-			if (succes) return { succes, message: 'Mail sent successfully' }
-			return { succes, message: 'We were unable to send the email' }
+			if (success) return { success, message: 'Mail sent successfully' }
+			return { success, message: 'We were unable to send the email' }
 		}
 	})
 }
