@@ -4,12 +4,12 @@ import { sendEmail } from '@/utils/mailter'
 
 const scheme = z.object({
 	name: z
-		.string({ error: 'Name field is required' })
-		.min(2, { error: 'Name field must have at least 2 characters' }),
-	email: z.email({ error: 'Email field must be a valid email' }),
+		.string({ error: 'error.name.required' })
+		.min(2, { error: 'error.name.min' }),
+	email: z.email({ error: 'error.email.valid' }),
 	message: z
-		.string({ error: 'Message field is required' })
-		.min(10, { error: 'Message field must have at least 10 characters' })
+		.string({ error: 'error.message.required' })
+		.min(10, { error: 'error.message.min' })
 })
 
 export const contact = {
