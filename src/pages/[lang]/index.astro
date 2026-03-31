@@ -1,0 +1,22 @@
+---
+import type { GetStaticPaths } from "astro";
+import Header from "@/components/layout/Header.astro";
+import Layout from "@/layouts/Layout.astro";
+import Home from "@/components/sections/Home.astro";
+import Projects from "@/components/sections/Projects.astro";
+import Me from "@/components/sections/Me.astro";
+import Contact from "@/components/sections/Contact.astro";
+import Footer from "@/components/layout/Footer.astro";
+import { getLangFromUrl, translations } from "@/i18n/utils";
+
+const { t } = translations(Astro.url);
+---
+
+<Layout title={t("index.title")} description={t("index.description")}>
+	<Header />
+	<Home />
+	<Projects />
+	<Me />
+	<Contact />
+	<Footer />
+</Layout>

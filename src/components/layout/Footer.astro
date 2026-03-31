@@ -1,5 +1,9 @@
 ---
 import Logo from "@/assets/cm.svg";
+import { getLocaleUrl, translations } from "@/i18n/utils";
+
+const { t, lang } = translations(Astro.url);
+const link = (path: string) => getLocaleUrl(lang, path);
 ---
 
 <footer
@@ -7,11 +11,11 @@ import Logo from "@/assets/cm.svg";
 >
 	<Logo width={40} height={40} class="text-white" />
 
-	<p class="text-xs text-gray-400 font-jet-brains tracking-widest">
+	<p class="text-xs text-gray-400 font-jet-brains tracking-widest uppercase">
 		<span>&copy;{new Date().getFullYear()}</span>
 		<span>CMORALES</span>
 		<span class="tracking-tighter">//</span>
-		<span>ARCHITECTED_BY_CMORALES</span>
+		<span>{t('index.footer.architected_by')}</span>
 	</p>
 
 	<div
