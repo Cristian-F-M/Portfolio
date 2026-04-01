@@ -1,23 +1,15 @@
 ---
 import { twMerge } from "tailwind-merge";
+import type { HTMLAttributes } from "astro/types";
 
-interface Props {
+interface Props extends HTMLAttributes<"a"> {
 	href: string;
 	text: string;
 	class?: string;
-	variant?: "primary" | "secondary";
-	isActive?: boolean;
 	id: string;
 }
 
-const {
-	href,
-	text,
-	class: className,
-	variant = "primary",
-	isActive = false,
-	id,
-} = Astro.props;
+const { href, text, class: className, id, ...props } = Astro.props;
 ---
 
 <a
@@ -27,6 +19,7 @@ const {
 		"text-text-muted text-shadow-2xs text-shadow-tertiary/30 p-1 peer transition-all text-sm",
 		className,
 	)}
+	{...props}
 >
 	{text}
 </a>
