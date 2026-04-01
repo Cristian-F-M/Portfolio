@@ -7,8 +7,6 @@ export const onRequest = defineMiddleware(({ url }, next) => {
 
 	const lang = url.pathname.split('/')[1] as keyof typeof ui
 
-	console.log(url)
-
 	if (!lang || !Object.keys(languages).includes(lang)) {
 		return Response.redirect(new URL(`/${defaultLanguage}/`, url))
 	}
