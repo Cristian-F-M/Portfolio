@@ -30,26 +30,35 @@ const l = ui[lang];
 						class="block absolute size-5 bg-primary rounded-full animate-ping"
 					></span>
 				</span>
-				{t("index.me.operational_status")}: <strong>{t("status.active")}</strong
+				<span data-i18n-key="index.me.operational_status"
+					>{t("index.me.operational_status")}:</span
 				>
+				<strong data-i18n-key="status.active">{t("status.active")}</strong>
 			</Badge>
 
 			<h2
 				class="uppercase font-bold text-6xl mt-2"
+				data-i18n-key="index.me.title"
+				data-i18n-to-change="html"
 				set:html={t("index.me.title")}
 			/>
 
-			<p class="text-gray-400 text-sm mt-1 w-150">
+			<p
+				class="text-gray-400 text-sm mt-1 w-150"
+				data-i18n-key="index.me.description"
+			>
 				{t("index.me.description")}
 			</p>
 
 			<div class="flex flex-row gap-2 items-center mt-5">
 				{
-					Object.values(l.index.me.cards).map((c) => {
+					Object.entries(l.index.me.cards).map(([k, c]) => {
 						return (
 							<div class="card">
-								<h4>{c.title}</h4>
-								<p>{c.description}</p>
+								<h4 data-i18n-key={`index.me.cards.${k}.title`}>{c.title}</h4>
+								<p data-i18n-key={`index.me.cards.${k}.description`}>
+									{c.description}
+								</p>
 							</div>
 						);
 					})
@@ -66,10 +75,13 @@ const l = ui[lang];
 	<section class="mt-20">
 		<header class="flex flex-row items-center justify-between">
 			<div>
-				<h2 class="text-text-primary uppercase text-4xl font-bold">
+				<h2
+					class="text-text-primary uppercase text-4xl font-bold"
+					data-i18n-key="index.me.technical_stack.title"
+				>
 					{t("index.me.technical_stack.title")}
 				</h2>
-				<p class="text-sm">
+				<p class="text-sm" data-i18n-key="index.me.technical_stack.description">
 					{t("index.me.technical_stack.description")}
 				</p>
 			</div>
@@ -87,7 +99,9 @@ const l = ui[lang];
 					<div>
 						<IconStack width={25} height={25} />
 					</div>
-					<h3>{t("index.me.technical_stack.frontend_layer")}</h3>
+					<h3 data-i18n-key="index.me.technical_stack.frontend_layer">
+						{t("index.me.technical_stack.frontend_layer")}
+					</h3>
 				</header>
 				<main>
 					{
@@ -102,7 +116,9 @@ const l = ui[lang];
 					<div>
 						<IconDatabase width={25} height={25} />
 					</div>
-					<h3>{t("index.me.technical_stack.core_engine")}</h3>
+					<h3 data-i18n-key="index.me.technical_stack.core_engine">
+						{t("index.me.technical_stack.core_engine")}
+					</h3>
 				</header>
 				<main>
 					{
@@ -117,7 +133,9 @@ const l = ui[lang];
 					<div>
 						<IconDeviceMobile width={25} height={25} />
 					</div>
-					<h3>{t("index.me.technical_stack.mobile")}</h3>
+					<h3 data-i18n-key="index.me.technical_stack.mobile">
+						{t("index.me.technical_stack.mobile")}
+					</h3>
 				</header>
 				<main>
 					{["REACT_NATIVE ", "EXPO"].map((t) => <BentoBadge text={t} />)}
@@ -128,11 +146,16 @@ const l = ui[lang];
 					<div>
 						<IconBrandPowershell width={25} height={25} />
 					</div>
-					<h3>{t("index.me.technical_stack.infrastructure.title")}</h3>
+					<h3 data-i18n-key="index.me.technical_stack.infrastructure.title">
+						{t("index.me.technical_stack.infrastructure.title")}
+					</h3>
 				</header>
 				<main class="flex flex-row justify-between">
 					<div class="flex flex-row gap-2 flex-wrap items-center w-8/12">
-						<p class="text-sm text-gray-400">
+						<p
+							class="text-sm text-gray-400"
+							data-i18n-key="index.me.technical_stack.infrastructure.description"
+						>
 							{t("index.me.technical_stack.infrastructure.description")}
 						</p>
 					</div>
@@ -166,6 +189,8 @@ const l = ui[lang];
 		<header class="flex flex-col items-center justify-center">
 			<h2
 				class="text-text-primary text-6xl font-bold text-center uppercase"
+				data-i18n-key="index.me.how_i_build.title"
+				data-i18n-to-change="html"
 				set:html={t("index.me.how_i_build.title")}
 			/>
 			<span class="block h-1 w-24 bg-primary rounded-[100%] mt-2 neon-line"
@@ -174,13 +199,19 @@ const l = ui[lang];
 
 		<main class="flex flex-row items-center gap-4 m-10">
 			{
-				Object.values(l.index.me.how_i_build.cards).map((c, i) => {
+				Object.entries(l.index.me.how_i_build.cards).map(([k, c], i) => {
 					return (
 						<div class="build-card">
 							<span>{String(i + 1).padStart(2, "0")}</span>
-							<header>{c.title}</header>
+							<header data-i18n-key={`index.me.how_i_build.cards.${k}.title`}>
+								{c.title}
+							</header>
 							<main>
-								<p>{c.description}</p>
+								<p
+									data-i18n-key={`index.me.how_i_build.cards.${k}.description`}
+								>
+									{c.description}
+								</p>
 							</main>
 						</div>
 					);

@@ -20,7 +20,9 @@ const link = (path: string) => getLocaleUrl(lang, path);
 					class="block absolute size-5 bg-text-muted rounded-full animate-ping"
 				></span>
 			</span>
-			{t("index.home.available_for_hire")}
+			<span data-i18n-key="index.home.available_for_hire">
+				{t("index.home.available_for_hire")}
+			</span>
 		</Badge>
 		<div>
 			<h1 class="text-8xl font-space-grotesk text-text-primary font-bold">
@@ -29,17 +31,19 @@ const link = (path: string) => getLocaleUrl(lang, path);
 				<span class="gradient-text">Morales</span>
 			</h1>
 
-			<p class="w-2/3">
+			<p data-i18n-key="index.home.description" class="w-2/3">
 				{t("index.home.description")}
 			</p>
 
 			<div class="mt-5 flex flex-row gap-5">
 				<a
+					data-i18n-key="index.home.view_projects"
 					href={link("#projects")}
 					class="button-glow bg-primary px-4 py-2 rounded font-jet-brains"
 					>{t("index.home.view_projects")}</a
 				>
 				<a
+					data-i18n-key="index.home.contact_me"
 					href={link("#contact")}
 					class="block px-4 py-2 rounded font-jet-brains bg-surface hover:bg-surface-soft text-text-primary"
 					>{t("index.home.contact_me")}</a
@@ -50,19 +54,25 @@ const link = (path: string) => getLocaleUrl(lang, path);
 		<div class="achievements flex flex-row justify-between w-7/12">
 			<div>
 				<span class="gradient-text font-jet-brains font-bold text-lg">+7</span>
-				<span class="achievement-text"
+				<span
+					class="achievement-text"
+					data-i18n-key="index.home.achievements.years_experience"
 					>{t("index.home.achievements.years_experience")}</span
 				>
 			</div>
 			<div>
 				<span class="gradient-text font-jet-brains font-bold text-lg">42+</span>
-				<span class="achievement-text"
+				<span
+					class="achievement-text"
+					data-i18n-key="index.home.achievements.projects_done"
 					>{t("index.home.achievements.projects_done")}</span
 				>
 			</div>
 			<div>
 				<span class="gradient-text font-jet-brains font-bold text-lg">12</span>
-				<span class="achievement-text"
+				<span
+					class="achievement-text"
+					data-i18n-key="index.home.achievements.technologies_learned"
 					>{t("index.home.achievements.technologies_learned")}</span
 				>
 			</div>
@@ -78,6 +88,8 @@ const link = (path: string) => getLocaleUrl(lang, path);
 			<div class="border border-border rounded-full size-full p-3">
 				<div class="border border-border rounded-full size-full p-8">
 					<img
+						data-i18n-key="index.home.me_alt"
+						data-i18n-to-change='alt'
 						src="/images/me.avif"
 						alt={t("index.home.me_alt")}
 						class="rounded-full animate-float animate-iteration-count-infinite animate-duration-3500"

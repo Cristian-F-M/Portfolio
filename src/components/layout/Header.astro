@@ -4,6 +4,7 @@ import Link from "@/components/layout/Link.astro";
 import { getLocaleUrl, translations } from "@/i18n/utils";
 import { IconMenu2 } from "@tabler/icons-react";
 import { links } from "@/constants/links";
+import type { Path } from "@/types/i18n";
 
 const { t, lang } = translations(Astro.url);
 const link = (path: string) => getLocaleUrl(lang, path);
@@ -21,12 +22,14 @@ const link = (path: string) => getLocaleUrl(lang, path);
 		<nav class="header-nav flex flex-row items-center gap-4">
 			{
 				links.map((l) => {
+					const path = `index.nav.links.${l.path}` as Path;
 					return (
 						<Link
+							data-i18n-key={path}
 							class={`link-${l.id}`}
 							id={`link-${l.id}`}
 							href={link(l.url)}
-							text={t(`index.nav.links.${l.path}`)}
+							text={t(path)}
 						/>
 					);
 				})

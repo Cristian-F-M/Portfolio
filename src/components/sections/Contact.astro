@@ -50,10 +50,15 @@ const toastMessages = Object.fromEntries(toastMessagesEntries);
 	<header class="text-7xl">
 		<h2
 			class="text-text-primary font-bold uppercase"
+			data-i18n-key="index.lets_build.title"
+			data-i18n-to-change="html"
 			set:html={t("index.lets_build.title")}
 		/>
 
-		<p class="text-base w-120 mt-8 pl-6 border-l border-primary">
+		<p
+			class="text-base w-120 mt-8 pl-6 border-l border-primary"
+			data-i18n-key="index.lets_build.description"
+		>
 			{t("index.lets_build.description")}
 		</p>
 	</header>
@@ -72,12 +77,22 @@ const toastMessages = Object.fromEntries(toastMessagesEntries);
 						name="name"
 						label={t("index.lets_build.form.name.name")}
 						placeholder={t("index.lets_build.form.name.placeholder")}
+						labelProps={{
+							"data-i18n-key": "index.lets_build.form.name.name",
+						}}
+						data-i18n-key="index.lets_build.form.name.placeholder"
+						data-i18n-to-change="placeholder"
 					/>
 					<Input
 						id="email"
 						name="email"
 						label={t("index.lets_build.form.email.name")}
 						placeholder={t("index.lets_build.form.email.placeholder")}
+						labelProps={{
+							"data-i18n-key": "index.lets_build.form.email.name",
+						}}
+						data-i18n-key="index.lets_build.form.email.placeholder"
+						data-i18n-to-change="placeholder"
 					/>
 				</div>
 				<Input
@@ -86,6 +101,11 @@ const toastMessages = Object.fromEntries(toastMessagesEntries);
 					id="message"
 					placeholder={t("index.lets_build.form.message.placeholder")}
 					textArea
+					labelProps={{
+						"data-i18n-key": "index.lets_build.form.message.name",
+					}}
+					data-i18n-key="index.lets_build.form.message.placeholder"
+					data-i18n-to-change="placeholder"
 				/>
 				<div>
 					<button
@@ -104,7 +124,10 @@ const toastMessages = Object.fromEntries(toastMessagesEntries);
 		</div>
 
 		<aside class="w-full">
-			<h3 class="text-text-primary font-jet-brains tracking-widest uppercase">
+			<h3
+				class="text-text-primary font-jet-brains tracking-widest uppercase"
+				data-i18n-key="index.lets_build.virtual_presence.title"
+			>
 				{t("index.lets_build.virtual_presence.title")}
 			</h3>
 
@@ -165,7 +188,10 @@ const toastMessages = Object.fromEntries(toastMessagesEntries);
 						className="text-primary self-start"
 					/>
 					<div class="flex flex-col text-text-primary">
-						<h5 class="font-jet-brains tracking-widest uppercase">
+						<h5
+							class="font-jet-brains tracking-widest uppercase"
+							data-i18n-key="index.lets_build.virtual_presence.coordinates"
+						>
 							{t("index.lets_build.virtual_presence.coordinates")}
 						</h5>
 						<span class="text-gray-400 text-xs">Remote / CMORALES</span>
@@ -263,7 +289,7 @@ const toastMessages = Object.fromEntries(toastMessagesEntries);
 		}
 		return toastMessages["en"];
 	};
-	const tM = translation(lang);
+	let tM = translation(lang);
 
 	const $form = document.getElementById(
 		"contact-form",
@@ -281,14 +307,16 @@ const toastMessages = Object.fromEntries(toastMessagesEntries);
 		duration: 3000,
 	} satisfies Toastify.Options;
 
-	const t = Toastify({
-		...toastifyCommonOptions,
-		duration: -1,
-		text: tM.sending,
-	});
-
 	$form?.addEventListener("submit", async (event) => {
 		event.preventDefault();
+		const [_, lang] = document.location.pathname.split("/");
+
+		tM = translation(lang);
+		const t = Toastify({
+			...toastifyCommonOptions,
+			duration: -1,
+			text: tM.sending,
+		});
 
 		t.showToast();
 		const form = event.currentTarget as HTMLFormElement;
@@ -383,6 +411,10 @@ const toastMessages = Object.fromEntries(toastMessagesEntries);
 
 		const error = getValue(tM, message);
 
+		const [k, field, errorK] = message.split(".");
+		const key = `index.lets_build.form.${field}.${k}.${errorK}`;
+
+		$error.setAttribute("data-i18n-key", key);
 		$error.textContent = typeof error === "string" ? error : "";
 	}
 </script>
