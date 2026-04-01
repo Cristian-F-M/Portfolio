@@ -1,10 +1,11 @@
-import { getHTMLTitle } from '@/utils/ui'
+import { getHTMLTitle } from '../../utils/ui'
 
 const es = {
 	status: {
 		active: 'Activo',
 		inactive: 'Inactivo'
 	},
+	language: "Español",
 	index: {
 		title:
 			'Portafolio de Cristian Morales | Trainee en el desarrollo de software',
