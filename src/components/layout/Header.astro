@@ -48,16 +48,20 @@ const link = (path: string) => getLocaleUrl(lang, path);
 		></span>
 	</div>
 
-	<button class="group cursor-pointer">
+	<button
+		class="group cursor-pointer"
+		data-open-side-menu
+		data-side-menu-toggler
+	>
 		<IconMenu2
-			className="text-text-secondary group-hover:text-primary transition-all"
+			className="text-text-secondary group-hover:text-primary transition-all [--path-scale:50%] [--path-translate-x:calc(calc(100%-var(--path-scale))/2)] [&_path]:transition-all group-data-[side-menu-showed=true]:[&_path]:last:scale-x-(--path-scale) group-data-[side-menu-showed=true]:[&_path]:last:translate-x-(--path-translate-x) group-data-[side-menu-showed=true]:[&_path]:first:scale-x-(--path-scale) group-data-[side-menu-showed=true]:[&_path]:first:translate-x-(--path-translate-x)"
 		/>
 	</button>
 </header>
 
 <script>
 	const $nav = document.querySelector("nav.header-nav") as HTMLElement | null;
-	const $links = ($nav?.querySelectorAll("nav.header-nav > a") ??
+	const $links = ($nav?.querySelectorAll("nav.header-nav a") ??
 		[]) as NodeListOf<HTMLAnchorElement>;
 	const $navContainer = document.querySelector(
 		".nav-container",
@@ -112,7 +116,7 @@ const link = (path: string) => getLocaleUrl(lang, path);
 		const $indicator = document.querySelector(
 			".link-indicator",
 		) as HTMLDivElement | null;
-		const $nav = document.querySelector("nav") as HTMLElement | null;
+		const $nav = document.querySelector("nav.header-nav") as HTMLElement | null;
 		const $anchor = document.querySelector(
 			`a.link-${hash}`,
 		) as HTMLAnchorElement | null;
