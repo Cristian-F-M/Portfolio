@@ -1,14 +1,25 @@
 ---
 import { twMerge } from "tailwind-merge";
+import type { HTMLAttributes } from "astro/types";
 
-interface Props {
+interface BaseProps {
 	label: string;
 	class?: string;
 	placeholder?: string;
 	name: string;
 	id: string;
 	textArea?: boolean;
+	labelProps?: HTMLAttributes<"label">;
 }
+
+interface InputProps extends HTMLAttributes<"input"> {
+	textarea?: false;
+}
+interface TextAreaProps extends HTMLAttributes<"textarea"> {
+	textarea: true;
+}
+
+type Props = BaseProps & (InputProps | TextAreaProps);
 
 const {
 	label,
@@ -17,13 +28,15 @@ const {
 	name,
 	id,
 	textArea,
+	labelProps,
+	...props
 } = Astro.props;
 ---
 
 <label class={twMerge("flex flex-col gap-1 w-full", className)}>
 	<span
 		class="text-xs text-text-muted has-[+input:focus]:text-text-primary transition-colors uppercase"
-		>{label}</span
+		{...labelProps}>{label}</span
 	>
 	{
 		textArea && (
@@ -32,6 +45,7 @@ const {
 				id={id}
 				placeholder={placeholder}
 				class="border-b-2 border-border focus:border-primary outline-none caret-primary text-text-secondary text-sm transition-colors resize-none field-sizing-content min-h-24 max-h-36 placeholder:text-xs placeholder:text-text-muted"
+				{...props}
 			/>
 		)
 	}
@@ -43,6 +57,7 @@ const {
 				name={name}
 				id={id}
 				placeholder={placeholder}
+				{...props}
 			/>
 		)
 	}
