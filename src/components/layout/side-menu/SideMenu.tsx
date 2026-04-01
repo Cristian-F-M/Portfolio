@@ -102,10 +102,28 @@ export function SideMenu({
 
 			textElements.forEach((el) => {
 				const path = el.dataset.i18nKey as Path | undefined
+				const { i18nToChange: rawToChange = 'content' } = el.dataset
+
 				if (!path) return
 
 				const newText = getValueByPath(l, path)
-				if (newText) el.textContent = newText
+				const toChange = rawToChange.replace(/[[\]\s]/g, '').split(',')
+
+				if (!newText) return
+
+				toChange.forEach((attr) => {
+					if (attr === 'content') {
+						el.textContent = newText
+						return
+					}
+
+					if (attr === 'html') {
+						el.innerHTML = newText
+						return
+					}
+
+					el.setAttribute(attr, newText)
+				})
 			})
 		},
 		[setLanguage, language, langs]
