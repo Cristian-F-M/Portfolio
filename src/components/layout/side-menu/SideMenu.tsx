@@ -20,7 +20,11 @@ export function getValueByPath(obj: defaultLangKeys, path: Path) {
 	return split.at(-1) ?? ''
 }
 
-export function SideMenu({ lang }: { lang: defaultLangKeys }) {
+export function SideMenu({
+	langs
+}: {
+	langs: Record<Languages, defaultLangKeys>
+}) {
 	const [isOpen, setIsOpen] = useState(false)
 	const [hash, setHash] = useState('#home')
 	const [areThemesShowed, setAreThemesShowed] = useState(false)
@@ -83,21 +87,36 @@ export function SideMenu({ lang }: { lang: defaultLangKeys }) {
 	)
 
 	const handleChangeLanguage = useCallback(
-		(lang: string) => {
+		(lang: Languages) => {
 			if (language === lang) return
 
+			const l = langs[lang]
+
 			const pathname = window.location.pathname.replace(language, lang)
-			window.location.href = pathname
+			window.history.replaceState(null, '', pathname)
 			setLanguage(lang as Languages)
+
+			const textElements = document.querySelectorAll(
+				'[data-i18n-key]'
+			) as NodeListOf<HTMLElement>
+
+			textElements.forEach((el) => {
+				const path = el.dataset.i18nKey as Path | undefined
+				if (!path) return
+
+				const newText = getValueByPath(l, path)
+				if (newText) el.textContent = newText
+			})
 		},
-		[setLanguage, language]
+		[setLanguage, language, langs]
 	)
 
 	const t = useCallback(
 		(path: Path) => {
+			const lang = langs[language]
 			return getValueByPath(lang, path)
 		},
-		[lang]
+		[langs, language]
 	)
 
 	useEffect(() => {
@@ -197,7 +216,7 @@ export function SideMenu({ lang }: { lang: defaultLangKeys }) {
 							{Object.entries(languages).map(([k, v]) => {
 								return (
 									<SelectItem
-										onClick={() => handleChangeLanguage(k)}
+										onClick={() => handleChangeLanguage(k as Languages)}
 										key={k}
 										className={twMerge(
 											'border-transparent bg-transparent hover:bg-surface-soft/60 hover:border-border flex flex-row items-center justify-between',
