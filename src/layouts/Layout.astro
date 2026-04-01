@@ -1,4 +1,6 @@
 ---
+import { SideMenu } from "@/components/layout/side-menu/SideMenu";
+import { useTheme } from "@/state/theme";
 import * as THEMES from "@/constants/themes";
 import "../styles/global.css";
 import "toastify-js/src/toastify.css";
@@ -17,22 +19,23 @@ const themes = Object.entries(THEMES).map(([key, value]) => {
 		return `--${k}: ${c}`;
 	});
 
-	const style = `:root.${name} {
+	const style = `:root[data-theme='${name}'] {
   \r${colors.join(";\n")}
   \r}`;
 
 	return style;
 });
+
+const { theme } = useTheme.getState();
 ---
 
 <!doctype html>
-<html lang="en" class="deep-space-blue">
+<html lang="en" data-theme={theme}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="description" content={description} />
 		<link rel="icon" type="image/svg+xml" href="/cm.svg" />
-
 		<title>{title}</title>
 
 		<script is:inline define:vars={{ themes }}>
@@ -41,8 +44,20 @@ const themes = Object.entries(THEMES).map(([key, value]) => {
 			style.textContent = themes.join("\n\n");
 			document.head.appendChild(style);
 		</script>
+
+		<script>
+			import { useTheme } from "@/state/theme";
+			import { useLanguage } from "@/state/language";
+
+			const { load: loadTheme } = useTheme.getState();
+			const { load: loadLanguage } = useLanguage.getState();
+
+			loadTheme();
+			loadLanguage();
+		</script>
 	</head>
 	<body>
+		<SideMenu client:load />
 		<slot />
 	</body>
 </html>
@@ -72,6 +87,7 @@ const themes = Object.entries(THEMES).map(([key, value]) => {
 
 			history.replaceState(null, "", `#${id}`);
 			window.setLinkActive();
+			if (window.setHash) window.setHash(`#${id}`);
 		});
 	}
 
