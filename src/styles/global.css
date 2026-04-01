@@ -40,7 +40,20 @@
 	--overlay: rgb(0, 0, 0);
 }
 
+.custom-scroll::-webkit-scrollbar-track {
+	background: var(--color-background);
+	border-radius: 3px;
+}
 
+.custom-scroll::-webkit-scrollbar-thumb {
+	background: var(--color-primary);
+	border-radius: 3px;
+}
+
+.custom-scroll::-webkit-scrollbar {
+	height: 5px;
+	width: 5px;
+}
 
 body {
 	background: var(--color-background);
