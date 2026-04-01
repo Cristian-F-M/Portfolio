@@ -17,7 +17,7 @@ const link = (path: string) => getLocaleUrl(lang, path);
 	</a>
 
 	<div class="nav-container relative hidden md:block">
-		<nav class="flex flex-row items-center gap-4">
+		<nav class="header-nav flex flex-row items-center gap-4">
 			<Link
 				class="link-home"
 				id="link-home"
@@ -56,8 +56,8 @@ const link = (path: string) => getLocaleUrl(lang, path);
 </header>
 
 <script>
-	const $nav = document.querySelector("nav") as HTMLElement | null;
-	const $links = ($nav?.querySelectorAll("a") ??
+	const $nav = document.querySelector("nav.header-nav") as HTMLElement | null;
+	const $links = ($nav?.querySelectorAll("nav.header-nav > a") ??
 		[]) as NodeListOf<HTMLAnchorElement>;
 	const $navContainer = document.querySelector(
 		".nav-container",
