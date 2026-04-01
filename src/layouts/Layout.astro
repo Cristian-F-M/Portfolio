@@ -4,6 +4,8 @@ import { useTheme } from "@/state/theme";
 import * as THEMES from "@/constants/themes";
 import "../styles/global.css";
 import "toastify-js/src/toastify.css";
+import { getLocaleUrl, translations } from "@/i18n/utils";
+import { ui } from "@/i18n/ui";
 
 interface Props {
 	title: string;
@@ -27,6 +29,7 @@ const themes = Object.entries(THEMES).map(([key, value]) => {
 });
 
 const { theme } = useTheme.getState();
+const { t, lang } = translations(Astro.url);
 ---
 
 <!doctype html>
@@ -57,7 +60,7 @@ const { theme } = useTheme.getState();
 		</script>
 	</head>
 	<body>
-		<SideMenu client:load />
+		<SideMenu lang={ui[lang]} client:load />
 		<slot />
 	</body>
 </html>
