@@ -60,7 +60,7 @@ const { t, lang } = translations(Astro.url);
 		</script>
 	</head>
 	<body>
-		<SideMenu lang={ui[lang]} client:load />
+		<SideMenu langs={ui} client:load />
 		<slot />
 	</body>
 </html>
