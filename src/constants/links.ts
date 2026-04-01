@@ -1,23 +1,30 @@
+import type { defaultLangKeys } from '@/types/i18n'
+
 export interface Link {
+	id: string
 	url: string
-	text: string
+	path: keyof defaultLangKeys['index']['nav']['links']
 }
 
 export const links = [
 	{
-		text: 'Home',
+		id: 'home',
+		path: 'home',
 		url: '#home'
 	},
 	{
-		text: 'projects',
+		id: 'projects',
+		path: 'projects',
 		url: '#projects'
 	},
 	{
-		text: 'me',
+		id: 'me',
+		path: 'me',
 		url: '#me'
 	},
 	{
-		text: 'contact',
+		id: 'contact',
+		path: 'contact',
 		url: '#contact'
 	}
 ] satisfies Link[]
