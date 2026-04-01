@@ -3,6 +3,7 @@ import Logo from "@/assets/cm.svg";
 import Link from "@/components/layout/Link.astro";
 import { getLocaleUrl, translations } from "@/i18n/utils";
 import { IconMenu2 } from "@tabler/icons-react";
+import { links } from "@/constants/links";
 
 const { t, lang } = translations(Astro.url);
 const link = (path: string) => getLocaleUrl(lang, path);
@@ -18,30 +19,18 @@ const link = (path: string) => getLocaleUrl(lang, path);
 
 	<div class="nav-container relative hidden md:block">
 		<nav class="header-nav flex flex-row items-center gap-4">
-			<Link
-				class="link-home"
-				id="link-home"
-				href={link("#home")}
-				text={t("index.nav.links.home")}
-			/>
-			<Link
-				class="link-projects"
-				id="link-projects"
-				href={link("#projects")}
-				text={t("index.nav.links.projects")}
-			/>
-			<Link
-				class="link-me"
-				id="link-me"
-				href={link("#me")}
-				text={t("index.nav.links.me")}
-			/>
-			<Link
-				class="link-contact"
-				id="link-contact"
-				href={link("#contact")}
-				text={t("index.nav.links.contact")}
-			/>
+			{
+				links.map((l) => {
+					return (
+						<Link
+							class={`link-${l.id}`}
+							id={`link-${l.id}`}
+							href={link(l.url)}
+							text={t(`index.nav.links.${l.path}`)}
+						/>
+					);
+				})
+			}
 		</nav>
 		<span
 			class="link-indicator bg-text-muted [[active]]:bg-primary pointer-events-none block h-0.5 w-(--indicator-w,0) translate-x-(--indicator-translate-x,0) scale-100 transition-all"
