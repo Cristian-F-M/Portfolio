@@ -149,6 +149,12 @@ const es = {
 		},
 		footer: {
 			architected_by: 'Desarrollado_por_CMORALES'
+		},
+		side_menu: {
+			language_select: 'Selecionar_idioma',
+			appearance_engine: 'Motor_de_apariencia',
+			show_more: 'Ver más',
+			show_less: 'Ver menos'
 		}
 	}
 }

@@ -146,6 +146,12 @@ const en = {
 		},
 		footer: {
 			architected_by: 'Architected_by_CMORALES'
+		},
+		side_menu: {
+			language_select: 'Language_engine',
+			appearance_engine: 'appearance_engine',
+			show_more: 'Show more',
+			show_less: 'Show less'
 		}
 	}
 }
