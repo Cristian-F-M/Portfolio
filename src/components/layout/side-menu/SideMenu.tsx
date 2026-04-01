@@ -70,10 +70,14 @@ export function SideMenu() {
 	)
 
 	const handleChangeLanguage = useCallback(
-		(language: Languages) => {
-			setLanguage(language)
+		(lang: string) => {
+			if (language === lang) return
+
+			const pathname = window.location.pathname.replace(language, lang)
+			window.location.href = pathname
+			setLanguage(lang as Languages)
 		},
-		[setLanguage]
+		[setLanguage, language]
 	)
 
 	useEffect(() => {
@@ -173,7 +177,7 @@ export function SideMenu() {
 							{Object.entries(languages).map(([k, v]) => {
 								return (
 									<SelectItem
-										onClick={() => handleChangeLanguage(k as Languages)}
+										onClick={() => handleChangeLanguage(k)}
 										key={k}
 										className={twMerge(
 											'border-transparent bg-transparent hover:bg-surface-soft/60 hover:border-border flex flex-row items-center justify-between',
