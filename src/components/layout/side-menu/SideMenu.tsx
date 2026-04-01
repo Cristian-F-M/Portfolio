@@ -1,5 +1,5 @@
 import { links } from '@/constants/links'
-import { languages } from '@/i18n/ui'
+import { defaultLanguage, languages, ui } from '@/i18n/ui'
 import { IconCheck, IconX } from '@tabler/icons-react'
 import { useCallback, useEffect, useState } from 'react'
 import { twMerge } from 'tailwind-merge'
@@ -7,7 +7,18 @@ import { SelectItem } from './SelectItem'
 import * as THEMES from '@/constants/themes'
 import { useTheme } from '@/state/theme'
 import { useLanguage } from '@/state/language'
-import type { defaultLangKeys, Languages } from '@/types/i18n'
+import type { defaultLangKeys, Lang, Languages, Path } from '@/types/i18n'
+
+export function getValueByPath(obj: defaultLangKeys, path: Path) {
+	const split = path.split('.')
+	const getValue = (obj: Lang, path: Path) =>
+		path.split('.').reduce((acc, key) => acc?.[key], obj) as Lang | string
+
+	const value = getValue(obj, path) ?? getValue(ui[defaultLanguage], path)
+	if (typeof value === 'string') return value
+
+	return split.at(-1) ?? ''
+}
 
 export function SideMenu({ lang }: { lang: defaultLangKeys }) {
 	const [isOpen, setIsOpen] = useState(false)
@@ -80,6 +91,13 @@ export function SideMenu({ lang }: { lang: defaultLangKeys }) {
 			setLanguage(lang as Languages)
 		},
 		[setLanguage, language]
+	)
+
+	const t = useCallback(
+		(path: Path) => {
+			return getValueByPath(lang, path)
+		},
+		[lang]
 	)
 
 	useEffect(() => {
@@ -161,7 +179,7 @@ export function SideMenu({ lang }: { lang: defaultLangKeys }) {
 										<a
 											className="uppercase text-3xl group-[.active]:text-primary leading-7 group-hover:text-text-muted group-[.active]:font-semibold"
 											href={l.url}>
-											{lang.index.nav.links[l.path]}
+											{t(`index.nav.links.${l.path}`)}
 										</a>
 									</li>
 								)
@@ -172,7 +190,7 @@ export function SideMenu({ lang }: { lang: defaultLangKeys }) {
 					<section>
 						<header className="flex flex-row gap-2 items-center text-text-muted text-sm uppercase">
 							<span className="block size-1 bg-text-muted rounded-full"></span>
-							<h4>{lang.index.side_menu.language_select}</h4>
+							<h4>{t('index.side_menu.language_select')}</h4>
 						</header>
 
 						<main className="flex flex-col justify-center gap-1 mt-2">
@@ -210,7 +228,7 @@ export function SideMenu({ lang }: { lang: defaultLangKeys }) {
 					<section>
 						<header className="flex flex-row gap-2 items-center text-text-muted text-sm uppercase">
 							<span className="block size-1 bg-text-muted rounded-full"></span>
-							<h4>{lang.index.side_menu.appearance_engine}</h4>
+							<h4>{t('index.side_menu.appearance_engine')}</h4>
 						</header>
 
 						<main className=" mt-3 w-full">
@@ -251,11 +269,9 @@ export function SideMenu({ lang }: { lang: defaultLangKeys }) {
 								}}
 								className="text-text-muted text-xs float-end w-fit px-2 py-1 my-1 cursor-pointer hover:text-text-secondary"
 								type="button">
-								{
-									lang.index.side_menu[
-										areThemesShowed ? 'show_less' : 'show_more'
-									]
-								}
+								{t(
+									`index.side_menu.${areThemesShowed ? 'show_less' : 'show_more'}`
+								)}
 							</button>
 						</main>
 					</section>
