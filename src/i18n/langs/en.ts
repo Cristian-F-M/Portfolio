@@ -42,7 +42,7 @@ const en = {
 				'Exploring the intersection between high-performance architecture and immersive visual interfaces. Each artifact reflects my knowledge and dedication ♥.'
 		},
 		me: {
-			operational_status: 'Operational status',
+			operational_status: 'Operational_status',
 			title: getHTMLTitle(
 				{ text: 'Who', separation: true },
 				{ text: 'am I?', gradient: true }

@@ -43,7 +43,7 @@ const es = {
 				'Explorando la intersección entre la arquitectura de alto rendimiento y las interfaces visuales inmersivas. Cada artefacto es una muestra de mi conocimiento y dedicación ♥.'
 		},
 		me: {
-			operational_status: 'Estado operativo',
+			operational_status: 'Estado_operativo',
 			title: getHTMLTitle(
 				{ text: '¿Quién', separation: true },
 				{ text: 'soy?', gradient: true }
