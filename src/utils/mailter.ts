@@ -1,7 +1,7 @@
 import nodemailer from 'nodemailer'
-import { loadEnvFile } from 'node:process'
+import { config } from 'dotenv'
 
-loadEnvFile()
+config()
 
 const { SMTP_USER, SMTP_PASS, MY_EMAIL } = process.env
 
