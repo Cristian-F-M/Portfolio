@@ -126,8 +126,6 @@
 		const duration = styles.animationDuration;
 		const delay = styles.animationDelay;
 
-		console.log(styles.animation);
-
 		function aMs(valor: string) {
 			if (valor.includes("ms")) return parseFloat(valor);
 			return parseFloat(valor) * 1000;
@@ -174,7 +172,7 @@
 
 		$svgContainer?.addEventListener("animationend", onAnimationEnd);
 		const duration = getDuration();
-		console.log({ duration });
+	
 		return duration;
 	};
 
