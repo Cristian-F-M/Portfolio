@@ -134,6 +134,7 @@ export function SideMenu({
 					el.setAttribute(attr, newText)
 				})
 			})
+			window.setLinkActive()
 		},
 		[setLanguage, language, langs]
 	)
