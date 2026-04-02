@@ -9,7 +9,7 @@ import { useTheme } from '@/state/theme'
 import { useLanguage } from '@/state/language'
 import type { defaultLangKeys, Lang, Languages, Path } from '@/types/i18n'
 
-export function getValueByPath(obj: defaultLangKeys, path: Path) {
+function getValueByPath(obj: defaultLangKeys, path: Path) {
 	const split = path.split('.')
 	const getValue = (obj: Lang, path: Path) =>
 		path.split('.').reduce((acc, key) => acc?.[key], obj) as Lang | string
@@ -31,7 +31,7 @@ export function SideMenu({
 	const { theme, setTheme } = useTheme()
 	const { language, setLanguage } = useLanguage()
 
-	// const link = (path: string) => getLocaleUrl(lang, path);
+	const link = (url: string) => `/${language}/${url}`
 
 	const handleClickAnyWhere = useCallback(
 		(event: MouseEvent) => {
@@ -98,15 +98,16 @@ export function SideMenu({
 
 			const pathname = window.location.pathname.replace(language, lang)
 			const hash = window.location.hash
-			
+
 			const textElements = document.querySelectorAll(
 				'[data-i18n-key]'
 			) as NodeListOf<HTMLElement>
+			const $anchors = document.querySelectorAll('a')
 
 			const duration = await window.showSplashScreen()
 			await new Promise((r) => setTimeout(r, duration / 2))
 			window.history.replaceState(null, '', pathname + hash)
- 
+
 			setLanguage(lang as Languages)
 
 			textElements.forEach((el) => {
@@ -134,6 +135,14 @@ export function SideMenu({
 					el.setAttribute(attr, newText)
 				})
 			})
+
+			$anchors.forEach((a) => {
+				const [_, url] = a.href.split(`/${language}/`)
+				const newHref = `/${lang}/${url}`
+
+				a.setAttribute('href', newHref)
+			})
+
 			window.setLinkActive()
 		},
 		[setLanguage, language, langs]
@@ -225,7 +234,7 @@ export function SideMenu({
 										</span>
 										<a
 											className="uppercase text-3xl group-[.active]:text-primary leading-7 group-hover:text-text-muted group-[.active]:font-semibold"
-											href={l.url}>
+											href={link(l.url)}>
 											{t(`index.nav.links.${l.path}`)}
 										</a>
 									</li>
