@@ -77,9 +77,13 @@ export function SideMenu({
 	}, [])
 
 	const handleChangeTheme = useCallback(
-		(t: string) => {
+		async (t: string) => {
 			if (theme === t) return
 			const root = document.documentElement
+
+			const duration = await window.showSplashScreen()
+			await new Promise((r) => setTimeout(r, duration / 2))
+
 			root.setAttribute('data-theme', t)
 			setTheme(t)
 		},
@@ -87,18 +91,23 @@ export function SideMenu({
 	)
 
 	const handleChangeLanguage = useCallback(
-		(lang: Languages) => {
+		async (lang: Languages) => {
 			if (language === lang) return
 
 			const l = langs[lang]
 
 			const pathname = window.location.pathname.replace(language, lang)
-			window.history.replaceState(null, '', pathname)
-			setLanguage(lang as Languages)
-
+			const hash = window.location.hash
+			
 			const textElements = document.querySelectorAll(
 				'[data-i18n-key]'
 			) as NodeListOf<HTMLElement>
+
+			const duration = await window.showSplashScreen()
+			await new Promise((r) => setTimeout(r, duration / 2))
+			window.history.replaceState(null, '', pathname + hash)
+ 
+			setLanguage(lang as Languages)
 
 			textElements.forEach((el) => {
 				const path = el.dataset.i18nKey as Path | undefined
