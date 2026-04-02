@@ -14,6 +14,8 @@ import { getLocaleUrl, translations, getValueByPath } from "@/i18n/utils";
 import { languages } from "@/i18n/ui";
 import { ui } from "@/i18n/ui";
 import type { Path } from "@/types/i18n";
+import { Image } from "astro:assets";
+import mapImg from '../../../public/images/mapa.avif'
 
 const { t, lang } = translations(Astro.url);
 const link = (path: string) => getLocaleUrl(lang, path);
@@ -201,7 +203,11 @@ const toastMessages = Object.fromEntries(toastMessagesEntries);
 					</div>
 				</header>
 				<div class="w-full h-32 aspect-video overflow-hidden rounded mt-6">
-					<img class="size-full object-cover" src="/images/mapa.avif" alt="" />
+					<Image
+						class="size-full object-cover"
+						src={mapImg}
+						alt=""
+					/>
 				</div>
 			</a>
 		</aside>
