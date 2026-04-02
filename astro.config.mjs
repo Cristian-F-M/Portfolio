@@ -18,7 +18,10 @@ export default defineConfig({
 	},
 	output: 'server',
 	vite: {
-		plugins: [tailwindcss()]
+		plugins: [tailwindcss()],
+		server: {
+			watch: { usePolling: true }
+		}
 	},
 	integrations: [react()],
 	adapter: vercel()
