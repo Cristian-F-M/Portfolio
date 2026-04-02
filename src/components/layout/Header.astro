@@ -71,6 +71,7 @@ const link = (path: string) => getLocaleUrl(lang, path);
 		const $indicator = $navContainer?.querySelector(
 			".link-indicator",
 		) as HTMLDivElement | null;
+		const navRect = $nav?.getBoundingClientRect();
 
 		if (!$indicator || !navRect) return;
 
