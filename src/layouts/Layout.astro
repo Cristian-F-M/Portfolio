@@ -6,6 +6,7 @@ import "../styles/global.css";
 import "toastify-js/src/toastify.css";
 import { getLocaleUrl, translations } from "@/i18n/utils";
 import { ui } from "@/i18n/ui";
+import SplashScreen from "@/components/layout/SplashScreen.astro";
 
 interface Props {
 	title: string;
@@ -59,8 +60,9 @@ const { t, lang } = translations(Astro.url);
 			loadLanguage();
 		</script>
 	</head>
-	<body>
-		<SideMenu langs={ui} client:load />
+	<body class="no-scroll">
+		<SplashScreen />
+		<SideMenu langs={ui} client:only="react" />
 		<slot />
 	</body>
 </html>
