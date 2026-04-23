@@ -5,13 +5,23 @@ import { getLocaleUrl, translations } from "@/i18n/utils";
 import { IconMenu2 } from "@tabler/icons-react";
 import { links } from "@/constants/links";
 import type { Path } from "@/types/i18n";
+import { twMerge } from "tailwind-merge";
+
+interface Props {
+	class?: string;
+}
 
 const { t, lang } = translations(Astro.url);
 const link = (path: string) => getLocaleUrl(lang, path);
+
+const { class: className } = Astro.props;
 ---
 
 <header
-	class="bg-surface/60 mx-auto mt-5 flex w-full flex-row items-center justify-between rounded px-4 py-3 text-text-primary shadow shadow-surface-soft sticky top-2 z-100 backdrop-blur-lg"
+	class={twMerge(
+		"bg-surface/60 mx-auto mt-5 flex w-full flex-row items-center justify-between rounded px-4 py-3 text-text-primary shadow shadow-surface-soft sticky top-2 z-100 backdrop-blur-lg",
+		className,
+	)}
 >
 	<a href="/#home" class="flex flex-row items-center gap-2 text-text-primary">
 		<Logo class="text-text-primary" />
@@ -83,7 +93,8 @@ const link = (path: string) => getLocaleUrl(lang, path);
 			`${left - navRect.left}px`,
 		);
 
-		if (a.getAttribute("active") === null) $indicator.removeAttribute("active");
+		if (a.getAttribute("active") === null)
+			$indicator.removeAttribute("active");
 		else $indicator.setAttribute("active", "");
 	};
 
@@ -109,7 +120,9 @@ const link = (path: string) => getLocaleUrl(lang, path);
 		const $indicator = document.querySelector(
 			".link-indicator",
 		) as HTMLDivElement | null;
-		const $nav = document.querySelector("nav.header-nav") as HTMLElement | null;
+		const $nav = document.querySelector(
+			"nav.header-nav",
+		) as HTMLElement | null;
 		const $anchor = document.querySelector(
 			`a.link-${hash}`,
 		) as HTMLAnchorElement | null;
