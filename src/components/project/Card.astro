@@ -1,0 +1,70 @@
+---
+import { Image } from "astro:assets";
+import mapImg from "../../../public/images/mapa.avif";
+import Badge from "./Badge.astro";
+import { IconArrowNarrowRight } from "@tabler/icons-react";
+import type { Project } from "@/types/project";
+import { getLocaleUrl, translations } from "@/i18n/utils";
+
+interface Props {
+	project: Project;
+}
+
+const { project } = Astro.props;
+
+const { t, lang } = translations(Astro.url);
+const link = (path: string) => getLocaleUrl(lang, path);
+---
+
+<article
+	class="border border-border rounded-lg overflow-hidden size-full"
+	id={`project-card-${project.id}`}
+>
+	<div class="w-full h-auto aspect-square max-h-6/12">
+		<Image
+			src={project.images[0].src}
+			alt=""
+			class="size-full object-cover"
+			width={100}
+			height={100}
+		/>
+	</div>
+
+	<main class="flex flex-col justify-between p-6 h-6/12">
+		<section class="">
+			<header class="space-y-5">
+				<div class="space-x-3">
+					{project.skills.map((skill) => <Badge>{skill}</Badge>)}
+				</div>
+				<h3
+					class="text-text-secondary text-4xl font-bold font-space-grotesk uppercase"
+				>
+					{t(project.title)}
+				</h3>
+			</header>
+
+			<p class="mt-2 text-sm line-clamp-3 text-pretty">
+				{t(project.description)}
+			</p>
+		</section>
+
+		<footer
+			class="flex flex-row items-center justify-between w-full text-sm min-h-6/12"
+		>
+			<a
+				href={link(`/projects/${project.id}`)}
+				class="flex flex-row items-center gap-1 uppercase text-primary cursor-pointer hover:underline"
+			>
+				<span>View artifact</span>
+				<IconArrowNarrowRight
+					size={20}
+					className="[&_path]:first:scale-x-70 [&_path]:first:origin-center -ml-1.5"
+					stroke={1.5}
+				/>
+			</a>
+			<span class="text-[10px] text-text-muted font-jet-brains"
+				>V0.4.1 // 2026</span
+			>
+		</footer>
+	</main>
+</article>

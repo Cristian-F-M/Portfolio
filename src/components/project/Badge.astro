@@ -1,0 +1,20 @@
+---
+import { twMerge } from "tailwind-merge";
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"span"> {
+	class?: string;
+}
+
+const { class: className, ...props } = Astro.props;
+---
+
+<span
+	class={twMerge(
+		"px-3.5 py-1.5 bg-surface-soft inset-shadow-[0_0_4px_var(--text-primary)] inset-shadow-gray-500/40 text-xs text-text-secondary rounded cursor-cell uppercase",
+		className,
+	)}
+	{...props}
+>
+	<slot />
+</span>
