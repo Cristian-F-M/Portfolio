@@ -13,7 +13,10 @@ const link = (path: string) => getLocaleUrl(lang, path);
 const pageTitle = `We could not found the project ${id ? `with id=${id}` : "searched"}`;
 ---
 
-<Layout title={t("index.projects.404.title")} description={t("index.projects.404.description")}>
+<Layout
+	title={t("index.projects.404.title")}
+	description={t("index.projects.404.description")}
+>
 	<div class="w-full h-screen flex flex-col">
 		<header
 			class="bg-surface/60 mx-auto mt-5 flex w-full flex-row items-center justify-between rounded px-4 py-3 text-text-primary shadow shadow-surface-soft sticky top-2 z-100 backdrop-blur-lg"
@@ -106,3 +109,9 @@ const pageTitle = `We could not found the project ${id ? `with id=${id}` : "sear
 		<Footer class="bottom-0" />
 	</div>
 </Layout>
+
+<script>
+	window.addEventListener("beforeunload", () => {
+		window.showSplashScreen();
+	});
+</script>
