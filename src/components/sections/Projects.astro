@@ -1,8 +1,20 @@
 ---
 import Section from "@/components/sections/Section.astro";
-import { translations } from "@/i18n/utils";
+import { getLocaleUrl, translations } from "@/i18n/utils";
+import Card from "@/components/project/Card.astro";
+import { IconPlus } from "@tabler/icons-react";
+import { PROJECTS } from "@/constants/projects";
+import { twMerge } from "tailwind-merge";
 
 const { t, lang } = translations(Astro.url);
+const link = (path: string) => getLocaleUrl(lang, path);
+
+const bentoClasses = [
+	"col-span-2 row-span-1 [&_p]:max-w-8/12",
+	"row-span-1 col-start-3",
+	"row-span-2 row-start-2 [&_p]:max-w-10/12 ",
+	"col-span-2 row-span-2 row-start-2",
+];
 ---
 
 <Section id="projects" class="mt-20">
@@ -24,7 +36,36 @@ const { t, lang } = translations(Astro.url);
 		set:html={t("index.projects.featured_projects")}
 	/>
 
-	<p class="text-gray-400 w-150 text-sm" data-i18n-key="index.projects.description">
+	<p
+		class="text-gray-400 w-150 text-sm"
+		data-i18n-key="index.projects.description"
+	>
 		{t("index.projects.description")}
 	</p>
+
+	<main class="mt-8 w-10/12">
+		<div class="grid grid-cols-3 grid-rows-2 gap-4">
+			{
+				PROJECTS.filter((p) => p.featured)
+					.slice(0, 4)
+					.map((p, i) => {
+						return (
+							<div class={twMerge("max-h-130", bentoClasses[i])}>
+								<Card project={p} />
+							</div>
+						);
+					})
+			}
+		</div>
+
+		<!-- <a
+			href={link("/projects")}
+			class="flex flex-row gap-1 items-center uppercase text-text-primary text-xs mx-auto border border-border bg-surface px-4 py-3 rounded-lg hover:bg-surface-soft mt-4 font-jet-brains cursor-pointer w-fit"
+		>
+			<IconPlus size={16} className="text-primary" />
+			<span data-i18n-key="index.projects.see_more_artifacts"
+				>{t("index.projects.see_more_artifacts")}</span
+			>
+		</a> -->
+	</main>
 </Section>
