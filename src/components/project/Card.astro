@@ -23,7 +23,7 @@ const link = (path: string) => getLocaleUrl(lang, path);
 	<div class="w-full h-auto aspect-square max-h-6/12">
 		<Image
 			src={project.images[0].src}
-			alt=""
+			alt={t("index.projects.generic_image_alt")}
 			class="size-full object-cover"
 			width={100}
 			height={100}
@@ -55,7 +55,7 @@ const link = (path: string) => getLocaleUrl(lang, path);
 				href={link(`/projects/${project.id}`)}
 				class="flex flex-row items-center gap-1 uppercase text-primary cursor-pointer hover:underline"
 			>
-				<span>View artifact</span>
+				<span>{t("index.projects.view_artifact")}</span>
 				<IconArrowNarrowRight
 					size={20}
 					className="[&_path]:first:scale-x-70 [&_path]:first:origin-center -ml-1.5"
@@ -63,7 +63,7 @@ const link = (path: string) => getLocaleUrl(lang, path);
 				/>
 			</a>
 			<span class="text-[10px] text-text-muted font-jet-brains"
-				>V0.4.1 // 2026</span
+				>V{project.latest_version} // {project.release_year}</span
 			>
 		</footer>
 	</main>
