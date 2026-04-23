@@ -22,25 +22,29 @@ const link = (path: string) => getLocaleUrl(lang, path);
 
 if (!project) return Astro.redirect(link("projects/404"));
 
-let openProjectText = "Open Live App";
+let openProjecti18nKey = "index.projects.open_project.web";
+let openProjectText = t("index.projects.open_project.web");
 let OpenProjectIcon = IconRocket;
 
 if (project.type === "cli") {
-	openProjectText = "Get CLI Tool";
+	openProjectText = t("index.projects.open_project.cli");
+	openProjecti18nKey = "index.projects.open_project.cli";
 	OpenProjectIcon = IconTerminal;
 }
 if (project.type === "desktop") {
-	openProjectText = "Download Desktop App";
+	openProjectText = t("index.projects.open_project.desktop");
+	openProjecti18nKey = "index.projects.open_project.desktop";
 	OpenProjectIcon = IconDeviceDesktop;
 }
 if (project.type === "mobile") {
-	openProjectText = "Dowload Mobile App";
+	openProjectText = t("index.projects.open_project.mobile");
+	openProjecti18nKey = "index.projects.open_project.mobile";
 	OpenProjectIcon = IconDeviceMobile;
 }
 ---
 
 <Layout title={t(project.title)} description={t(project.description)}>
-	<Header />
+	<Header class="[&_nav]:hidden" />
 
 	<main class="mt-20">
 		<section class="slider w-7/12 aspect-video relative">
@@ -100,15 +104,30 @@ if (project.type === "mobile") {
 						)}
 					>
 					</span>
-					<span>Operational_System:</span>
-					<span>{project.active ? "Active" : "Inactive"}</span>
+					<span data-i18n-key="index.projects.operational_system"
+						>{t("index.projects.operational_system")}:</span
+					>
+					<span
+						data-i18n-key={`status.${project.active ? "active" : "inactive"}`}
+						>{
+							t(
+								`status.${project.active ? "active" : "inactive"}`,
+							)
+						}</span
+					>
 				</span>
 
-				<h1 class="text-7xl text-text-primary font-semibold">
+				<h1
+					class="text-7xl text-text-primary font-semibold"
+					data-i18n-key={project.title}
+				>
 					{t(project.title)}
 				</h1>
 
-				<p class="text-text-secondary w-7/12 mt-1">
+				<p
+					class="text-text-secondary w-7/12 mt-1"
+					data-i18n-key={project.description}
+				>
 					{t(project.description)}
 				</p>
 
@@ -132,7 +151,9 @@ if (project.type === "mobile") {
 						class="flex flex-row gap-1 items-center justify-center w-fit bg-surface-soft px-4 py-3 rounded text-text-primary text-xs button-glow cursor-pointer [&_svg]:size-4.5"
 					>
 						<OpenProjectIcon />
-						{openProjectText}
+						<span data-i18n-key={openProjecti18nKey}>
+							{openProjectText}
+						</span>
 					</a>
 					<a
 						href={`https://github.com/Cristian-F-M/${project.github}`}
@@ -141,7 +162,9 @@ if (project.type === "mobile") {
 						class="flex flex-row gap-1 items-center justify-center w-fit bg-surface-soft px-4 py-3 rounded text-text-primary text-xs cursor-pointer [&_svg]:size-4.5"
 					>
 						<IconTerminal2 />
-						View on GitHub
+						<span data-i18n-key="index.projects.view_on_github">
+							{t("index.projects.view_on_github")}
+						</span>
 					</a>
 				</div>
 			</section>
@@ -149,16 +172,6 @@ if (project.type === "mobile") {
 
 		<Footer />
 	</main>
-
-	<script>
-		const $linkProjects = document.querySelector(
-			"#link-projects",
-		) as HTMLAnchorElement | null;
-		if ($linkProjects) {
-			$linkProjects.setAttribute("active", "true");
-			window.moveLinkIndicator($linkProjects);
-		}
-	</script>
 
 	<script>
 		import Swiper from "swiper";
