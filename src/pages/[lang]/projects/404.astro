@@ -1,0 +1,108 @@
+---
+import { getLocaleUrl, translations } from "@/i18n/utils";
+import Layout from "@/layouts/Layout.astro";
+import Logo from "@/assets/cm.svg";
+import Footer from "@/components/layout/Footer.astro";
+import { IconWorldExclamation } from "@tabler/icons-react";
+
+const id = Astro.url.searchParams.get("id");
+
+const { t, lang } = translations(Astro.url);
+const link = (path: string) => getLocaleUrl(lang, path);
+
+const pageTitle = `We could not found the project ${id ? `with id=${id}` : "searched"}`;
+---
+
+<Layout title={t("index.projects.404.title")} description={t("index.projects.404.description")}>
+	<div class="w-full h-screen flex flex-col">
+		<header
+			class="bg-surface/60 mx-auto mt-5 flex w-full flex-row items-center justify-between rounded px-4 py-3 text-text-primary shadow shadow-surface-soft sticky top-2 z-100 backdrop-blur-lg"
+		>
+			<a
+				href="/#home"
+				class="flex flex-row items-center gap-2 text-text-primary"
+			>
+				<Logo class="text-text-primary" />
+				<h4 class="font-jet-brains text-lg">cmorales</h4>
+			</a>
+
+			<button
+				class="p-2 bg-surface-soft border border-border rounded text-xs font-jet-brains cursor-pointer hover:bg-surface"
+				type="button"
+				onclick="window.location.reload()">Reboot</button
+			>
+		</header>
+
+		<main class="flex flex-1 justify-between mt-8">
+			<section>
+				<div class="bg-surface-soft p-6 rounded-lg size-fit max-w-87.5">
+					<header class="flex flex-row items-center gap-3">
+						<div class="bg-primary text-text-primary p-1 rounded">
+							<IconWorldExclamation className="stroke-1.5" />
+						</div>
+						<div class="uppercase text-text-primary text-sm">
+							<span class="text-primary text-[10px]"
+								>Error_code</span
+							>
+							<h5>System_disconnect</h5>
+						</div>
+					</header>
+
+					<main class="mt-4">
+						<h4 class="uppercase text-text-muted">
+							Link_establishment_failed:
+						</h4>
+						<p class="text-sm">
+							Artifact not found in current sector.
+						</p>
+						<p class="text-sm">
+							The requested coordinate ({id}) does not exist in
+							the active neural lattice.
+						</p>
+					</main>
+
+					<footer
+						class="uppercase mt-4 flex flex-col items-center gap-2"
+					>
+						<button
+							onclick="window.location.reload()"
+							class="bg-surface border border-border rounded px-5 py-3 uppercase text-text-secondary text-sm cursor-pointer w-full bg-linear-120 from-primary-pressed to-primary hover:to-primary-pressed"
+							type="button">Re-establish_connection</button
+						>
+						<a
+							href="https://github.com/Cristian-F-M/portfolio/issues/new"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="bg-surface border border-border rounded px-5 py-3 uppercase text-text-secondary text-sm cursor-pointer w-full hover:bg-surface text-center"
+						>
+							Report_glitch
+						</a>
+					</footer>
+				</div>
+
+				<div class="mt-6 flex flex-row gap-4">
+					{
+						["Sector_09", "Ping_infinite", "Protocol_v4.0.4"].map(
+							(b) => {
+								return (
+									<span class="block w-fit px-2 py-1 bg-surface rounded-full text-[8px] font-jet-brains text-text-muted uppercase">
+										{b}
+									</span>
+								);
+							},
+						)
+					}
+				</div>
+			</section>
+			<section class="flex items-center justify-center size-fit">
+				<h1
+					class="text-[300px] font-jet-brains text-text-muted leading-none"
+				>
+					404
+				</h1>
+			</section>
+		</main>
+
+		<Footer class="bottom-0" />
+	</div>
+</Layout>
