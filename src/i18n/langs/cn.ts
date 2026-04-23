@@ -38,8 +38,45 @@ const zh = {
 				{ text: '精选', separation: true },
 				{ text: '项目', gradient: true }
 			),
+			view_artifact: '查看作品',
+			generic_image_alt: '项目图像，展示应用运行情况',
 			description:
-				'探索高性能架构与沉浸式界面之间的交汇。每个项目都体现了我的知识与投入 ♥。'
+				'探索高性能架构与沉浸式视觉界面的交汇点。每个作品都体现了我的知识和奉献 ♥。',
+			see_more_artifacts: '查看更多作品',
+			projects: {
+				'todo-cm': {
+					title: 'Todo CM',
+					description:
+						'Todo CM 是一款超越传统的任务管理应用，具有文件夹组织、定时或指定日期通知、主题切换、自动或手动创建主题等功能。'
+				},
+				solitario: {
+					title: 'Solitario',
+					description:
+						'Todo CM 是一款超越传统的任务管理应用，具有文件夹组织、定时或指定日期通知、主题切换、自动或手动创建主题等功能。'
+				},
+				touch: {
+					title: 'Touch',
+					description:
+						'创建复杂的文件结构从未如此简单。@cmorales_/touch 是一个强大的 CLI 工具，允许你使用简单直观的语法生成嵌套目录和文件。'
+				},
+				'fast-emoji': {
+					title: 'Fast Emoji',
+					description:
+						'Todo CM 是一款超越传统的任务管理应用，具有文件夹组织、定时或指定日期通知、主题切换、自动或手动创建主题等功能。'
+				}
+			},
+			'404': {
+				title: '未找到所搜索的项目 😔...',
+				description: ''
+			},
+			open_project: {
+				cli: '获取 CLI 工具',
+				desktop: '下载桌面应用',
+				web: '打开在线应用',
+				mobile: '下载移动应用'
+			},
+			operational_system: '操作系统',
+			view_on_github: '在 GitHub 上查看'
 		},
 		me: {
 			operational_status: '运行状态',

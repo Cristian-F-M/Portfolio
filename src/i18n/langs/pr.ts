@@ -5,7 +5,7 @@ const pt = {
 		active: 'Ativo',
 		inactive: 'Inativo'
 	},
-	language: "Português",
+	language: 'Português',
 	index: {
 		title:
 			'Portfólio de Cristian Morales | Trainee em desenvolvimento de software',
@@ -39,8 +39,45 @@ const pt = {
 				{ text: 'Projetos', separation: true },
 				{ text: 'em destaque', gradient: true }
 			),
+			view_artifact: 'Ver projeto',
+			generic_image_alt: 'Imagem do projeto mostrando o app em funcionamento',
 			description:
-				'Explorando a interseção entre arquitetura de alto desempenho e interfaces visuais imersivas. Cada artefato representa meu conhecimento e dedicação ♥.'
+				'Explorando a interseção entre arquitetura de alto desempenho e interfaces visuais imersivas. Cada projeto reflete meu conhecimento e dedicação ♥.',
+			see_more_artifacts: 'Ver mais projetos',
+			projects: {
+				'todo-cm': {
+					title: 'Todo CM',
+					description:
+						'O Todo CM é um aplicativo de gerenciamento de tarefas que vai além do convencional, com organização por pastas, notificações após um tempo definido ou em uma data específica, troca de temas, criação automática ou manual de temas, entre outros recursos.'
+				},
+				solitario: {
+					title: 'Solitario',
+					description:
+						'O Todo CM é um aplicativo de gerenciamento de tarefas que vai além do convencional, com organização por pastas, notificações após um tempo definido ou em uma data específica, troca de temas, criação automática ou manual de temas, entre outros recursos.'
+				},
+				touch: {
+					title: 'Touch',
+					description:
+						'Criar estruturas de arquivos complexas nunca foi tão fácil. @cmorales_/touch é uma poderosa ferramenta CLI que permite gerar diretórios e arquivos aninhados usando uma sintaxe simples e intuitiva.'
+				},
+				'fast-emoji': {
+					title: 'Fast Emoji',
+					description:
+						'O Todo CM é um aplicativo de gerenciamento de tarefas que vai além do convencional, com organização por pastas, notificações após um tempo definido ou em uma data específica, troca de temas, criação automática ou manual de temas, entre outros recursos.'
+				}
+			},
+			'404': {
+				title: 'Não foi possível encontrar o projeto pesquisado 😔...',
+				description: ''
+			},
+			open_project: {
+				cli: 'Obter ferramenta CLI',
+				desktop: 'Baixar aplicativo desktop',
+				web: 'Abrir aplicativo online',
+				mobile: 'Baixar aplicativo mobile'
+			},
+			operational_system: 'Sistema Operacional',
+			view_on_github: 'Ver no GitHub'
 		},
 		me: {
 			operational_status: 'Status_operacional',
@@ -93,13 +130,11 @@ const pt = {
 					},
 					development: {
 						title: 'Desenvolvimento',
-						description:
-							'Implementação orientada a testes com código limpo.'
+						description: 'Implementação orientada a testes com código limpo.'
 					},
 					optimization: {
 						title: 'Otimização',
-						description:
-							'Otimização de performance, testes de carga e deploy.'
+						description: 'Otimização de performance, testes de carga e deploy.'
 					}
 				}
 			}

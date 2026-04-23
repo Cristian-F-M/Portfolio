@@ -5,7 +5,7 @@ const fr = {
 		active: 'Actif',
 		inactive: 'Inactif'
 	},
-	language: "Français",
+	language: 'Français',
 	index: {
 		title:
 			'Portfolio de Cristian Morales | Stagiaire en développement logiciel',
@@ -39,8 +39,45 @@ const fr = {
 				{ text: 'Projets', separation: true },
 				{ text: 'en vedette', gradient: true }
 			),
+			view_artifact: 'Voir le projet',
+			generic_image_alt: "Image du projet montrant l'application en action",
 			description:
-				'Explorer l’intersection entre une architecture haute performance et des interfaces visuelles immersives. Chaque artefact reflète mes connaissances et mon engagement ♥.'
+				"L'exploration de l'intersection entre une architecture haute performance et des interfaces visuelles immersives. Chaque projet reflète mes connaissances et mon engagement ♥.",
+			see_more_artifacts: 'Voir plus de projets',
+			projects: {
+				'todo-cm': {
+					title: 'Todo CM',
+					description:
+						'Todo CM est une application de gestion des tâches qui va au-delà du conventionnel, avec organisation en dossiers, notifications après un certain temps ou à une date spécifique, changement de thème, création automatique ou manuelle de thèmes, entre autres fonctionnalités.'
+				},
+				solitario: {
+					title: 'Solitario',
+					description:
+						'Todo CM est une application de gestion des tâches qui va au-delà du conventionnel, avec organisation en dossiers, notifications après un certain temps ou à une date spécifique, changement de thème, création automatique ou manuelle de thèmes, entre autres fonctionnalités.'
+				},
+				touch: {
+					title: 'Touch',
+					description:
+						"La création de structures de fichiers complexes n'a jamais été aussi simple. @cmorales_/touch est un puissant outil CLI qui permet de générer des répertoires et fichiers imbriqués avec une syntaxe simple et intuitive."
+				},
+				'fast-emoji': {
+					title: 'Fast Emoji',
+					description:
+						'Todo CM est une application de gestion des tâches qui va au-delà du conventionnel, avec organisation en dossiers, notifications après un certain temps ou à une date spécifique, changement de thème, création automatique ou manuelle de thèmes, entre autres fonctionnalités.'
+				}
+			},
+			'404': {
+				title: "Nous n'avons pas pu trouver le projet recherché 😔...",
+				description: ''
+			},
+			open_project: {
+				cli: 'Obtenir l’outil CLI',
+				desktop: 'Télécharger l’application desktop',
+				web: 'Ouvrir l’application en ligne',
+				mobile: 'Télécharger l’application mobile'
+			},
+			operational_system: 'Système d’exploitation',
+			view_on_github: 'Voir sur GitHub'
 		},
 		me: {
 			operational_status: 'Statut_opérationnel',

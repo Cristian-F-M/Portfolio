@@ -22,7 +22,7 @@ const en = {
 			available_for_hire: 'Available_for_hire',
 			description:
 				'I build high-quality, scalable, and visually appealing digital experiences at the intersection of engineering and visual design.',
-			view_projects: 'View projects',
+			view_projects: 'View artifacts',
 			contact_me: 'Contact me',
 			achievements: {
 				years_experience: 'Years of experience',
@@ -38,8 +38,45 @@ const en = {
 				{ text: 'Projects', separation: true },
 				{ text: 'featured', gradient: true }
 			),
+			view_artifact: 'View artifact',
+			generic_image_alt: 'Image of the project, showing the app in action',
 			description:
-				'Exploring the intersection between high-performance architecture and immersive visual interfaces. Each artifact reflects my knowledge and dedication ♥.'
+				'Exploring the intersection between high-performance architecture and immersive visual interfaces. Each artifact reflects my knowledge and dedication ♥.',
+			see_more_artifacts: 'See more artifacts',
+			projects: {
+				'todo-cm': {
+					title: 'Todo CM',
+					description:
+						'Todo CM is a task management application that goes beyond the conventional, featuring folder organization, notifications after a set time or at a specific date, theme switching, automatic or manual theme creation, among other features.'
+				},
+				solitario: {
+					title: 'Solitario',
+					description:
+						'Todo CM is a task management application that goes beyond the conventional, featuring folder organization, notifications after a set time or at a specific date, theme switching, automatic or manual theme creation, among other features.'
+				},
+				touch: {
+					title: 'Touch',
+					description:
+						'Creating complex file structures has never been easier. @cmorales_/touch is a powerful CLI tool that allows you to generate nested directories and files using a simple and intuitive syntax.'
+				},
+				'fast-emoji': {
+					title: 'Fast Emoji',
+					description:
+						'Todo CM is a task management application that goes beyond the conventional, featuring folder organization, notifications after a set time or at a specific date, theme switching, automatic or manual theme creation, among other features.'
+				}
+			},
+			'404': {
+				title: 'We could not find the searched project 😔...',
+				description: ''
+			},
+			open_project: {
+				cli : 'Get CLI Tool',
+				desktop: 'Download Desktop App"',
+				web: 'Open Live App',
+				mobile: 'Dowload Mobile App'
+			},
+			operational_system: 'Operational_System',
+			view_on_github: 'View on GitHub'
 		},
 		me: {
 			operational_status: 'Operational_status',
