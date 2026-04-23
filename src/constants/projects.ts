@@ -50,8 +50,8 @@ export const PROJECTS = [
 				src: '/images/projects/touch/touch.avif'
 			}
 		],
-		latest_version: '',
-		release_year: '',
+		latest_version: '1.2.5',
+		release_year: '2026',
 		featured: true,
 		skills: ['Node.js', 'npm'],
 		github: 'touch-npm',
@@ -112,7 +112,7 @@ export const PROJECTS = [
 				src: '/images/projects/solitario/solitario-4.avif'
 			}
 		],
-		latest_version: '1.0.1',
+		latest_version: '1.0.0',
 		release_year: '2026',
 		featured: true,
 		skills: ['HTML', 'CSS', 'JS', 'TAILWINDCSS'],
