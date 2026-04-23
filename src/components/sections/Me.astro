@@ -13,6 +13,7 @@ import {
 import BentoBadge from "@/components/me/Badge.astro";
 import { getLocaleUrl, translations } from "@/i18n/utils";
 import { ui } from "@/i18n/ui";
+import { FRONTEND, CORE, MOBILE } from "@/constants/skills";
 
 const { t, lang } = translations(Astro.url);
 const link = (path: string) => getLocaleUrl(lang, path);
@@ -33,7 +34,9 @@ const l = ui[lang];
 				<span data-i18n-key="index.me.operational_status"
 					>{t("index.me.operational_status")}:</span
 				>
-				<strong data-i18n-key="status.active">{t("status.active")}</strong>
+				<strong data-i18n-key="status.active"
+					>{t("status.active")}</strong
+				>
 			</Badge>
 
 			<h2
@@ -55,8 +58,12 @@ const l = ui[lang];
 					Object.entries(l.index.me.cards).map(([k, c]) => {
 						return (
 							<div class="card">
-								<h4 data-i18n-key={`index.me.cards.${k}.title`}>{c.title}</h4>
-								<p data-i18n-key={`index.me.cards.${k}.description`}>
+								<h4 data-i18n-key={`index.me.cards.${k}.title`}>
+									{c.title}
+								</h4>
+								<p
+									data-i18n-key={`index.me.cards.${k}.description`}
+								>
 									{c.description}
 								</p>
 							</div>
@@ -81,7 +88,10 @@ const l = ui[lang];
 				>
 					{t("index.me.technical_stack.title")}
 				</h2>
-				<p class="text-sm" data-i18n-key="index.me.technical_stack.description">
+				<p
+					class="text-sm"
+					data-i18n-key="index.me.technical_stack.description"
+				>
 					{t("index.me.technical_stack.description")}
 				</p>
 			</div>
@@ -104,11 +114,7 @@ const l = ui[lang];
 					</h3>
 				</header>
 				<main>
-					{
-						["REACT", "NEXT.JS", "TYPESCRIPT", "TAILWIND_CSS", "THREE.JS"].map(
-							(t) => <BentoBadge text={t} />,
-						)
-					}
+					{FRONTEND.map((t) => <BentoBadge text={t} />)}
 				</main>
 			</div>
 			<div class="bento-card col-span-4 row-span-2 col-start-9">
@@ -121,11 +127,7 @@ const l = ui[lang];
 					</h3>
 				</header>
 				<main>
-					{
-						["REACT", "NEXT.JS", "TYPESCRIPT", "TAILWIND_CSS", "THREE.JS"].map(
-							(t) => <BentoBadge text={t} />,
-						)
-					}
+					{CORE.map((t) => <BentoBadge text={t} />)}
 				</main>
 			</div>
 			<div class="bento-card col-span-4 row-span-2 row-start-3">
@@ -138,32 +140,46 @@ const l = ui[lang];
 					</h3>
 				</header>
 				<main>
-					{["REACT_NATIVE ", "EXPO"].map((t) => <BentoBadge text={t} />)}
+					{MOBILE.map((t) => <BentoBadge text={t} />)}
 				</main>
 			</div>
-			<div class="bento-card col-span-8 row-span-2 col-start-5 row-start-3">
+			<div
+				class="bento-card col-span-8 row-span-2 col-start-5 row-start-3"
+			>
 				<header>
 					<div>
 						<IconBrandPowershell width={25} height={25} />
 					</div>
-					<h3 data-i18n-key="index.me.technical_stack.infrastructure.title">
+					<h3
+						data-i18n-key="index.me.technical_stack.infrastructure.title"
+					>
 						{t("index.me.technical_stack.infrastructure.title")}
 					</h3>
 				</header>
 				<main class="flex flex-row justify-between">
-					<div class="flex flex-row gap-2 flex-wrap items-center w-8/12">
+					<div
+						class="flex flex-row gap-2 flex-wrap items-center w-8/12"
+					>
 						<p
 							class="text-sm text-gray-400"
 							data-i18n-key="index.me.technical_stack.infrastructure.description"
 						>
-							{t("index.me.technical_stack.infrastructure.description")}
+							{
+								t(
+									"index.me.technical_stack.infrastructure.description",
+								)
+							}
 						</p>
 					</div>
 					<div
 						class="flex flex-row gap-2 items-center [&_div]:p-2 [&_div]:bg-surface-soft [&_div]:rounded [&_div]:border [&_div]:border-border"
 					>
 						<div>
-							<IconCloud width={24} height={24} className="text-primary" />
+							<IconCloud
+								width={24}
+								height={24}
+								className="text-primary"
+							/>
 						</div>
 						<div>
 							<IconShieldCheckeredFilled
@@ -193,29 +209,34 @@ const l = ui[lang];
 				data-i18n-to-change="html"
 				set:html={t("index.me.how_i_build.title")}
 			/>
-			<span class="block h-1 w-24 bg-primary rounded-[100%] mt-2 neon-line"
+			<span
+				class="block h-1 w-24 bg-primary rounded-[100%] mt-2 neon-line"
 			></span>
 		</header>
 
 		<main class="flex flex-row items-center gap-4 m-10">
 			{
-				Object.entries(l.index.me.how_i_build.cards).map(([k, c], i) => {
-					return (
-						<div class="build-card">
-							<span>{String(i + 1).padStart(2, "0")}</span>
-							<header data-i18n-key={`index.me.how_i_build.cards.${k}.title`}>
-								{c.title}
-							</header>
-							<main>
-								<p
-									data-i18n-key={`index.me.how_i_build.cards.${k}.description`}
+				Object.entries(l.index.me.how_i_build.cards).map(
+					([k, c], i) => {
+						return (
+							<div class="build-card">
+								<span>{String(i + 1).padStart(2, "0")}</span>
+								<header
+									data-i18n-key={`index.me.how_i_build.cards.${k}.title`}
 								>
-									{c.description}
-								</p>
-							</main>
-						</div>
-					);
-				})
+									{c.title}
+								</header>
+								<main>
+									<p
+										data-i18n-key={`index.me.how_i_build.cards.${k}.description`}
+									>
+										{c.description}
+									</p>
+								</main>
+							</div>
+						);
+					},
+				)
 			}
 		</main>
 	</section>
