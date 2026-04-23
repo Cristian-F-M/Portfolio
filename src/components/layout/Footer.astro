@@ -1,13 +1,23 @@
 ---
 import Logo from "@/assets/cm.svg";
 import { getLocaleUrl, translations } from "@/i18n/utils";
+import { twMerge } from "tailwind-merge";
+
+interface Props {
+	class?: string;
+}
 
 const { t, lang } = translations(Astro.url);
 const link = (path: string) => getLocaleUrl(lang, path);
+
+const { class: className } = Astro.props;
 ---
 
 <footer
-	class="flex flex-row justify-between items-center mt-10 px-6 py-8 bg-tertiary/5 w-full absolute left-0 backdrop-blur-2xl border-t border-border"
+	class={twMerge(
+		"flex flex-row justify-between items-center mt-10 px-6 py-8 bg-tertiary/5 w-full absolute left-0 backdrop-blur-2xl border-t border-border",
+		className,
+	)}
 >
 	<Logo width={40} height={40} class="text-white" />
 
@@ -15,7 +25,7 @@ const link = (path: string) => getLocaleUrl(lang, path);
 		<span>&copy;{new Date().getFullYear()}</span>
 		<span>CMORALES</span>
 		<span class="tracking-tighter">//</span>
-		<span>{t('index.footer.architected_by')}</span>
+		<span>{t("index.footer.architected_by")}</span>
 	</p>
 
 	<div
