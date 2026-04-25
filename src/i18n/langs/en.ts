@@ -47,22 +47,22 @@ const en = {
 				'todo-cm': {
 					title: 'Todo CM',
 					description:
-						'Todo CM is a task management application that goes beyond the conventional, featuring folder organization, notifications after a set time or at a specific date, theme switching, automatic or manual theme creation, among other features.'
+						'Todo CM is a task management application that goes beyond the conventional, featuring folder organization, notifications after a set time or on a specific date, theme switching, automatic or manual theme creation, among other functions.'
 				},
 				solitario: {
-					title: 'Solitario',
+					title: 'Solitaire',
 					description:
-						'Todo CM is a task management application that goes beyond the conventional, featuring folder organization, notifications after a set time or at a specific date, theme switching, automatic or manual theme creation, among other features.'
+						'Classic solitaire game developed in JavaScript that includes move counting, as well as undo and redo options. It allows you to pause and resume the game at any time, as well as restart the current game or start a new one.'
 				},
 				touch: {
 					title: 'Touch',
 					description:
-						'Creating complex file structures has never been easier. @cmorales_/touch is a powerful CLI tool that allows you to generate nested directories and files using a simple and intuitive syntax.'
+						'Creating complex file structures has never been easier. @cmorales_/touch is a powerful CLI tool that lets you generate nested directories and files using a simple and intuitive syntax.'
 				},
 				'fast-emoji': {
 					title: 'Fast Emoji',
 					description:
-						'Todo CM is a task management application that goes beyond the conventional, featuring folder organization, notifications after a set time or at a specific date, theme switching, automatic or manual theme creation, among other features.'
+						'If you want easy access to emojis, Fast Emoji is for you. Just press Ctrl + . and a panel will appear where you can start typing; results will automatically be filtered according to your search. You can use the mouse or keyboard arrows to choose the emoji you want, and with a click or by pressing Enter, the emoji will be inserted and the search text will be removed. If you want to cancel, simply press Esc.'
 				}
 			},
 			'404': {
@@ -70,7 +70,7 @@ const en = {
 				description: ''
 			},
 			open_project: {
-				cli : 'Get CLI Tool',
+				cli: 'Get CLI Tool',
 				desktop: 'Download Desktop App"',
 				web: 'Open Live App',
 				mobile: 'Dowload Mobile App'
