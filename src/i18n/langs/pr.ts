@@ -48,12 +48,12 @@ const pt = {
 				'todo-cm': {
 					title: 'Todo CM',
 					description:
-						'O Todo CM é um aplicativo de gerenciamento de tarefas que vai além do convencional, com organização por pastas, notificações após um tempo definido ou em uma data específica, troca de temas, criação automática ou manual de temas, entre outros recursos.'
+						'Todo CM é um aplicativo de gerenciamento de tarefas que vai além do convencional, com organização por pastas, notificações após um tempo determinado ou em uma data específica, troca de temas, criação automática ou manual de temas, entre outras funcionalidades.'
 				},
 				solitario: {
-					title: 'Solitario',
+					title: 'Paciência',
 					description:
-						'O Todo CM é um aplicativo de gerenciamento de tarefas que vai além do convencional, com organização por pastas, notificações após um tempo definido ou em uma data específica, troca de temas, criação automática ou manual de temas, entre outros recursos.'
+						'Jogo clássico de paciência desenvolvido em JavaScript que inclui contagem de movimentos, além de opções para desfazer e refazer jogadas. Permite pausar e retomar a partida a qualquer momento, além de reiniciar o jogo atual ou iniciar uma nova partida.'
 				},
 				touch: {
 					title: 'Touch',
@@ -63,7 +63,7 @@ const pt = {
 				'fast-emoji': {
 					title: 'Fast Emoji',
 					description:
-						'O Todo CM é um aplicativo de gerenciamento de tarefas que vai além do convencional, com organização por pastas, notificações após um tempo definido ou em uma data específica, troca de temas, criação automática ou manual de temas, entre outros recursos.'
+						'Se você quer acessar emojis facilmente, Fast Emoji é para você. Basta pressionar Ctrl + . e um painel será exibido onde você pode começar a digitar; os resultados serão automaticamente filtrados de acordo com sua busca. Você pode usar o mouse ou as setas do teclado para escolher o emoji desejado, e com um clique ou pressionando Enter, o emoji será inserido e o texto de busca será removido. Se quiser cancelar, basta pressionar Esc.'
 				}
 			},
 			'404': {
