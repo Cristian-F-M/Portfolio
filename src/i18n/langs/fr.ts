@@ -48,22 +48,22 @@ const fr = {
 				'todo-cm': {
 					title: 'Todo CM',
 					description:
-						'Todo CM est une application de gestion des tâches qui va au-delà du conventionnel, avec organisation en dossiers, notifications après un certain temps ou à une date spécifique, changement de thème, création automatique ou manuelle de thèmes, entre autres fonctionnalités.'
+						'Todo CM est une application de gestion des tâches qui va au-delà du conventionnel, avec organisation par dossiers, notifications après un certain temps ou à une date spécifique, changement de thèmes, création automatique ou manuelle de thèmes, entre autres fonctionnalités.'
 				},
 				solitario: {
-					title: 'Solitario',
+					title: 'Solitare',
 					description:
-						'Todo CM est une application de gestion des tâches qui va au-delà du conventionnel, avec organisation en dossiers, notifications après un certain temps ou à une date spécifique, changement de thème, création automatique ou manuelle de thèmes, entre autres fonctionnalités.'
+						"Jeu classique de solitaire développé en JavaScript qui inclut le comptage des mouvements, ainsi que des options pour annuler et rétablir les actions. Il permet de mettre en pause et de reprendre la partie à tout moment, ainsi que de redémarrer la partie en cours ou d'en commencer une nouvelle."
 				},
 				touch: {
 					title: 'Touch',
 					description:
-						"La création de structures de fichiers complexes n'a jamais été aussi simple. @cmorales_/touch est un puissant outil CLI qui permet de générer des répertoires et fichiers imbriqués avec une syntaxe simple et intuitive."
+						"Créer des structures de fichiers complexes n'a jamais été aussi simple. @cmorales_/touch est un puissant outil CLI qui permet de générer des répertoires et fichiers imbriqués avec une syntaxe simple et intuitive."
 				},
 				'fast-emoji': {
 					title: 'Fast Emoji',
 					description:
-						'Todo CM est une application de gestion des tâches qui va au-delà du conventionnel, avec organisation en dossiers, notifications après un certain temps ou à une date spécifique, changement de thème, création automatique ou manuelle de thèmes, entre autres fonctionnalités.'
+						"Si vous souhaitez accéder facilement aux emojis, Fast Emoji est fait pour vous. Appuyez simplement sur Ctrl + . et un panneau s'affichera où vous pourrez commencer à taper ; les résultats seront automatiquement filtrés selon votre recherche. Vous pouvez utiliser la souris ou les flèches du clavier pour choisir l'emoji souhaité, et avec un clic ou en appuyant sur Entrée, l'emoji sera inséré et le texte de recherche supprimé. Pour annuler, appuyez simplement sur Échap."
 				}
 			},
 			'404': {

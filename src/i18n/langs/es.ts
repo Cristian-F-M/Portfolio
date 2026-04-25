@@ -54,7 +54,7 @@ const es = {
 				solitario: {
 					title: 'Solitario',
 					description:
-						'Todo CM es una aplicación de gestión de tareas que va más allá de lo convencional, con organización por carpetas, notificaciones tras un tiempo determinado o en una fecha específica, cambio de temas, creación automática o manual de temas, entre otras funciones.'
+						'Juego clásico de solitario desarrollado en JavaScript que incluye conteo de movimientos, así como opciones para deshacer y rehacer jugadas. Permite pausar y reanudar la partida en cualquier momento, además de reiniciar el juego actual o comenzar una nueva partida.'
 				},
 				touch: {
 					title: 'Touch',
@@ -64,7 +64,7 @@ const es = {
 				'fast-emoji': {
 					title: 'Fast Emoji',
 					description:
-						'Todo CM es una aplicación de gestión de tareas que va más allá de lo convencional, con organización por carpetas, notificaciones tras un tiempo determinado o en una fecha específica, cambio de temas, creación automática o manual de temas, entre otras funciones.'
+						'Si quieres acceder a emojis fácilmente, Fast Emoji es para ti. Solo presiona Ctrl + . y se desplegará un panel donde puedes comenzar a escribir; automáticamente se filtrarán los resultados según tu búsqueda. Puedes usar el mouse o las flechas del teclado para elegir el emoji que desees, y con solo hacer clic o presionar Enter, el emoji se insertará y se eliminará el texto de búsqueda. Si deseas cancelar, simplemente presiona Esc.'
 				}
 			},
 			'404': {
