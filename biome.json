@@ -48,7 +48,7 @@
 			"semicolons": "asNeeded",
 			"trailingNewline": false,
 			"arrowParentheses": "always",
-			"attributePosition": "multiline",
+			"attributePosition": "auto",
 			"bracketSpacing": true,
 			"bracketSameLine": true
 		}
