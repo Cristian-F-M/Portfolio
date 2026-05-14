@@ -102,7 +102,7 @@ html {
 }
 
 body {
-	@apply w-full md:max-w-11/12 mx-auto overflow-x-hidden;
+	@apply w-full md:max-w-11/12 mx-auto overflow-x-hidden text-text-primary;
 }
 
 * {
