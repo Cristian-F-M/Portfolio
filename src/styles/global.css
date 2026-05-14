@@ -10,33 +10,66 @@
 	--color-background: var(--background);
 	--color-surface: var(--surface);
 	--color-surface-soft: var(--surface-soft);
+	--color-surface-raised: var(--surface-raised);
+
 	--color-border: var(--border);
+	--color-border-strong: var(--border-strong);
+	--color-border-subtle: var(--border-subtle);
+	--color-focus-ring: var(--focus-ring);
 
 	--color-primary: var(--primary);
+	--color-primary-hover: var(--primary-hover);
 	--color-primary-pressed: var(--primary-pressed);
+	--color-primary-subtle: var(--primary-subtle);
 
+	--color-text-on-primary: var(--text-on-primary);
 	--color-text-primary: var(--text-primary);
 	--color-text-secondary: var(--text-secondary);
 	--color-text-muted: var(--text-muted);
+	--color-text-link: var(--text-link);
+
+	--color-success: var(--success);
+	--color-success-bg: var(--success-bg);
+	--color-success-text: var(--success-text);
+
+	--color-warning: var(--warning);
+	--color-warning-bg: var(--warning-bg);
+	--color-warning-text: var(--warning-text);
+
+	--color-danger: var(--danger);
+	--color-danger-bg: var(--danger-bg);
+	--color-danger-text: var(--danger-text);
 
 	--color-overlay: var(--overlay);
 }
 
 :root {
-	--background: rgb(10, 16, 20);
-
-	--surface: rgb(24, 44, 48); /* menos verde, más azul/gris */
-	--surface-soft: rgb(32, 56, 60); /* más neutro */
-
-	--border: rgb(46, 80, 84);
-
-	--primary: rgb(20, 204, 140);
-	--primary-pressed: rgb(16, 163, 115);
-
-	--text-primary: rgb(236, 255, 249);
-	--text-secondary: rgb(170, 220, 215);
-	--text-muted: rgb(130, 170, 165); /* mucho menos verde */
-
+	--background: rgb(9, 14, 26);
+	--surface: rgb(30, 34, 46);
+	--surface-soft: rgb(38, 44, 60);
+	--surface-raised: rgb(45, 50, 68);
+	--border: rgb(45, 58, 90);
+	--border-strong: rgb(35, 48, 80);
+	--border-subtle: rgb(60, 75, 110);
+	--primary: rgb(45, 110, 220);
+	--primary-hover: rgb(65, 130, 240);
+	--primary-pressed: rgb(30, 85, 190);
+	--primary-subtle: rgba(45, 110, 220, 0.2);
+	--focus-ring: rgba(45, 110, 220, 0.5);
+	--text-on-primary: rgb(255, 255, 255);
+	--text-primary: rgb(240, 245, 255);
+	--text-secondary: rgb(170, 185, 220);
+	--text-muted: rgb(135, 145, 165);
+	--text-link: rgb(45, 110, 220);
+	--success: rgb(46, 213, 115);
+	--success-bg: rgba(46, 213, 115, 0.2);
+	--success-text: rgb(46, 213, 115);
+	--warning: rgb(255, 176, 32);
+	--warning-bg: rgba(255, 176, 32, 0.2);
+	--warning-text: rgb(255, 176, 32);
+	--danger: rgb(255, 82, 82);
+	--danger-bg: rgba(255, 82, 82, 0.2);
+	--danger-text: rgb(255, 82, 82);
 	--overlay: rgb(0, 0, 0);
 }
 
