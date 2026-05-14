@@ -1,0 +1,19 @@
+export default function Logo(props: React.SVGAttributes<SVGElement>) {
+	return (
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			width="24"
+			height="24"
+			fill="none"
+			color="#000"
+			viewBox="0 0 344 308"
+			{...props}>
+			<title>Cristian Morales's Logo</title>
+			<path
+				fill="currentColor"
+				d="M344 32v223.5L302.5 223V117.5l-64.5 51v72l-40-32V150zM175 166.5 103 110v51l71.5 56.127zM69.5 308 0 253v-50l102 79.5z"
+			/>
+			<path fill="currentColor" d="M94.5 52.5 0 127.5V75L94 0l81 63.852V115z" />
+		</svg>
+	)
+}
