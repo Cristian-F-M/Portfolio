@@ -1,9 +1,11 @@
 import { useEffect, useRef, useState } from 'react'
 import { Outlet, useLocation } from 'react-router'
+import useNav from '@/state/nav'
 
 export default function Layout() {
 	const location = useLocation()
 	const [showSplash, setShowSplash] = useState(false)
+	const { setActive } = useNav()
 
 	const lastPath = useRef(location.pathname)
 
@@ -23,7 +25,8 @@ export default function Layout() {
 	useEffect(() => {
 		if (location.pathname !== '/') return
 		if (location.hash === '') document.location.hash = 'home'
-	}, [location])
+		setActive(document.location.hash)
+	}, [location, setActive])
 
 	if (showSplash) return '<SplashScreen />'
 
