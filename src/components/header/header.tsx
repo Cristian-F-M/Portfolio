@@ -1,4 +1,4 @@
-import MobileHeader from '@/src/components/header/mobile-header'
+import MobileHeader from '@/components/header/mobile-header'
 import DesktopHeader from './desktop-header'
 
 export function Header(props: React.ComponentProps<'header'>) {

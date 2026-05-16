@@ -1,9 +1,9 @@
 import { twMerge } from 'tailwind-merge'
-import { Link } from '@/src/components/link'
-import { links } from '@/src/constants/links'
+import { Link } from '@/components/link'
+import { links } from '@/constants/links'
 import { useTranslation } from 'react-i18next'
 import { IconMenu2 } from '@tabler/icons-react'
-import useNav from '@/src/state/nav'
+import useNav from '@/state/nav'
 
 export default function MobileHeader({
 	className,
