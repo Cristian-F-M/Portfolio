@@ -66,7 +66,7 @@ export default function Home() {
 				<Badge className="absolute top-0 right-0 bg-surface p-2 animate-float animate-iteration-count-infinite animate-duration-3500 animate-delay-900 border-border">
 					<Logo width={16} height={16} className="text-primary" />
 				</Badge>
-				<div className="w-full md:w-96 rounded-full">
+				<div className="w-full md:w-96 max-w-90 rounded-full">
 					<div className="border border-border rounded-full size-full p-3">
 						<div className="border border-border rounded-full size-full p-8">
 							<img
