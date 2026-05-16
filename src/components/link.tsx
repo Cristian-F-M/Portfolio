@@ -10,7 +10,7 @@ export function Link({ to, children, className, ...props }: LinkProps) {
 	return (
 		<NavLink
 			className={twMerge(
-				'text-text-muted hover:text-text-secondary',
+				'text-text-muted hover:text-text-secondary text-sm',
 				className
 			)}
 			end
