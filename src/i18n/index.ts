@@ -8,6 +8,11 @@ i18n
 	.use(Backend)
 	.use(initReactI18next)
 	.init({
+		detection: {
+			order: ['localStorage', 'navigator'],
+			caches: ['localStorage'],
+			lookupLocalStorage: 'lang'
+		},
 		ns: ['common', 'index', 'projects', 'side_menu'],
 		defaultNS: 'common',
 		backend: {
