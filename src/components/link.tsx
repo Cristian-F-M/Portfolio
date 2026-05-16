@@ -1,22 +1,42 @@
 import { NavLink, type NavLinkProps } from 'react-router'
 import { twMerge } from 'tailwind-merge'
 
-interface LinkProps extends NavLinkProps {
-	to: string
-	className?: string
-}
+type RouterLinkProps = {
+	router: true
+} & NavLinkProps
 
-export function Link({ to, children, className, ...props }: LinkProps) {
+type HTMLLinkProps = {
+	router?: false
+} & React.ComponentProps<'a'>
+
+type LinkProps = RouterLinkProps | HTMLLinkProps
+
+export function Link({ className, ...props }: LinkProps) {
+	const commonClassNames =
+		'text-text-muted hover:text-text-secondary text-sm cursor-pointer'
+	const cn = typeof className === 'string' ? className : ''
+
+	if (!props.router)
+		return (
+			<a
+				className={twMerge(commonClassNames, cn)}
+				rel="noopener noreferrer"
+				href={props.href}
+				{...props}>
+				{props.children}
+			</a>
+		)
+
 	return (
 		<NavLink
-			className={twMerge(
-				'text-text-muted hover:text-text-secondary text-sm',
-				className
-			)}
+			className={(props) => {
+				const cn =
+					typeof className === 'function' ? className(props) : className
+				return twMerge(commonClassNames, cn)
+			}}
 			end
-			to={to}
 			{...props}>
-			{children}
+			{props.children}
 		</NavLink>
 	)
 }
