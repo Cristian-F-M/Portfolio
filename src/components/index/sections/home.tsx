@@ -70,10 +70,8 @@ export default function Home() {
 					<div className="border border-border rounded-full size-full p-3">
 						<div className="border border-border rounded-full size-full p-8">
 							<img
-								data-i18n-key="index.home.me_alt"
-								data-i18n-to-change="alt"
 								src={'/images/me.avif'}
-								alt={t('index.home.me_alt')}
+								alt={t('index:sections.home.me_alt')}
 								className="rounded-full animate-float animate-iteration-count-infinite animate-duration-3500"
 							/>
 						</div>
