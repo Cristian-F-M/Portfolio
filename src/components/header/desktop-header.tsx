@@ -101,8 +101,6 @@ export default function DesktopHeader({
 					{links.map(({ id, url, path }) => {
 						const isActive = active === url
 
-						console.log(`desktop-header-${id}`)
-
 						return (
 							<Link
 								router={false}
