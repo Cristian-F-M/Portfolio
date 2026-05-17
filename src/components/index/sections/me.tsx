@@ -37,9 +37,7 @@ export default function Me() {
 					</h2>
 
 					<p className="text-gray-400 text-sm mt-1 md:w-150">
-						I design digital ecosystems where performance meets precision. My
-						approach goes beyond coding—I solve complex structural challenges
-						with engineering solutions.
+					{t('index:sections.me.description')}
 					</p>
 
 					<div className="flex flex-col md:flex-row gap-2 items-center mt-5">
