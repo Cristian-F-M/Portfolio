@@ -194,16 +194,6 @@ export default function Me() {
 					})}
 				</main>
 			</section>
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
 		</Section>
 	)
 }
