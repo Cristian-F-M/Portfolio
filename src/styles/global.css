@@ -131,6 +131,8 @@ body {
 	box-shadow:
 		0 0px 20px var(--color-primary),
 		0 0px 30px var(--color-text-muted);
+
+	/* TODO: Fix shadow */
 }
 
 .button-glow:hover {
@@ -177,4 +179,16 @@ p {
 	font-weight: 100 900;
 	font-display: swap;
 	font-variant: normal;
+}
+
+.bento-card {
+	@apply bg-surface p-6 border border-border-subtle/50 rounded;
+}
+
+.bento-card header {
+	@apply flex flex-row items-center gap-1 text-text-primary uppercase;
+}
+
+.bento-card main {
+	@apply flex flex-row items-center gap-2 flex-wrap mt-2;
 }
