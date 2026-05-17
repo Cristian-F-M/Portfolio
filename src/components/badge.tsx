@@ -20,7 +20,7 @@ export default function Badge({
 			<span
 				className={twMerge(
 					commonClassNames,
-					'px-3 py-1.5 uppercase',
+					'px-2 py-1 uppercase text-xs',
 					className
 				)}>
 				{children}
