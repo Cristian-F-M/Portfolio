@@ -16,8 +16,7 @@ export const useTheme = create<ThemeState>()((set) => ({
 	},
 	load: () => {
 		const theme = localStorage.getItem('theme')
-		if (!theme) return
-		document.documentElement.setAttribute('data-theme', theme)
+		if (!theme || !(theme in THEMES)) return
 		set({ theme })
 	}
 }))
