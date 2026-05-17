@@ -1,4 +1,5 @@
 import { create } from 'zustand'
+import * as THEMES from '@/constants/themes'
 
 interface ThemeState {
 	theme: string
@@ -7,9 +8,10 @@ interface ThemeState {
 }
 
 export const useTheme = create<ThemeState>()((set) => ({
-	theme: '',
+	theme: 'DARK',
 	setTheme: (theme) => {
 		localStorage.setItem('theme', theme)
+		if (!theme || !(theme in THEMES)) return
 		set({ theme })
 	},
 	load: () => {
