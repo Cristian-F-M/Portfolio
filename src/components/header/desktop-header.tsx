@@ -88,7 +88,7 @@ export default function DesktopHeader({
 	return (
 		<header
 			className={twMerge(
-				'hidden md:flex w-full mt-1 md:mt-4 bg-surface p-3 rounded flex-row items-center justify-between shadow shadow-surface-soft sticky top-2 z-100 backdrop-blur-lg',
+				'hidden md:flex w-full mt-1 md:mt-4 bg-surface/60 p-3 rounded flex-row items-center justify-between shadow shadow-surface-soft sticky top-2 z-100 backdrop-blur-lg',
 				className
 			)}
 			{...props}>
