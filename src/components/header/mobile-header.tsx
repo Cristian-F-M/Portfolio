@@ -25,9 +25,11 @@ export default function MobileHeader({
 
 					return (
 						<Link
+							router={false}
 							title={t(`index:sections.header.links.${path}`)}
-							key={id}
-							to={url}
+							id={`mobile-header-${id}`}
+							key={`mobile-header-${id}`}
+							href={url}
 							className={twMerge(
 								'p-2 rounded-full duration-300',
 								isActive && 'bg-primary shadow-[0_0_30px_8px_var(--primary)]'

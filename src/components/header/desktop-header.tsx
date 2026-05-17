@@ -26,7 +26,7 @@ export default function DesktopHeader({
 			const navRect = navRef.current.getBoundingClientRect()
 
 			const anchor = navRef.current.querySelector(
-				`a#${link.id}`
+				`a#desktop-header-${link.id}`
 			) as HTMLAnchorElement | null
 
 			if (!anchor) return
@@ -101,11 +101,14 @@ export default function DesktopHeader({
 					{links.map(({ id, url, path }) => {
 						const isActive = active === url
 
+						console.log(`desktop-header-${id}`)
+
 						return (
 							<Link
-								id={id}
-								key={id}
-								to={url}
+								router={false}
+								id={`desktop-header-${id}`}
+								key={`desktop-header-${id}`}
+								href={url}
 								className={twMerge(
 									isActive && 'text-primary hover:text-text-link'
 								)}>
