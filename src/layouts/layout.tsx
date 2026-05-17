@@ -8,7 +8,7 @@ export default function Layout() {
 	const location = useLocation()
 	const [showSplash, setShowSplash] = useState(false)
 	const { setActive } = useNav()
-	const { load: loadTheme } = useTheme()
+	const { theme, load: loadTheme } = useTheme()
 
 	const lastPath = useRef(location.pathname)
 
@@ -34,6 +34,10 @@ export default function Layout() {
 	useLayoutEffect(() => {
 		loadTheme()
 	}, [loadTheme])
+
+	useEffect(() => {
+		document.documentElement.setAttribute('data-theme', theme)
+	}, [theme])
 
 	const themes = Object.entries(THEMES).map(([key, value]) => {
 		const colors = Object.entries(value).map(([k, c]) => {
