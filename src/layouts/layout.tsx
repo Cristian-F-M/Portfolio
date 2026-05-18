@@ -1,12 +1,16 @@
-import { useEffect, useLayoutEffect, useRef, useState } from 'react'
+import { useEffect, useLayoutEffect, useRef } from 'react'
 import { Outlet, useLocation } from 'react-router'
 import useNav from '@/state/nav'
 import { useTheme } from '@/state/theme'
 import * as THEMES from '@/constants/themes'
+import SideMenu from '@/components/side-menu'
+import SplashScreen from '@/components/splash-screen'
+import { useSplashScreen } from '@/state/splash-screen'
+import { twMerge } from 'tailwind-merge'
 
 export default function Layout() {
 	const location = useLocation()
-	const [showSplash, setShowSplash] = useState(false)
+	const { isShowing, show } = useSplashScreen()
 	const { setActive } = useNav()
 	const { theme, load: loadTheme } = useTheme()
 
@@ -16,14 +20,8 @@ export default function Layout() {
 		if (lastPath.current === location.pathname) return
 		lastPath.current = location.pathname
 
-		setShowSplash(true)
-
-		const timer = setTimeout(() => {
-			setShowSplash(false)
-		}, 2000)
-
-		return () => clearTimeout(timer)
-	}, [location.pathname])
+		show()
+	}, [location.pathname, show])
 
 	useEffect(() => {
 		if (location.pathname !== '/') return
@@ -50,11 +48,11 @@ export default function Layout() {
 		return style
 	})
 
-	if (showSplash) return '<SplashScreen />'
-
 	return (
-		<div>
+		<div className={twMerge(isShowing && 'pointer-events-none')}>
 			<style>{themes}</style>
+			<SplashScreen />
+			<SideMenu />
 			<Outlet />
 		</div>
 	)
