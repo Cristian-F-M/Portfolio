@@ -15,7 +15,7 @@ export default function MobileHeader({
 	return (
 		<header
 			className={twMerge(
-				'md:hidden fixed bottom-4 left-1/2 -translate-x-1/2 bg-surface/60 px-4 py-3 rounded-full shadow shadow-surface-soft z-100 backdrop-blur-lg flex flex-row items-center gap-4',
+				'md:hidden fixed bottom-4 left-1/2 -translate-x-1/2 bg-surface/60 px-3 py-1.5 rounded-full shadow shadow-surface-soft z-100 backdrop-blur-lg flex flex-row items-center gap-4',
 				className
 			)}
 			{...props}>
@@ -36,7 +36,7 @@ export default function MobileHeader({
 							)}>
 							<Icon
 								className={twMerge(
-									'size-5.5',
+									'size-5',
 									isActive &&
 										'text-text-on-primary drop-shadow-[0_0_8px_var(--text-on-primary)]'
 								)}
@@ -50,7 +50,7 @@ export default function MobileHeader({
 				className="group cursor-pointer"
 				data-open-side-menu
 				data-side-menu-toggler>
-				<IconMenu2 className="text-text-muted group-active:text-primary transition-all [--path-scale:50%] [--path-translate-x:calc(calc(100%-var(--path-scale))/2)] [&_path]:transition-all group-data-[side-menu-showed=true]:[&_path]:last:scale-x-(--path-scale) group-data-[side-menu-showed=true]:[&_path]:last:translate-x-(--path-translate-x) group-data-[side-menu-showed=true]:[&_path]:first:scale-x-(--path-scale) group-data-[side-menu-showed=true]:[&_path]:first:translate-x-(--path-translate-x)" />
+				<IconMenu2 className="text-text-secondary group-active:text-primary transition-all [--path-scale:50%] [--path-translate-x:calc(calc(100%-var(--path-scale))/2)] [&_path]:transition-all group-data-[side-menu-showed=true]:[&_path]:last:scale-x-(--path-scale) group-data-[side-menu-showed=true]:[&_path]:last:translate-x-(--path-translate-x) group-data-[side-menu-showed=true]:[&_path]:first:scale-x-(--path-scale) group-data-[side-menu-showed=true]:[&_path]:first:translate-x-(--path-translate-x)" />
 			</button>
 		</header>
 	)
