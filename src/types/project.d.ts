@@ -1,5 +1,3 @@
-import type { Path } from '@/types/i18n'
-
 export type Type = 'web' | 'mobile' | 'desktop' | 'cli'
 
 export interface Skill {
@@ -9,7 +7,6 @@ export interface Skill {
 
 export interface Image {
 	src: string
-	alt: Path
 }
 
 export interface Project {

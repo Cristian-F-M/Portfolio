@@ -3,31 +3,25 @@ import type { Project } from '@/types/project'
 export const PROJECTS = [
 	{
 		id: 'todo-cm',
-		title: 'index.projects.projects.todo-cm.title',
-		description: 'index.projects.projects.todo-cm.description',
+		title: 'projects:todo-cm.title',
+		description: 'projects:todo-cm.description',
 		images: [
 			{
-				alt: 'index.description',
 				src: '/images/projects/todo-cm/todo-cm-1.avif'
 			},
 			{
-				alt: 'index.description',
 				src: '/images/projects/todo-cm/todo-cm-2.avif'
 			},
 			{
-				alt: 'index.description',
 				src: '/images/projects/todo-cm/todo-cm-3.avif'
 			},
 			{
-				alt: 'index.description',
 				src: '/images/projects/todo-cm/todo-cm-4.avif'
 			},
 			{
-				alt: 'index.description',
 				src: '/images/projects/todo-cm/todo-cm-5.avif'
 			},
 			{
-				alt: 'index.description',
 				src: '/images/projects/todo-cm/todo-cm-6.avif'
 			}
 		],
@@ -42,11 +36,10 @@ export const PROJECTS = [
 	},
 	{
 		id: 'touch',
-		title: 'index.projects.projects.touch.title',
-		description: 'index.projects.projects.touch.description',
+		title: 'projects:touch.title',
+		description: 'projects:touch.description',
 		images: [
 			{
-				alt: 'index.description',
 				src: '/images/projects/touch/touch.avif'
 			}
 		],
@@ -61,23 +54,19 @@ export const PROJECTS = [
 	},
 	{
 		id: 'fast-emoji',
-		title: 'index.projects.projects.fast-emoji.title',
-		description: 'index.projects.projects.fast-emoji.description',
+		title: 'projects:fast-emoji.title',
+		description: 'projects:fast-emoji.description',
 		images: [
 			{
-				alt: 'index.description',
 				src: '/images/projects/fast-emoji/fast-emoji-1.png'
 			},
 			{
-				alt: 'index.description',
 				src: '/images/projects/fast-emoji/fast-emoji-2.png'
 			},
 			{
-				alt: 'index.description',
 				src: '/images/projects/fast-emoji/fast-emoji-3.png'
 			},
 			{
-				alt: 'index.description',
 				src: '/images/projects/fast-emoji/fast-emoji-4.png'
 			}
 		],
@@ -92,23 +81,19 @@ export const PROJECTS = [
 	},
 	{
 		id: 'solitario',
-		title: 'index.projects.projects.solitario.title',
-		description: 'index.projects.projects.solitario.description',
+		title: 'projects:solitario.title',
+		description: 'projects:solitario.description',
 		images: [
 			{
-				alt: 'index.description',
 				src: '/images/projects/solitario/solitario-1.avif'
 			},
 			{
-				alt: 'index.description',
 				src: '/images/projects/solitario/solitario-2.avif'
 			},
 			{
-				alt: 'index.description',
 				src: '/images/projects/solitario/solitario-3.avif'
 			},
 			{
-				alt: 'index.description',
 				src: '/images/projects/solitario/solitario-4.avif'
 			}
 		],
