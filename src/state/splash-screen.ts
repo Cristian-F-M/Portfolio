@@ -14,7 +14,7 @@ interface SplashScreenState {
 }
 
 export const useSplashScreen = create<SplashScreenState>()((set, get) => ({
-	isShowing: false,
+	isShowing: true,
 	setIsShowing: (fnValue) => {
 		if (typeof fnValue === 'function') {
 			const newValue = fnValue(get().isShowing)
