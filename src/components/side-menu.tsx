@@ -30,7 +30,6 @@ export default function SideMenu() {
 			const $openElement = $target.closest('[data-open-side-menu]')
 			const $closeElement = $target.closest('[data-close-side-menu]')
 
-			console.log($target)
 			if (!$openElement && !$closeElement) return
 
 			event.preventDefault()
