@@ -15,7 +15,7 @@ export default function MobileHeader({
 	return (
 		<header
 			className={twMerge(
-				'md:hidden fixed bottom-4 left-1/2 -translate-x-1/2 bg-surface px-4 py-3 rounded-full shadow shadow-surface-soft z-100 backdrop-blur-lg flex flex-row items-center gap-4',
+				'md:hidden fixed bottom-4 left-1/2 -translate-x-1/2 bg-surface/60 px-4 py-3 rounded-full shadow shadow-surface-soft z-100 backdrop-blur-lg flex flex-row items-center gap-4',
 				className
 			)}
 			{...props}>
