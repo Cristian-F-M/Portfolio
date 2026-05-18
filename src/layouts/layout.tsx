@@ -7,6 +7,7 @@ import SideMenu from '@/components/side-menu'
 import SplashScreen from '@/components/splash-screen'
 import { useSplashScreen } from '@/state/splash-screen'
 import { twMerge } from 'tailwind-merge'
+import Footer from '@/components/footer'
 
 export default function Layout() {
 	const location = useLocation()
@@ -54,6 +55,7 @@ export default function Layout() {
 			<SplashScreen />
 			<SideMenu />
 			<Outlet />
+			<Footer />
 		</div>
 	)
 }
