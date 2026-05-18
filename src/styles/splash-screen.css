@@ -1,0 +1,69 @@
+@reference "./global.css";
+
+.svg-container svg path {
+	@apply opacity-0;
+}
+
+.svg-container.animate svg path {
+	animation:
+		springIn 600ms cubic-bezier(0.34, 1.56, 0.64, 1) 50ms forwards,
+		fadeIn 800ms ease 50ms forwards;
+}
+
+.svg-container svg path:nth-child(2) {
+	animation-delay: 50ms;
+}
+
+.svg-container svg path:nth-child(3) {
+	animation-delay: 200ms;
+}
+.svg-container svg path:nth-child(4) {
+	animation-delay: 350ms;
+}
+.svg-container svg path:nth-child(5) {
+	animation-delay: 500ms;
+}
+
+.svg-container {
+	transform: scale(0.8);
+}
+
+.svg-container.animate {
+	animation: scaleIn 850ms cubic-bezier(0.34, 1.56, 0.64, 1) 800ms forwards;
+}
+
+@keyframes springIn {
+	0% {
+		transform: translateY(120px);
+	}
+	60% {
+		transform: translateY(-5px);
+	}
+	80% {
+		transform: translateY(2px);
+	}
+	100% {
+		transform: translateY(0);
+	}
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes scaleIn {
+	0% {
+		transform: scale(0.8);
+	}
+	60% {
+		transform: scale(1.05);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
