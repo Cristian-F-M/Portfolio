@@ -11,7 +11,7 @@ export default function Home() {
 	return (
 		<Section
 			id="home"
-			className="flex flex-col md:flex-row items-center mt-3 md:mt-10">
+			className="flex flex-col md:flex-row items-center justify-between mt-3 md:mt-10">
 			<section className="flex flex-col gap-8">
 				<div>
 					<Badge className="uppercase" ping>
