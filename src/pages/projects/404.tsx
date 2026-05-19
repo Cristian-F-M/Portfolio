@@ -1,4 +1,3 @@
-import Logo from '@/assets/logo'
 import { IconWorldExclamation } from '@tabler/icons-react'
 import { Fragment, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -16,21 +15,6 @@ export default function ProjectNotFound() {
 
 	return (
 		<Fragment>
-			<header className="bg-surface/60 mx-auto mt-5 flex w-full flex-row items-center justify-between rounded px-4 py-3 text-text-primary shadow shadow-surface-soft sticky top-2 z-100 backdrop-blur-lg">
-				<a
-					href="/#home"
-					className="flex flex-row items-center gap-2 text-text-primary">
-					<Logo className="text-text-primary" />
-					<h4 className="font-jet-brains text-lg">cmorales</h4>
-				</a>
-
-				<button
-					className="p-2 bg-surface-soft border border-border rounded text-xs font-jet-brains cursor-pointer hover:bg-surface"
-					type="button"
-					onClick={handleReload}>
-					{t('projects:404.reboot')}
-				</button>
-			</header>
 			<main className="flex flex-1 justify-between mt-8">
 				<section>
 					<div className="bg-surface-soft p-6 rounded-lg size-fit max-w-87.5">
