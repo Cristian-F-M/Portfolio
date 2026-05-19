@@ -103,10 +103,10 @@ export default function DesktopHeader({
 
 						return (
 							<Link
-								router={false}
+								router={true}
 								id={`desktop-header-${id}`}
 								key={`desktop-header-${id}`}
-								href={url}
+								to={url}
 								className={twMerge(
 									isActive && 'text-primary hover:text-text-link'
 								)}>

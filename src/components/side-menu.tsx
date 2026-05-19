@@ -119,7 +119,8 @@ export default function SideMenu() {
 						{links.map((l, index) => {
 							return (
 								<Link
-									href={l.url}
+									router={true}
+									to={l.url}
 									key={l.id}
 									onClick={() => {
 										if (active === l.url) return
