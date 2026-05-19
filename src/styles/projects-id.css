@@ -1,0 +1,5 @@
+@reference "./global.css";
+
+.swiper-button {
+	@apply [&_svg]:size-5! bg-surface p-1 rounded size-auto! text-text-primary! hover:scale-105 hover:bg-surface-soft cursor-pointer transition-all;
+}
