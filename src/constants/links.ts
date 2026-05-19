@@ -18,25 +18,25 @@ export const links = [
 	{
 		id: 'home',
 		path: 'home',
-		url: '#home',
+		url: '/#home',
 		icon: IconHome
 	},
 	{
 		id: 'projects',
 		path: 'projects',
-		url: '#projects',
+		url: '/#projects',
 		icon: IconCode
 	},
 	{
 		id: 'me',
 		path: 'me',
-		url: '#me',
+		url: '/#me',
 		icon: IconUserCircle
 	},
 	{
 		id: 'contact',
 		path: 'contact',
-		url: '#contact',
+		url: '/#contact',
 		icon: IconMail
 	}
 ] satisfies Link[]
