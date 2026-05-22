@@ -11,7 +11,7 @@ export default function Footer({ className, ...props }: FooterProps) {
 	return (
 		<footer
 			className={twMerge(
-				'flex flex-col md:flex-row justify-center md:justify-between items-center mt-10 px-6 py-8 bg-tertiary/5 w-full absolute left-0 backdrop-blur-2xl border-t border-border pb-25 md:pb-0 space-y-2 md:space-y-0',
+				'flex flex-col md:flex-row justify-center md:justify-between items-center mt-10 px-6 py-8 bg-tertiary/5 w-full absolute left-0 backdrop-blur-2xl border-t border-border pb-25 md:pb-8 space-y-2 md:space-y-0',
 				className
 			)}
 			{...props}>
