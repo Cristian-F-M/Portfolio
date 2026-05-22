@@ -23,3 +23,12 @@ export interface Project {
 	url: string
 	active: boolean
 }
+
+export type Primitive = string | number | boolean | null
+
+export type RecursiveValue =
+	| Primitive
+	| RecursiveValue[]
+	| {
+			[key: string]: RecursiveValue
+	  }
