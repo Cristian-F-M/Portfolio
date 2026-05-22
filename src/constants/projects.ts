@@ -1,4 +1,11 @@
-import type { Project } from '@/types/project'
+import type { Project, Type } from '@/types/project'
+
+export const TypeObj = {
+	web: 'web',
+	mobile: 'mobile',
+	desktop: 'desktop',
+	cli: 'cli'
+} satisfies Record<Type, Type>
 
 export const PROJECTS = [
 	{
