@@ -16,7 +16,8 @@ export default function Button({
 	loading,
 	...props
 }: ButtonProps) {
-	const commonClasses = 'px-6 py-3 rounded cursor-pointer relative'
+	const commonClasses =
+		'px-6 py-3 rounded cursor-pointer relative border border-transparent'
 	const primaryClasses =
 		'bg-primary text-text-on-primary hover:bg-primary-hover active:bg-primary-pressed'
 	const secondaryClasses =
@@ -34,15 +35,17 @@ export default function Button({
 
 	return (
 		<button className={twMerge(finalClasses, className)} type={type} {...props}>
-			<div
-				className={twMerge(
-					'size-full absolute z-5 inset-0 flex flex-col items-center justify-center pointer-events-none',
-					loading && '[&_span]:scale-y-100'
-				)}>
-				<span className="block w-full h-1/2 bg-overlay/50 backdrop-blur-xs scale-y-0 origin-top transition-all duration-200 ease-in-out"></span>
-				<span className="block w-full h-1/2 bg-overlay/50 backdrop-blur-xs scale-y-0 origin-bottom transition-all duration-200 ease-in-out"></span>
-				<Loader className={loading ? 'opacity-100' : 'opacity-0'} />
-			</div>
+			{loading && showLoader && (
+				<div
+					className={twMerge(
+						'size-full absolute z-5 inset-0 flex flex-col items-center justify-center pointer-events-none',
+						loading && '[&_span]:scale-y-100'
+					)}>
+					<span className="block w-full h-1/2 bg-overlay/50 backdrop-blur-xs scale-y-0 origin-top transition-all duration-200 ease-in-out"></span>
+					<span className="block w-full h-1/2 bg-overlay/50 backdrop-blur-xs scale-y-0 origin-bottom transition-all duration-200 ease-in-out"></span>
+					<Loader className={loading ? 'opacity-100' : 'opacity-0'} />
+				</div>
+			)}
 			{children}
 		</button>
 	)
