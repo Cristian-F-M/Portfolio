@@ -9,17 +9,56 @@ import {
 } from '@tabler/icons-react'
 import Textarea from '@/components/textarea'
 import Button from '@/components/button'
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { ME } from '@/constants/me'
 import MapGL, { Marker } from '@vis.gl/react-maplibre'
 import 'maplibre-gl/dist/maplibre-gl.css'
 import { useMapStyle } from '@/constants/map'
 import { Link } from '@/components/link'
+import { contactScheme } from '@/zod/contact'
+
+interface Errors {
+	name: string | null
+	email: string | null
+	message: string | null
+}
 
 export default function Contact() {
 	const { t } = useTranslation()
 	const [l, setL] = useState(false)
 	const { mapStyle } = useMapStyle()
+	const [errors, setErrors] = useState<Partial<Errors>>({})
+
+	const handleSubmit = useCallback(
+		(event: React.SubmitEvent<HTMLFormElement>) => {
+			event.preventDefault()
+			// TODO -> Create a small api to send the mail insted of call to mailto api
+			const formData = new FormData(event.currentTarget)
+
+			const name = formData.get('name')
+			const email = formData.get('email')
+			const message = formData.get('message')
+
+			const result = contactScheme.safeParse({ name, email, message })
+			if (!result.success) {
+				const entries = result.error.issues.map((issue) => {
+					return [issue.path[0], issue.message]
+				})
+				const errors = Object.fromEntries(entries)
+				setErrors(errors)
+				return
+			}
+
+			if (Object.values(errors).filter(Boolean).length > 0) return
+
+			const url = new URL(
+				`mailto:cfmorales.diaz@gmail.com?subject=Let's build a project together&body=${message}`
+			)
+			window.open(url, '_blank')
+			event.currentTarget.reset()
+		},
+		[errors]
+	)
 
 	useEffect(() => {}, [])
 
@@ -44,30 +83,45 @@ export default function Contact() {
 					<div className="absolute top-1 right-1 pointer-events-none z-50">
 						<IconMail className="size-14 md:size-18 text-text-muted" />
 					</div>
-					<form id="send-email-form" className="w-full space-y-10">
+					<form
+						id="send-email-form"
+						className="w-full space-y-10"
+						onSubmit={handleSubmit}>
 						<div className="flex flex-col md:flex-row md:items-center justify-between gap-6 w-full">
 							<Input
+								id="name"
+								name="name"
 								label={t('index:sections.lets_build.form.name.name')}
 								placeholder={t(
 									'index:sections.lets_build.form.name.placeholder'
 								)}
+								onChange={() => setErrors((prev) => ({ ...prev, name: null }))}
+								error={errors.name && t(errors.name)}
 							/>
 							<Input
+								id="email"
+								name="email"
 								label={t('index:sections.lets_build.form.email.name')}
 								placeholder={t(
 									'index:sections.lets_build.form.email.placeholder'
 								)}
+								onChange={() => setErrors((prev) => ({ ...prev, email: null }))}
+								error={errors.email && t(errors.email)}
 							/>
 						</div>
 						<Textarea
 							id="message"
+							name="message"
 							label={t('index:sections.lets_build.form.message.name')}
 							placeholder={t(
 								'index:sections.lets_build.form.message.placeholder'
 							)}
+							onChange={() => setErrors((prev) => ({ ...prev, message: null }))}
+							error={errors.message && t(errors.message)}
 						/>
 
 						<Button
+							type="submit"
 							variant="glow"
 							className="flex flex-row gap-2 items-center"
 							onClick={() => setL((prev) => !prev)}
