@@ -2,7 +2,7 @@ import { twMerge } from 'tailwind-merge'
 
 interface TextAreaProps extends React.ComponentProps<'textarea'> {
 	label: string
-	error?: string
+	error?: string | null
 }
 
 export default function Textarea({
