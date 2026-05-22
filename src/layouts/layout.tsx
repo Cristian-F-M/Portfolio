@@ -28,7 +28,7 @@ export default function Layout() {
 	useEffect(() => {
 		if (location.pathname !== '/') return
 		if (location.hash === '') document.location.hash = 'home'
-		setActive(document.location.hash)
+		setActive(`/${document.location.hash}`)
 	}, [location, setActive])
 
 	useLayoutEffect(() => {
