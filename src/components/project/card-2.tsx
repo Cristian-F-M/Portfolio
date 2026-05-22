@@ -36,7 +36,7 @@ export default function Card2({ className, project, ...props }: CardProps) {
 
 			<main className="p-5 space-y-2">
 				<h2 className="uppercase font-jet-brains text-2xl">
-					{t(project.title)}
+					{t(`projects:${project.name}.title`)}
 				</h2>
 
 				<div className="flex flex-row gap-2">
@@ -53,7 +53,7 @@ export default function Card2({ className, project, ...props }: CardProps) {
 				</div>
 
 				<p className="mt-2 text-sm line-clamp-3 text-pretty text-text-muted">
-					{t(project.description)}
+					{t(`projects:${project.name}.description`)}
 				</p>
 
 				<Link

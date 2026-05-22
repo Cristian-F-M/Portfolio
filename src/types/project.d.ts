@@ -11,8 +11,7 @@ export interface Image {
 
 export interface Project {
 	id: string
-	title: Path
-	description: Path
+	name: string
 	images: Image[]
 	latest_version: string
 	release_year: string

@@ -10,8 +10,7 @@ export const TypeObj = {
 export const PROJECTS = [
 	{
 		id: 'todo-cm',
-		title: 'projects:todo-cm.title',
-		description: 'projects:todo-cm.description',
+		name: 'todo-cm',
 		images: [
 			{
 				src: '/images/projects/todo-cm/todo-cm-1.avif'
@@ -43,8 +42,7 @@ export const PROJECTS = [
 	},
 	{
 		id: 'touch',
-		title: 'projects:touch.title',
-		description: 'projects:touch.description',
+		name: 'touch',
 		images: [
 			{
 				src: '/images/projects/touch/touch.avif'
@@ -61,8 +59,7 @@ export const PROJECTS = [
 	},
 	{
 		id: 'fast-emoji',
-		title: 'projects:fast-emoji.title',
-		description: 'projects:fast-emoji.description',
+		name: 'fast-emoji',
 		images: [
 			{
 				src: '/images/projects/fast-emoji/fast-emoji-1.png'
@@ -88,8 +85,7 @@ export const PROJECTS = [
 	},
 	{
 		id: 'solitario',
-		title: 'projects:solitario.title',
-		description: 'projects:solitario.description',
+		name: 'solitario',
 		images: [
 			{
 				src: '/images/projects/solitario/solitario-1.avif'

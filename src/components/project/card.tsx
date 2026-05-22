@@ -38,14 +38,12 @@ export default function Card({ project, className, ...props }: CardProps) {
 							))}
 						</div>
 						<h3 className="text-text-secondary text-4xl font-bold font-space-grotesk uppercase">
-							{t(project.title)}
+							{t(`projects:${project.name}.title`)}
 						</h3>
 					</header>
 
-					<p
-						className="mt-2 text-sm line-clamp-3 text-pretty text-text-muted"
-						data-i18n-key={project.description}>
-						{t(project.description)}
+					<p className="mt-2 text-sm line-clamp-3 text-pretty text-text-muted">
+						{t(`projects:${project.name}.description`)}
 					</p>
 				</section>
 

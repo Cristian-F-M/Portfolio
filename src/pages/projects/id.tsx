@@ -123,11 +123,11 @@ export default function ProjectIdPage() {
 				</Badge>
 
 				<h1 className="text-6xl md:text-7xl text-text-primary font-semibold">
-					{t(project.title)}
+					{t(`projects:${project.name}.title`)}
 				</h1>
 
 				<p className="text-sm md:text-base text-text-secondary md:w-7/12 mt-1">
-					{t(project.description)}
+					{t(`projects:${project.name}.description`)}
 				</p>
 
 				<div className="flex flex-row gap-2 items-center mt-4">
