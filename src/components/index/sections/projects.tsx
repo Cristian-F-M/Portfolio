@@ -52,13 +52,13 @@ export default function Projects() {
 						})}
 				</div>
 
-				{/* <Link
+				<Link
 					router
 					to={'/projects'}
 					className="flex flex-row gap-1 items-center uppercase text-text-primary text-xs mx-auto border border-border bg-surface px-4 py-3 rounded-lg hover:bg-surface-soft mt-4 font-jet-brains cursor-pointer w-fit">
 					<IconPlus size={16} className="text-primary" />
 					<span>{t('index:see_more_artifacts')}</span>
-				</Link> */}
+				</Link>
 			</main>
 		</Section>
 	)
