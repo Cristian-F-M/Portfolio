@@ -23,7 +23,7 @@ export default function FilterButton({
 			<span
 				className={twMerge(
 					'text-text-muted text-xs',
-					isSelected && 'text-text-primary'
+					isSelected && 'text-text-on-primary'
 				)}>
 				({count})
 			</span>
