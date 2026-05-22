@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { twMerge } from 'tailwind-merge'
 import Badge from '../badge'
 import { Link } from '../link'
+import BrokenFile from '@/assets/broken-file'
 
 interface CardProps extends React.ComponentProps<'div'> {
 	project: Project
@@ -19,13 +20,20 @@ export default function Card2({ className, project, ...props }: CardProps) {
 			)}
 			{...props}>
 			<div className="w-full h-auto aspect-video max-h-6/12">
-				<img
-					src={project.images[0].src}
-					alt={t('index:sections.projects.generic_image_alt')}
-					className="size-full object-cover object-top"
-					width={100}
-					height={100}
-				/>
+				{!project.images[0] && (
+					<div className="size-full flex items-center justify-center bg-surface-soft">
+						<BrokenFile className="size-8/12 text-text-muted" />
+					</div>
+				)}
+				{project.images[0] && (
+					<img
+						src={project.images[0].src}
+						alt={t('index:sections.projects.generic_image_alt')}
+						className="size-full object-cover object-top"
+						width={100}
+						height={100}
+					/>
+				)}
 			</div>
 
 			<Badge

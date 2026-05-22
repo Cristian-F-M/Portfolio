@@ -30,6 +30,7 @@ import 'swiper/css/zoom'
 import 'swiper/css/autoplay'
 import 'swiper/css/virtual'
 import Badge from '@/components/badge'
+import BrokenFile from '@/assets/broken-file'
 
 export default function ProjectIdPage() {
 	const { id } = useParams()
@@ -86,6 +87,11 @@ export default function ProjectIdPage() {
 						nextEl: '.swiper-button-next',
 						prevEl: '.swiper-button-prev'
 					}}>
+					{!project.images[0] && (
+						<div className="size-9/12 flex items-center justify-center bg-surface-soft mx-auto p-8">
+							<BrokenFile className="size-5/12 text-text-muted" />
+						</div>
+					)}
 					{project.images.map(({ src }, index) => {
 						return (
 							<SwiperSlide
