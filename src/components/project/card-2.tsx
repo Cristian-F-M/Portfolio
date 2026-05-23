@@ -27,7 +27,7 @@ export default function Card2({ className, project, ...props }: CardProps) {
 				)}
 				{project.images[0] && (
 					<img
-						src={project.images[0].src}
+						src={`/images/projects/${project.name}/${project.images[0]}`}
 						alt={t('index:sections.projects.generic_image_alt')}
 						className="size-full object-cover object-top"
 						width={100}

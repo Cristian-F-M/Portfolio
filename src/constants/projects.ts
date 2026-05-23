@@ -15,12 +15,12 @@ export const PROJECTS = [
 		id: 'todo-cm',
 		name: 'todo-cm',
 		images: [
-			'/images/projects/todo-cm/todo-cm-1.avif',
-			'/images/projects/todo-cm/todo-cm-2.avif',
-			'/images/projects/todo-cm/todo-cm-3.avif',
-			'/images/projects/todo-cm/todo-cm-4.avif',
-			'/images/projects/todo-cm/todo-cm-5.avif',
-			'/images/projects/todo-cm/todo-cm-6.avif'
+			'todo-cm-1.avif',
+			'todo-cm-2.avif',
+			'todo-cm-3.avif',
+			'todo-cm-4.avif',
+			'todo-cm-5.avif',
+			'todo-cm-6.avif'
 		],
 		latest_version: '1.21.2',
 		release_year: '2026',
@@ -34,7 +34,7 @@ export const PROJECTS = [
 	{
 		id: 'touch',
 		name: 'touch',
-		images: ['/images/projects/touch/touch.avif'],
+		images: ['touch.avif'],
 		latest_version: '1.2.5',
 		release_year: '2026',
 		featured: true,
@@ -48,10 +48,10 @@ export const PROJECTS = [
 		id: 'fast-emoji',
 		name: 'fast-emoji',
 		images: [
-			'/images/projects/fast-emoji/fast-emoji-1.png',
-			'/images/projects/fast-emoji/fast-emoji-2.png',
-			'/images/projects/fast-emoji/fast-emoji-3.png',
-			'/images/projects/fast-emoji/fast-emoji-4.png'
+			'fast-emoji-1.png',
+			'fast-emoji-2.png',
+			'fast-emoji-3.png',
+			'fast-emoji-4.png'
 		],
 		latest_version: '1.0.1',
 		release_year: '2026',
@@ -66,10 +66,10 @@ export const PROJECTS = [
 		id: 'solitario',
 		name: 'solitario',
 		images: [
-			'/images/projects/solitario/solitario-1.avif',
-			'/images/projects/solitario/solitario-2.avif',
-			'/images/projects/solitario/solitario-3.avif',
-			'/images/projects/solitario/solitario-4.avif'
+			'solitario-1.avif',
+			'solitario-2.avif',
+			'solitario-3.avif',
+			'solitario-4.avif'
 		],
 		latest_version: '1.0.0',
 		release_year: '2026',

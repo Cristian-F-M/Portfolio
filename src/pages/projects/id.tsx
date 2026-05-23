@@ -92,7 +92,7 @@ export default function ProjectIdPage() {
 							<BrokenFile className="size-5/12 text-text-muted" />
 						</div>
 					)}
-					{project.images.map(({ src }, index) => {
+					{project.images.map((src, index) => {
 						return (
 							<SwiperSlide
 								// biome-ignore lint/suspicious/noArrayIndexKey: ---
@@ -102,7 +102,7 @@ export default function ProjectIdPage() {
 								className="h-full relative aspect-square md:aspect-video cursor-zoom-in">
 								<img
 									className="object-contain size-full"
-									src={src}
+									src={`/images/projects/${project.name}/${src}`}
 									alt={t('index:projects.generic_image_alt')}
 								/>
 							</SwiperSlide>
