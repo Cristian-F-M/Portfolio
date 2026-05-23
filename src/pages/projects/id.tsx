@@ -150,14 +150,16 @@ export default function ProjectIdPage() {
 				</div>
 
 				<div className="flex flex-col md:flex-row gap-4 uppercase mt-10 [&_a]:w-full md:[&_a]:w-fit">
-					<a
-						href={project.url}
-						target="_blank"
-						rel="noopener noreferrer"
-						className="flex flex-row gap-1 items-center justify-center w-fit bg-surface-soft px-4 py-3 rounded text-text-primary text-xs button-glow cursor-pointer [&_svg]:size-4.5">
-						<OpenProjectIcon />
-						<span>{openProjectText}</span>
-					</a>
+					{project.active && project.url && (
+						<a
+							href={project.url}
+							target="_blank"
+							rel="noopener noreferrer"
+							className="flex flex-row gap-1 items-center justify-center w-fit bg-surface-soft px-4 py-3 rounded text-text-primary text-xs button-glow cursor-pointer [&_svg]:size-4.5">
+							<OpenProjectIcon />
+							<span>{openProjectText}</span>
+						</a>
+					)}
 					<a
 						href={`https://github.com/Cristian-F-M/${project.github}`}
 						target="_blank"
