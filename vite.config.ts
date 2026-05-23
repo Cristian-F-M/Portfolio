@@ -8,5 +8,14 @@ export default defineConfig({
 	resolve: {
 		tsconfigPaths: true
 	},
-	plugins: [react(), babel({ presets: [reactCompilerPreset()] }), tailwindcss()]
+	plugins: [
+		react(),
+		babel({ presets: [reactCompilerPreset()] }),
+		tailwindcss()
+	],
+	server: {
+		watch: {
+			usePolling: true
+		}
+	}
 })
