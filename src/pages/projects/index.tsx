@@ -10,6 +10,7 @@ import { useEffect, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { twMerge } from 'tailwind-merge'
 import { useQueryState } from 'nuqs'
+import { Helmet } from 'react-helmet-async'
 
 export default function ProjectsPage() {
 	const [filterBy, setFilterBy] = useQueryState('filterBy', {
@@ -42,6 +43,10 @@ export default function ProjectsPage() {
 
 	return (
 		<section className="mt-10">
+			<Helmet>
+				<title>{t('projects:page.title', { count: PROJECTS.length })}</title>
+				<meta name="description" content={t('projects:page.description')} />
+			</Helmet>
 			<header className="space-y-1">
 				<h1 className="text-4xl md:text-6xl uppercase font-bold">
 					<span className="gradient-text">{t('projects:title.0')}</span>

@@ -9,6 +9,8 @@ import { useSplashScreen } from '@/state/splash-screen'
 import { twMerge } from 'tailwind-merge'
 import Footer from '@/components/footer'
 import { Header } from '@/components/header/header'
+import { NuqsAdapter } from 'nuqs/adapters/react-router/v7'
+import { HelmetProvider } from 'react-helmet-async'
 
 export default function Layout() {
 	const location = useLocation()
@@ -27,7 +29,8 @@ export default function Layout() {
 
 	useEffect(() => {
 		if (location.pathname !== '/') return
-		if (location.hash === '') window.location.replace(`${location.pathname}#home`)
+		if (location.hash === '')
+			window.location.replace(`${location.pathname}#home`)
 		setActive(`/${document.location.hash}`)
 	}, [location, setActive])
 
@@ -51,13 +54,17 @@ export default function Layout() {
 	})
 
 	return (
-		<div className={twMerge(isShowing && 'pointer-events-none')}>
-			<style>{themes}</style>
-			<SplashScreen />
-			<SideMenu />
-			<Header />
-			<Outlet />
-			<Footer />
-		</div>
+		<NuqsAdapter>
+			<HelmetProvider>
+				<div className={twMerge(isShowing && 'pointer-events-none')}>
+					<style>{themes}</style>
+					<SplashScreen />
+					<SideMenu />
+					<Header />
+					<Outlet />
+					<Footer />
+				</div>
+			</HelmetProvider>
+		</NuqsAdapter>
 	)
 }

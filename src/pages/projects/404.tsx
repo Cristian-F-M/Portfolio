@@ -1,5 +1,6 @@
 import { IconWorldExclamation } from '@tabler/icons-react'
 import { Fragment, useCallback } from 'react'
+import { Helmet } from 'react-helmet-async'
 import { useTranslation } from 'react-i18next'
 import { useLocation, useNavigate } from 'react-router'
 
@@ -15,6 +16,15 @@ export default function ProjectNotFound() {
 
 	return (
 		<Fragment>
+			<Helmet>
+				<title>404 | {t('projects:404.errors.404.code')}</title>
+				<meta
+					name="description"
+					content={t('projects:404.errors.404.description', {
+						joinArrays: true
+					})}
+				/>
+			</Helmet>
 			<main className="flex flex-1 justify-between mt-8">
 				<section>
 					<div className="bg-surface-soft p-6 rounded-lg size-fit max-w-87.5">
