@@ -15,7 +15,7 @@ export default function DesktopHeader({
 	const { active } = useNav()
 	const navRef = useRef<HTMLElement>(null)
 	const navIndicatorRef = useRef<HTMLSpanElement>(null)
-	let activeLinkTimeout: number | undefined
+	let activeLinkTimeout: NodeJS.Timeout | undefined
 
 	const moveAnchorIndicator = useCallback(
 		(id?: string) => {
