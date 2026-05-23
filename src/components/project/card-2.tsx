@@ -36,11 +36,13 @@ export default function Card2({ className, project, ...props }: CardProps) {
 				)}
 			</div>
 
-			<Badge
-				className="absolute top-2 right-2 border border-border-subtle text-[10px] font-jet-brains"
-				variant="skill">
-				{project.latest_version}
-			</Badge>
+			{project.latest_version && (
+				<Badge
+					className="absolute top-2 right-2 border border-border-subtle text-[10px] font-jet-brains"
+					variant="skill">
+					{project.latest_version}
+				</Badge>
+			)}
 
 			<main className="p-5 space-y-2">
 				<h2 className="uppercase font-jet-brains text-2xl">

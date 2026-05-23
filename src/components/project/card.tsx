@@ -68,9 +68,11 @@ export default function Card({ project, className, ...props }: CardProps) {
 							stroke={1.5}
 						/>
 					</Link>
-					<span className="text-[10px] text-text-muted font-jet-brains">
-						V{project.latest_version} {'//'} {project.release_year}
-					</span>
+					{project.latest_version && (
+						<span className="text-[10px] text-text-muted font-jet-brains">
+							V{project.latest_version} {'//'} {project.release_year}
+						</span>
+					)}
 				</footer>
 			</main>
 		</div>
