@@ -1,0 +1,33 @@
+{
+	"view_detail": "view_detail",
+	"status": {
+		"active": "Active",
+		"inactive": "Inactive"
+	},
+	"language": "English",
+	"404": {
+		"title": "navigation_error // sector_not_found",
+		"description": [
+			"You have reached the edge of the",
+			"neural lattice",
+			". The requested sector does not exist in the current architecture."
+		],
+		"cards": [
+			{
+				"badge": "status_code",
+				"title": "error_code: 0x404_not_found"
+			},
+			{
+				"badge": "coordinate_log",
+				"title": "location: unknown_sector"
+			},
+			{
+				"badge": "protocol_stack",
+				"title": "recovery_mode: active"
+			}
+		],
+		"re_establish_connection": "re_establish",
+		"go_to_main_page": "go_to_main_page",
+		"system_offline": "system_offline"
+	}
+}

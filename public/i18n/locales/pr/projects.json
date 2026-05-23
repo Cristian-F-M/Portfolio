@@ -1,0 +1,110 @@
+{
+  "404": {
+    "title": "Não conseguimos encontrar o projeto pesquisado 😔...",
+    "description": "",
+    "reboot": "reiniciar",
+    "re_establish_connection": "Restabelecer_conexão",
+    "report_glitch": "Reportar_falha",
+    "error_code": "error_code",
+    "errors": {
+      "404": {
+        "code": "Not_found",
+        "title": "Link_establishment_failed",
+        "description": [
+          "Artefato não encontrado no setor atual.",
+          "A coordenada solicitada",
+          "({{id}})",
+          "não existe na rede neural ativa."
+        ]
+      }
+    }
+  },
+  "no_projects_found": {
+    "title": [
+      "no_match_artifacts",
+      "{{count}}_resultados_encontrados"
+    ],
+    "description": "Os parâmetros de filtro atuais não produziram dados na rede neural ativa.",
+    "reset_filters": "limpar_filtros"
+  },
+  "page": {
+    "title": "Projetos de Cristian Morales | {{count}} projetos",
+    "description": "Um registro abrangente de experimentos computacionais, padrões arquitetônicos e implantações de nível de produção em toda a fronteira sintética."
+  },
+  "page_id": {
+    "title": "Informações detalhadas sobre o projeto {{project_name}}"
+  },
+  "title": [
+    "intelligence",
+    "repository"
+  ],
+  "input": {
+    "placeholder": "query_project_id_..."
+  },
+  "search_result": [
+    "search_found // ",
+    "{{count}}",
+    "_records_indexed"
+  ],
+  "description": "Um registro abrangente de experimentos computacionais, padrões arquitetônicos e implantações de nível de produção em toda a fronteira sintética.",
+  "view_artifact": "Ver artefato",
+  "open_project": {
+    "cli": "Obter Ferramenta CLI",
+    "desktop": "Baixar App para Desktop",
+    "web": "Abrir App Online",
+    "mobile": "Baixar App Mobile"
+  },
+  "view_on_github": "Ver no GitHub",
+  "todo-cm": {
+    "title": "Todo CM",
+    "description": "O Todo CM é um aplicativo de gerenciamento de tarefas que vai além do convencional, com organização de pastas, notificações após um tempo definido ou em uma data específica, troca de tema, criação de tema automática ou manual, entre outras funções."
+  },
+  "solitario": {
+    "title": "Solitaire",
+    "description": "Clássico jogo de paciência desenvolvido em JavaScript que inclui contagem de movimentos, bem como opções de desfazer e refazer. Permite pausar e retomar o jogo a qualquer momento, bem como reiniciar o jogo atual ou iniciar um novo."
+  },
+  "touch": {
+    "title": "Touch",
+    "description": "Criar estruturas de arquivos complexas nunca foi tão fácil. @cmorales_/touch é uma ferramenta CLI poderosa que permite gerar diretórios e arquivos aninhados usando uma sintaxe simples e intuitiva."
+  },
+  "fast-emoji": {
+    "title": "Fast Emoji",
+    "description": "Se você quer acesso fácil a emojis, o Fast Emoji é para você. Basta pressionar Ctrl + . e um painel aparecerá onde você pode começar a digitar; os resultados serão filtrados automaticamente de acordo com sua pesquisa. Você pode usar o mouse ou as setas do teclado para escolher o emoji desejado, e com um clique ou pressionando Enter, o emoji será inserido e o texto da pesquisa será removido. Se quiser cancelar, simplesmente pressione Esc."
+  },
+  "vite-plugin-html-template": {
+    "title": "HTML template vite plugin",
+    "description": "@cmorales_/vite-plugin-html-template é um plugin para vite e principalmente para 'Vanilla' (sem framework específico, como React.js, Vue, Svelte, ...), com o qual você pode definir dentro da tag <template> como um componente, em seguida, pode usar a tag <x-template> (personalizável) e também adicionar atributos HTML (class, data-*, style, aria-*)"
+  },
+  "web-votaciones-v2": {
+    "title": "Votaciones V2 WEB",
+    "description": "Site para participar das votações do CGAO (SENA), criando perfis de candidatos e gerenciando os aspectos administrativos da aplicação."
+  },
+  "fast-scroll-chrome-extension": {
+    "title": "Fast Scroll",
+    "description": "Fast Scroll é uma extensão do Chrome que permite acelerar ou desacelerar a rolagem mantendo pressionada a tecla Alt. É perfeito para navegar rapidamente por páginas da web longas ou documentos extensos."
+  },
+  "api-votaciones-v2": {
+    "title": "Votaciones V2 API",
+    "description": "Uma API desenvolvida em JavaScript para gerenciar as votações do CGAO (SENA), permitindo requisições a partir do app mobile e do site; usando SQLite (ou MySQL) para o banco de dados"
+  },
+  "python-games-web": {
+    "title": "Python games",
+    "description": "Um site para mostrar jogos criados com Python, utilizando Pyodide para rodar código Python na web, além de modificações para permitir execução, usando elementos HTML para funções básicas como `print` e `input`"
+  },
+  "wordle": {
+    "title": "wordle",
+    "description": "Um jogo de adivinhação de palavras que permite várias tentativas e fornece ao usuário feedback por cores para cada letra correta."
+  },
+  "buscaminas": {
+    "title": "buscaminas",
+    "description": "Um clássico jogo Campo Minado feito com HTML, CSS e JavaScript, permitindo escolher o tamanho do tabuleiro e salvar preferências."
+  },
+  "astronomy-picture-day": {
+    "title": "Astronomy Picture Day",
+    "description": "Um site que faz uma solicitação para a API da NASA (astronomy-picture-day) para obter a imagem (ou vídeo) astronômica do dia ou de uma data específica, juntamente com a descrição."
+  },
+  "video-player": {
+    "title": "Video player",
+    "description": "Um site que permite enviar um vídeo do seu computador ou via URL para assistir, apresentando vários controles de navegação e configurações de visualização."
+  }
+}

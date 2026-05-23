@@ -1,0 +1,33 @@
+{
+  "view_detail": "voir_detail",
+  "status": {
+    "active": "Actif",
+    "inactive": "Inactif"
+  },
+  "language": "Français",
+  "404": {
+    "title": "navigation_error // sector_not_found",
+    "description": [
+      "Vous avez atteint la limite du",
+      "réseau neuronal",
+      ". Le secteur demandé n'existe pas dans l'architecture actuelle."
+    ],
+    "cards": [
+      {
+        "badge": "status_code",
+        "title": "error_code: 0x404_not_found"
+      },
+      {
+        "badge": "coordinate_log",
+        "title": "location: unknown_sector"
+      },
+      {
+        "badge": "protocol_stack",
+        "title": "recovery_mode: active"
+      }
+    ],
+    "re_establish_connection": "retablir",
+    "go_to_main_page": "aller_a_la_page_principale",
+    "system_offline": "systeme_hors_ligne"
+  }
+}

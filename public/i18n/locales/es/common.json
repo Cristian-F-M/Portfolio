@@ -1,0 +1,33 @@
+{
+	"view_detail": "ver_detalle",
+	"status": {
+		"active": "Activo",
+		"inactive": "Inactivo"
+	},
+	"language": "Inglés",
+	"404": {
+		"title": "error_de_navegación // sector_no_encontrado",
+		"description": [
+			"Has llegado al borde de la",
+			"rejilla neural",
+			". El sector solicitado no existe en la arquitectura actual."
+		],
+		"cards": [
+			{
+				"badge": "status_code",
+				"title": "error_code: 0x404_no_encontrado"
+			},
+			{
+				"badge": "coordinate_log",
+				"title": "location: sector_desconocido"
+			},
+			{
+				"badge": "protocol_stack",
+				"title": "recovery_mode: activo"
+			}
+		],
+		"re_establish_connection": "reestablecer_conexión",
+		"go_to_main_page": "ir_a_página_principal",
+		"system_offline": "sistema_offline"
+	}
+}

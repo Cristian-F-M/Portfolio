@@ -1,0 +1,33 @@
+{
+  "view_detail": "ver_detalhe",
+  "status": {
+    "active": "Ativo",
+    "inactive": "Inativo"
+  },
+  "language": "Português",
+  "404": {
+    "title": "navigation_error // sector_not_found",
+    "description": [
+      "Você atingiu o limite da",
+      "rede neural",
+      ". O setor solicitado não existe na arquitetura atual."
+    ],
+    "cards": [
+      {
+        "badge": "status_code",
+        "title": "error_code: 0x404_not_found"
+      },
+      {
+        "badge": "coordinate_log",
+        "title": "location: unknown_sector"
+      },
+      {
+        "badge": "protocol_stack",
+        "title": "recovery_mode: active"
+      }
+    ],
+    "re_establish_connection": "restabelecer",
+    "go_to_main_page": "ir_para_pagina_inicial",
+    "system_offline": "sistema_offline"
+  }
+}

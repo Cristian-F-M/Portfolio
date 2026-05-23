@@ -1,0 +1,130 @@
+{
+	"title": "Portafolio de Cristian Morales | Practicante de Desarrollo de Software",
+	"description": "Practicante de desarrollo de software enfocado en desarrollo web con habilidades en distintas plataformas como móvil y escritorio.",
+	"sections": {
+		"header": {
+			"links": {
+				"home": "Inicio",
+				"projects": "Proyectos",
+				"me": "Yo",
+				"contact": "Contacto"
+			}
+		},
+		"home": {
+			"available_for_hire": "Disponible_para_contratar",
+			"description": "Construyo experiencias digitales de alta calidad, escalables y visualmente atractivas en la intersección entre ingeniería y diseño visual.",
+			"view_projects": "Ver artefactos",
+			"contact_me": "Contáctame",
+			"achievements": {
+				"years_experience": "Años de experiencia",
+				"projects_done": "Proyectos completados",
+				"technologies_learned": "Tecnologías aprendidas"
+			},
+			"me_alt": "Foto frontal en fondo blanco de Cristian Morales con mirada seria y profunda, usando gafas que reflejan ligeramente luz azul."
+		},
+		"projects": {
+			"deployment_logs": "Registros de despliegue",
+			"featured_projects": [
+				"Proyectos",
+				"destacados"
+			],
+			"generic_image_alt": "Imagen del proyecto, mostrando la aplicación en acción",
+			"description": "Explorando la intersección entre arquitectura de alto rendimiento e interfaces visuales inmersivas. Cada artefacto refleja mi conocimiento y dedicación ♥.",
+			"see_more_artifacts": "Ver más artefactos",
+			"operational_system": "Sistema_Operativo"
+		},
+		"me": {
+			"operational_status": "Estado_Operativo",
+			"title": [
+				"¿Quién",
+				"soy?"
+			],
+			"description": "Diseño ecosistemas digitales donde el rendimiento se encuentra con la precisión. Mi enfoque va más allá del código: resuelvo desafíos estructurales complejos con soluciones de ingeniería.",
+			"cards": {
+				"philosophy": {
+					"title": "Filosofía",
+					"description": "El código es una responsabilidad; los sistemas son un activo. Diseñé para longevidad y escalabilidad."
+				},
+				"focus": {
+					"title": "Enfoque",
+					"description": "Optimización obsesiva de caminos críticos y arquitectura de alta disponibilidad."
+				}
+			},
+			"technical_stack": {
+				"title": "Stack técnico",
+				"description": "Aprovechando tecnologías primitivas modernas para construir sistemas distribuidos y resilientes.",
+				"frontend_layer": "Capa Frontend",
+				"core_engine": "Ingeniería Central",
+				"mobile": "Móvil",
+				"infrastructure": {
+					"title": "Infraestructura",
+					"description": "Pipelines automatizados y despliegues nativos en la nube para lanzamientos sin tiempo de inactividad."
+				}
+			},
+			"how_i_build": {
+				"title": [
+					"¿Cómo",
+					"construyo?"
+				],
+				"cards": {
+					"planning": {
+						"title": "Planificación",
+						"description": "Descubrimiento, mapeo de la experiencia del usuario y definición del alcance de requisitos."
+					},
+					"architecture": {
+						"title": "Arquitectura",
+						"description": "Diseño del sistema, modelado de datos y definición de esquema."
+					},
+					"development": {
+						"title": "Desarrollo",
+						"description": "Implementación impulsada por pruebas con código limpio y documentado."
+					},
+					"optimization": {
+						"title": "Optimización",
+						"description": "Ajuste de rendimiento, pruebas de estrés y despliegue."
+					}
+				}
+			}
+		},
+		"lets_build": {
+			"title": [
+				"Construyamos",
+				"algo grande"
+			],
+			"description": "Disponible para colaboraciones innovadoras y desafíos técnicos. Envía un mensaje para iniciar el proceso arquitectónico.",
+			"click_here": "Haz clic aquí",
+			"form": {
+				"required": "El campo es obligatorio",
+				"name": {
+					"name": "Nombre",
+					"placeholder": "Juan Pérez",
+					"error": {
+						"required": "El campo \"nombre\" es obligatorio",
+						"min": "El campo \"nombre\" debe tener al menos 2 caracteres"
+					}
+				},
+				"email": {
+					"name": "Correo electrónico",
+					"placeholder": "juan@gmail.com",
+					"error": {
+						"required": "El campo \"correo electrónico\" es obligatorio",
+						"valid": "El campo \"correo electrónico\" debe ser un correo válido"
+					}
+				},
+				"message": {
+					"name": "Mensaje",
+					"placeholder": "Describe los parámetros del proyecto",
+					"error": {
+						"required": "El campo \"mensaje\" es obligatorio",
+						"min": "El campo \"mensaje\" debe tener al menos 10 caracteres"
+					}
+				},
+				"initiate_contact": "Iniciar contacto"
+			},
+			"virtual_presence": {
+				"title": "Presencia_virtual",
+				"coordinates": "Coordenadas"
+			},
+			"sending": "Enviando..."
+		},
+		"footer": {

@@ -1,0 +1,33 @@
+{
+  "view_detail": "查看详情",
+  "status": {
+    "active": "活跃",
+    "inactive": "不活跃"
+  },
+  "language": "中文",
+  "404": {
+    "title": "navigation_error // sector_not_found",
+    "description": [
+      "您已到达神经网络的",
+      "边缘",
+      "。请求的扇区在当前架构中不存在。"
+    ],
+    "cards": [
+      {
+        "badge": "status_code",
+        "title": "error_code: 0x404_not_found"
+      },
+      {
+        "badge": "coordinate_log",
+        "title": "location: unknown_sector"
+      },
+      {
+        "badge": "protocol_stack",
+        "title": "recovery_mode: active"
+      }
+    ],
+    "re_establish_connection": "重新建立连接",
+    "go_to_main_page": "返回主页",
+    "system_offline": "系统离线"
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "title": "Portfólio Cristian Morales | Estagiário em Desenvolvimento de Software",
+  "description": "Estagiário em desenvolvimento de software com foco em web, possuindo habilidades em diferentes plataformas como Mobile e Desktop.",
+  "sections": {
+    "header": {
+      "links": {
+        "home": "Início",
+        "projects": "Projetos",
+        "me": "Sobre Mim",
+        "contact": "Contato"
+      }
+    },
+    "home": {
+      "available_for_hire": "Disponível_para_contratação",
+      "description": "Construo experiências digitais de alta qualidade, escaláveis e visualmente atraentes na interseção entre engenharia e design visual.",
+      "view_projects": "Ver artefatos",
+      "contact_me": "Entre em contato",
+      "achievements": {
+        "years_experience": "Anos de experiência",
+        "projects_done": "Projetos concluídos",
+        "technologies_learned": "Tecnologias aprendidas"
+      },
+      "me_alt": "Foto de rosto num fundo branco de Cristian Morales com um olhar sério e profundo, usando óculos que refletem levemente uma luz azul."
+    },
+    "projects": {
+      "deployment_logs": "Logs de implantação",
+      "featured_projects": [
+        "Projetos",
+        "destaque"
+      ],
+      "generic_image_alt": "Imagem do projeto, mostrando o aplicativo em ação",
+      "description": "Explorando a interseção entre arquitetura de alta performance e interfaces visuais imersivas. Cada artefato reflete meu conhecimento e dedicação ♥.",
+      "see_more_artifacts": "Ver mais artefatos",
+      "operational_system": "Sistema_Operacional"
+    },
+    "me": {
+      "operational_status": "Status_Operacional",
+      "title": [
+        "Quem",
+        "sou eu?"
+      ],
+      "description": "Projeto ecossistemas digitais onde o desempenho encontra a precisão. Minha abordagem vai além de codificar—resolvo desafios estruturais complexos com soluções de engenharia.",
+      "cards": {
+        "philosophy": {
+          "title": "Filosofia",
+          "description": "Código é um passivo; sistemas são um ativo. Projeto para longevidade e escalabilidade."
+        },
+        "focus": {
+          "title": "Foco",
+          "description": "Otimização obsessiva de caminhos críticos e arquitetura de alta disponibilidade."
+        }
+      },
+      "technical_stack": {
+        "title": "Pilha tecnológica",
+        "description": "Aproveitando tecnologias primitivas modernas para construir sistemas distribuídos e resilientes.",
+        "frontend_layer": "Camada frontend",
+        "core_engine": "Engenharia principal",
+        "mobile": "Mobile",
+        "infrastructure": {
+          "title": "Infraestrutura",
+          "description": "Pipelines automatizados e implantações nativas na nuvem para lançamentos sem tempo de inatividade."
+        }
+      },
+      "how_i_build": {
+        "title": [
+          "Como",
+          "eu construo?"
+        ],
+        "cards": {
+          "planning": {
+            "title": "Planejamento",
+            "description": "Descoberta, mapeamento da jornada do usuário e definição do escopo de requisitos."
+          },
+          "architecture": {
+            "title": "Arquitetura",
+            "description": "Design de sistema, modelagem de dados e definição de esquema."
+          },
+          "development": {
+            "title": "Desenvolvimento",
+            "description": "Implementação guiada por testes (TDD) com código limpo e documentado."
+          },
+          "optimization": {
+            "title": "Otimização",
+            "description": "Ajuste de performance, testes de estresse e implantação."
+          }
+        }
+      }
+    },
+    "lets_build": {
+      "title": [
+        "Vamos construir",
+        "algo incrível"
+      ],
+      "description": "Disponível para colaborações inovadoras e desafios técnicos. Envie uma mensagem para iniciar o processo arquitetônico.",
+      "click_here": "Clique aqui",
+      "form": {
+        "required": "Campo obrigatório",
+        "name": {
+          "name": "Nome",
+          "placeholder": "João da Silva",
+          "error": {
+            "required": "O campo \"nome\" é obrigatório",
+            "min": "O campo \"nome\" deve ter pelo menos 2 caracteres"
+          }
+        },
+        "email": {
+          "name": "E-mail",
+          "placeholder": "joao@gmail.com",
+          "error": {
+            "required": "O campo \"e-mail\" é obrigatório",
+            "valid": "O campo \"e-mail\" deve ser um e-mail válido"
+          }
+        },
+        "message": {
+          "name": "Mensagem",
+          "placeholder": "Descreva os parâmetros do projeto",
+          "error": {
+            "required": "O campo \"mensagem\" é obrigatório",
+            "min": "O campo \"mensagem\" deve ter pelo menos 10 caracteres"
+          }
+        },
+        "initiate_contact": "Iniciar contato"
+      },
+      "virtual_presence": {
+        "title": "Presença_virtual",
+        "coordinates": "Coordenadas"
+      },
+      "sending": "Enviando..."
+    },
+    "footer": {
+      "architected_by": "Architected_by_CMORALES"
+    }
+  }
+}

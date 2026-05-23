@@ -1,0 +1,110 @@
+{
+	"404": {
+		"title": "We could not find the searched project 😔...",
+		"description": "",
+		"reboot": "reboot",
+		"re_establish_connection": "Re_establish_connection",
+		"report_glitch": "Report_glitch",
+		"error_code": "error_code",
+		"errors": {
+			"404": {
+				"code": "Not_found",
+				"title": "Link_establishment_failed",
+				"description": [
+					"Artifact not found in current sector.",
+					"The requested coordinate",
+					"({{id}})",
+					"does not exist in the active neural lattice."
+				]
+			}
+		}
+	},
+	"no_projects_found": {
+		"title": [
+			"no_match_artifacts",
+			"{{count}}_results_found"
+		],
+		"description": "The current filter parameters yielded no data in the active neural lattice.",
+		"reset_filters": "reset_filters"
+	},
+	"page": {
+		"title": "Cristian Morales Projects | {{count}} projects",
+		"description": "A comprehensive log of computational experiments, architectural patterns, and production-grade deployments across the synthetic frontier."
+	},
+	"page_id": {
+		"title": "Detailed information about the project {{project_name}}"
+	},
+	"title": [
+		"intelligence",
+		"repository"
+	],
+	"input": {
+		"placeholder": "query_project_id_..."
+	},
+	"search_result": [
+		"search_found // ",
+		"{{count}}",
+		"_records_indexed"
+	],
+	"description": "A comprehensive log of computational experiments, architectural patterns, and production-grade deployments across the synthetic frontier.",
+	"view_artifact": "View artifact",
+	"open_project": {
+		"cli": "Get CLI Tool",
+		"desktop": "Download Desktop App",
+		"web": "Open Live App",
+		"mobile": "Dowload Mobile App"
+	},
+	"view_on_github": "View on GitHub",
+	"todo-cm": {
+		"title": "Todo CM",
+		"description": "Todo CM is a task management application that goes beyond the conventional, featuring folder organization, notifications after a set time or on a specific date, theme switching, automatic or manual theme creation, among other functions."
+	},
+	"solitario": {
+		"title": "Solitaire",
+		"description": "Classic solitaire game developed in JavaScript that includes move counting, as well as undo and redo options. It allows you to pause and resume the game at any time, as well as restart the current game or start a new one."
+	},
+	"touch": {
+		"title": "Touch",
+		"description": "Creating complex file structures has never been easier. @cmorales_/touch is a powerful CLI tool that lets you generate nested directories and files using a simple and intuitive syntax."
+	},
+	"fast-emoji": {
+		"title": "Fast Emoji",
+		"description": "If you want easy access to emojis, Fast Emoji is for you. Just press Ctrl + . and a panel will appear where you can start typing; results will automatically be filtered according to your search. You can use the mouse or keyboard arrows to choose the emoji you want, and with a click or by pressing Enter, the emoji will be inserted and the search text will be removed. If you want to cancel, simply press Esc."
+	},
+	"vite-plugin-html-template": {
+		"title": "HTML template vite plugin",
+		"description": "@cmorales_/vite-plugin-html-template is a plugin for vite and mainly for 'Vanilla' (without specific framework, like React.js, Vue, Svelte, ...), with which you can define within the <template> tag as a component, then you can use the <x-template> tag (customizable) and also add HTML attributes (class, data-*, style, aria-*)"
+	},
+	"web-votaciones-v2": {
+		"title": "Votaciones V2 WEB",
+		"description": "Website for participating in CGAO (SENA) voting, creating candidate profiles, and managing the administrative aspects of the application."
+	},
+	"fast-scroll-chrome-extension": {
+		"title": "Fast Scroll",
+		"description": "Fast Scroll is a Chrome extension that lets you speed up or slow down scrolling by holding down the Alt key. It's perfect for quickly navigating long web pages or lengthy documents."
+	},
+	"api-votaciones-v2": {
+		"title": "Votaciones V2 API",
+		"description": "An API developed in JavaScript to manage voting for the CGAO (SENA), allowing requests to be made from both the mobile app and the website; using SQLite (or MySQL) for the database"
+	},
+	"python-games-web": {
+		"title": "Python games",
+		"description": "A website to showcase games created using Python, utilizing Pyodide to run Python code on the web, along with modifications to enable execution, using HTML elements to perform basic functions such as `print` and `input`"
+	},
+	"wordle": {
+		"title": "wordle",
+		"description": "A word-guessing game that allows multiple attempts and provides the user with color-coded feedback for each correct letter."
+	},
+	"buscaminas": {
+		"title": "buscaminas",
+		"description": "A classic Minesweeper game built using HTML, CSS, and JavaScript, allowing you to choose the board size and save your preferences."
+	},
+	"astronomy-picture-day": {
+		"title": "Astronomy Picture Day",
+		"description": "A website that makes a request to NASA's API (astronomy-picture-day) to retrieve the astronomical image (or video) of the day or for a specific date, along with a description of the image"
+	},
+	"video-player": {
+		"title": "Video player",
+		"description": "A website that allows you to upload a video from your computer or via a URL to view it, featuring various controls for navigating the video, as well as settings for viewing the video."
+	}
+}

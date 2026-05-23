@@ -1,0 +1,134 @@
+{
+  "title": "Cristian Morales Portfolio | 软件开发实习生",
+  "description": "专注于 Web 开发的软件开发实习生，具备移动和桌面等不同平台的技能。",
+  "sections": {
+    "header": {
+      "links": {
+        "home": "首页",
+        "projects": "项目",
+        "me": "关于我",
+        "contact": "联系"
+      }
+    },
+    "home": {
+      "available_for_hire": "可受聘",
+      "description": "我在工程与视觉设计的交汇处构建高质量、可扩展且具有视觉吸引力的数字体验。",
+      "view_projects": "查看产物",
+      "contact_me": "联系我",
+      "achievements": {
+        "years_experience": "年经验",
+        "projects_done": "完成的项目",
+        "technologies_learned": "掌握的技术"
+      },
+      "me_alt": "白色背景上 Cristian Morales 的正脸照片，目光严肃深邃，戴着轻微反射蓝光的眼镜。"
+    },
+    "projects": {
+      "deployment_logs": "部署日志",
+      "featured_projects": [
+        "精选",
+        "项目"
+      ],
+      "generic_image_alt": "项目图片，显示应用程序运行中的状态",
+      "description": "探索高性能架构与沉浸式视觉界面的交汇点。每个产物都反映了我的知识和奉献 ♥。",
+      "see_more_artifacts": "查看更多产物",
+      "operational_system": "操作系统"
+    },
+    "me": {
+      "operational_status": "运行状态",
+      "title": [
+        "我是",
+        "谁？"
+      ],
+      "description": "我设计性能与精度完美结合的数字生态系统。我的方法超越了编码——我用工程解决方案解决复杂的结构挑战。",
+      "cards": {
+        "philosophy": {
+          "title": "理念",
+          "description": "代码是负债；系统是资产。我为持久性和可扩展性进行设计。"
+        },
+        "focus": {
+          "title": "重点",
+          "description": "对关键路径和高可用性架构的痴迷优化。"
+        }
+      },
+      "technical_stack": {
+        "title": "技术栈",
+        "description": "利用现代基础技术构建分布式和弹性系统。",
+        "frontend_layer": "前端层",
+        "core_engine": "核心工程",
+        "mobile": "移动端",
+        "infrastructure": {
+          "title": "基础设施",
+          "description": "用于零停机发布的自动化流水线和云原生部署。"
+        }
+      },
+      "how_i_build": {
+        "title": [
+          "我如何",
+          "构建？"
+        ],
+        "cards": {
+          "planning": {
+            "title": "规划",
+            "description": "发现、用户旅程映射和需求范围定义。"
+          },
+          "architecture": {
+            "title": "架构",
+            "description": "系统设计、数据建模和模式定义。"
+          },
+          "development": {
+            "title": "开发",
+            "description": "测试驱动的实现，拥有干净并带有文档的代码。"
+          },
+          "optimization": {
+            "title": "优化",
+            "description": "性能调优、压力测试和部署。"
+          }
+        }
+      }
+    },
+    "lets_build": {
+      "title": [
+        "让我们构建",
+        "伟大的事物"
+      ],
+      "description": "可进行创新合作和应对技术挑战。发送消息以开始架构过程。",
+      "click_here": "点击这里",
+      "form": {
+        "required": "此字段为必填项",
+        "name": {
+          "name": "姓名",
+          "placeholder": "约翰·多伊",
+          "error": {
+            "required": "“姓名”字段为必填项",
+            "min": "“姓名”字段至少包含 2 个字符"
+          }
+        },
+        "email": {
+          "name": "电子邮件",
+          "placeholder": "john@gmail.com",
+          "error": {
+            "required": "“电子邮件”字段为必填项",
+            "valid": "“电子邮件”字段必须是有效的电子邮件"
+          }
+        },
+        "message": {
+          "name": "消息",
+          "placeholder": "描述项目参数",
+          "error": {
+            "required": "“消息”字段为必填项",
+            "min": "“消息”字段至少包含 10 个字符"
+          }
+        },
+        "initiate_contact": "发起联系"
+      },
+      "virtual_presence": {
+        "title": "虚拟状态",
+        "coordinates": "坐标"
+      },
+      "sending": "发送中..."
+    },
+    "footer": {
+      "architected_by": "Architected_by_CMORALES"
+    }
+  }
+}

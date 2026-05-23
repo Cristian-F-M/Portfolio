@@ -1,0 +1,134 @@
+{
+  "title": "Portfolio Cristian Morales | Stagiaire en Développement Logiciel",
+  "description": "Stagiaire en développement logiciel concentré sur le développement web avec des compétences sur différentes plateformes telles que Mobile et Desktop.",
+  "sections": {
+    "header": {
+      "links": {
+        "home": "Accueil",
+        "projects": "Projets",
+        "me": "Moi",
+        "contact": "Contact"
+      }
+    },
+    "home": {
+      "available_for_hire": "Disponible_pour_embauche",
+      "description": "Je crée des expériences numériques de haute qualité, évolutives et visuellement attrayantes à l'intersection de l'ingénierie et du design visuel.",
+      "view_projects": "Voir les artefacts",
+      "contact_me": "Me contacter",
+      "achievements": {
+        "years_experience": "Années d'expérience",
+        "projects_done": "Projets réalisés",
+        "technologies_learned": "Technologies apprises"
+      },
+      "me_alt": "Photo de face sur fond blanc de Cristian Morales avec un regard profond et sérieux, portant des lunettes reflétant légèrement la lumière bleue."
+    },
+    "projects": {
+      "deployment_logs": "Journaux de déploiement",
+      "featured_projects": [
+        "Projets",
+        "vedettes"
+      ],
+      "generic_image_alt": "Image du projet, montrant l'application en action",
+      "description": "Exploration de l'intersection entre l'architecture de haute performance et les interfaces visuelles immersives. Chaque artefact reflète mes connaissances et mon dévouement ♥.",
+      "see_more_artifacts": "Voir d'autres artefacts",
+      "operational_system": "Système_Opérationnel"
+    },
+    "me": {
+      "operational_status": "Statut_Opérationnel",
+      "title": [
+        "Qui",
+        "suis-je ?"
+      ],
+      "description": "Je conçois des écosystèmes numériques où la performance rencontre la précision. Mon approche va au-delà du codage—je résous des défis structurels complexes avec des solutions d'ingénierie.",
+      "cards": {
+        "philosophy": {
+          "title": "Philosophie",
+          "description": "Le code est un passif ; les systèmes sont un actif. Je conçois pour la longévité et l'évolutivité."
+        },
+        "focus": {
+          "title": "Objectif",
+          "description": "Optimisation obsessionnelle des chemins critiques et de l'architecture haute disponibilité."
+        }
+      },
+      "technical_stack": {
+        "title": "Pile technique",
+        "description": "Utilisation de technologies primitives modernes pour construire des systèmes distribués et résilients.",
+        "frontend_layer": "Couche frontend",
+        "core_engine": "Ingénierie de base",
+        "mobile": "Mobile",
+        "infrastructure": {
+          "title": "Infrastructure",
+          "description": "Pipelines automatisés et déploiements cloud-native pour des lancements sans interruption."
+        }
+      },
+      "how_i_build": {
+        "title": [
+          "Comment",
+          "est-ce que je construis ?"
+        ],
+        "cards": {
+          "planning": {
+            "title": "Planification",
+            "description": "Découverte, cartographie du parcours utilisateur et définition de la portée des exigences."
+          },
+          "architecture": {
+            "title": "Architecture",
+            "description": "Conception de système, modélisation de données et définition de schéma."
+          },
+          "development": {
+            "title": "Développement",
+            "description": "Mise en œuvre pilotée par les tests avec un code propre et documenté."
+          },
+          "optimization": {
+            "title": "Optimisation",
+            "description": "Ajustement des performances, tests de stress et déploiement."
+          }
+        }
+      }
+    },
+    "lets_build": {
+      "title": [
+        "Construisons",
+        "quelque chose de grand"
+      ],
+      "description": "Disponible pour des collaborations innovantes et des défis techniques. Envoyez un message pour commencer le processus architectural.",
+      "click_here": "Cliquez ici",
+      "form": {
+        "required": "Le champ est obligatoire",
+        "name": {
+          "name": "Nom",
+          "placeholder": "Jean Dupont",
+          "error": {
+            "required": "Le champ \"nom\" est obligatoire",
+            "min": "Le champ \"nom\" doit comporter au moins 2 caractères"
+          }
+        },
+        "email": {
+          "name": "E-mail",
+          "placeholder": "jean@gmail.com",
+          "error": {
+            "required": "Le champ \"e-mail\" est obligatoire",
+            "valid": "Le champ \"e-mail\" doit être un e-mail valide"
+          }
+        },
+        "message": {
+          "name": "Message",
+          "placeholder": "Décrivez les paramètres du projet",
+          "error": {
+            "required": "Le champ \"message\" est obligatoire",
+            "min": "Le champ \"message\" doit comporter au moins 10 caractères"
+          }
+        },
+        "initiate_contact": "Initier le contact"
+      },
+      "virtual_presence": {
+        "title": "Présence_virtuelle",
+        "coordinates": "Coordonnées"
+      },
+      "sending": "Envoi en cours..."
+    },
+    "footer": {
+      "architected_by": "Architected_by_CMORALES"
+    }
+  }
+}

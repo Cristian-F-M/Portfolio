@@ -1,0 +1,110 @@
+{
+  "404": {
+    "title": "Nous n'avons pas pu trouver le projet recherché 😔...",
+    "description": "",
+    "reboot": "redémarrer",
+    "re_establish_connection": "Rétablir_connexion",
+    "report_glitch": "Signaler_problème",
+    "error_code": "error_code",
+    "errors": {
+      "404": {
+        "code": "Not_found",
+        "title": "Link_establishment_failed",
+        "description": [
+          "Artefact introuvable dans le secteur actuel.",
+          "La coordonnée demandée",
+          "({{id}})",
+          "n'existe pas dans le réseau neuronal actif."
+        ]
+      }
+    }
+  },
+  "no_projects_found": {
+    "title": [
+      "no_match_artifacts",
+      "{{count}}_résultats_trouvés"
+    ],
+    "description": "Les paramètres de filtre actuels n'ont produit aucune donnée dans le réseau neuronal actif.",
+    "reset_filters": "réinitialiser_filtres"
+  },
+  "page": {
+    "title": "Projets de Cristian Morales | {{count}} projets",
+    "description": "Un journal complet des expériences informatiques, des modèles architecturaux et des déploiements de niveau production à travers la frontière synthétique."
+  },
+  "page_id": {
+    "title": "Informations détaillées sur le projet {{project_name}}"
+  },
+  "title": [
+    "intelligence",
+    "repository"
+  ],
+  "input": {
+    "placeholder": "query_project_id_..."
+  },
+  "search_result": [
+    "search_found // ",
+    "{{count}}",
+    "_records_indexed"
+  ],
+  "description": "Un journal complet des expériences informatiques, des modèles architecturaux et des déploiements de niveau production à travers la frontière synthétique.",
+  "view_artifact": "Voir l'artefact",
+  "open_project": {
+    "cli": "Obtenir l'outil CLI",
+    "desktop": "Télécharger l'App Bureau",
+    "web": "Ouvrir l'App en Ligne",
+    "mobile": "Télécharger l'App Mobile"
+  },
+  "view_on_github": "Voir sur GitHub",
+  "todo-cm": {
+    "title": "Todo CM",
+    "description": "Todo CM est une application de gestion des tâches qui va au-delà du conventionnel, offrant une organisation par dossiers, des notifications après un temps défini ou à une date précise, le changement de thème, la création automatique ou manuelle de thèmes, parmi d'autres fonctions."
+  },
+  "solitario": {
+    "title": "Solitaire",
+    "description": "Jeu de solitaire classique développé en JavaScript qui inclut le comptage des mouvements, ainsi que des options d'annulation et de rétablissement. Il permet de mettre en pause et de reprendre le jeu à tout moment, ainsi que de recommencer la partie en cours ou d'en commencer une nouvelle."
+  },
+  "touch": {
+    "title": "Touch",
+    "description": "La création de structures de fichiers complexes n'a jamais été aussi simple. @cmorales_/touch est un puissant outil CLI qui vous permet de générer des répertoires et des fichiers imbriqués en utilisant une syntaxe simple et intuitive."
+  },
+  "fast-emoji": {
+    "title": "Fast Emoji",
+    "description": "Si vous souhaitez un accès facile aux emojis, Fast Emoji est fait pour vous. Appuyez simplement sur Ctrl + . et un panneau apparaîtra où vous pourrez commencer à taper ; les résultats seront automatiquement filtrés selon votre recherche. Vous pouvez utiliser la souris ou les flèches pour choisir l'emoji souhaité, et avec un clic ou en appuyant sur Entrée, l'emoji sera inséré et le texte de recherche effacé. Si vous souhaitez annuler, appuyez simplement sur Échap."
+  },
+  "vite-plugin-html-template": {
+    "title": "HTML template vite plugin",
+    "description": "@cmorales_/vite-plugin-html-template est un plugin pour vite et principalement pour 'Vanilla' (sans framework spécifique, comme React.js, Vue, Svelte, ...), avec lequel vous pouvez définir dans la balise <template> en tant que composant, puis vous pouvez utiliser la balise <x-template> (personnalisable) et également ajouter des attributs HTML (class, data-*, style, aria-*)"
+  },
+  "web-votaciones-v2": {
+    "title": "Votaciones V2 WEB",
+    "description": "Site Web pour participer aux votes du CGAO (SENA), créer des profils de candidats et gérer les aspects administratifs de l'application."
+  },
+  "fast-scroll-chrome-extension": {
+    "title": "Fast Scroll",
+    "description": "Fast Scroll est une extension Chrome qui vous permet d'accélérer ou de ralentir le défilement en maintenant la touche Alt enfoncée. C'est parfait pour naviguer rapidement dans de longues pages Web ou de longs documents."
+  },
+  "api-votaciones-v2": {
+    "title": "Votaciones V2 API",
+    "description": "Une API développée en JavaScript pour gérer le vote pour le CGAO (SENA), permettant de faire des requêtes à la fois depuis l'application mobile et le site Web ; utilisant SQLite (ou MySQL) pour la base de données"
+  },
+  "python-games-web": {
+    "title": "Python games",
+    "description": "Un site Web pour présenter des jeux créés avec Python, utilisant Pyodide pour exécuter du code Python sur le Web, ainsi que des modifications pour permettre l'exécution, en utilisant des éléments HTML pour effectuer des fonctions basiques comme `print` et `input`"
+  },
+  "wordle": {
+    "title": "wordle",
+    "description": "Un jeu de devinettes de mots qui permet plusieurs tentatives et fournit à l'utilisateur des indications par couleurs pour chaque lettre correcte."
+  },
+  "buscaminas": {
+    "title": "buscaminas",
+    "description": "Un jeu classique du Démineur construit en utilisant HTML, CSS et JavaScript, vous permettant de choisir la taille de la grille et de sauvegarder vos préférences."
+  },
+  "astronomy-picture-day": {
+    "title": "Astronomy Picture Day",
+    "description": "Un site Web qui fait une requête à l'API de la NASA (astronomy-picture-day) pour récupérer l'image (ou la vidéo) astronomique du jour ou pour une date spécifique, ainsi qu'une description de l'image"
+  },
+  "video-player": {
+    "title": "Video player",
+    "description": "Un site Web qui vous permet de télécharger un vidéo depuis votre ordinateur ou via une URL pour le visionner, proposant divers contrôles pour la navigation vidéo, ainsi que des paramètres pour l'affichage."
+  }
+}
