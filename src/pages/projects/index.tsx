@@ -6,13 +6,16 @@ import { TypeObj } from '@/constants/projects'
 import useNav from '@/state/nav'
 import { deepSearch } from '@/utils/global'
 import { IconSearch } from '@tabler/icons-react'
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { twMerge } from 'tailwind-merge'
+import { useQueryState } from 'nuqs'
 
 export default function ProjectsPage() {
-	const [filterBy, setFilterBy] = useState('all')
-	const [query, setQuery] = useState('')
+	const [filterBy, setFilterBy] = useQueryState('filterBy', {
+		defaultValue: 'all'
+	})
+	const [query, setQuery] = useQueryState('query', { defaultValue: '' })
 	const { t } = useTranslation()
 	const { setActive } = useNav()
 
