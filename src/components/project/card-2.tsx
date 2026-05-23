@@ -49,13 +49,14 @@ export default function Card2({ className, project, ...props }: CardProps) {
 					{t(`projects:${project.name}.title`)}
 				</h2>
 
-				<div className="flex flex-row gap-2">
+				<div className="flex flex-row gap-2 overflow-hidden whitespace-nowrap">
 					{project.skills.map((skill, index) => {
 						return (
 							<Badge
 								// biome-ignore lint/suspicious/noArrayIndexKey: It does not matter
 								key={`${skill}-${index}`}
-								variant="skill">
+								variant="skill"
+								className="shrink-0">
 								{skill}
 							</Badge>
 						)
