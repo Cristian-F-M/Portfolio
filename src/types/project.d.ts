@@ -3,8 +3,7 @@ export type Type =
 	| 'mobile'
 	| 'desktop'
 	| 'cli'
-	| 'plugin'
-	| 'extension'
+	| 'other'
 	| 'api'
 
 export interface Skill {
