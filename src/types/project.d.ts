@@ -13,13 +13,13 @@ export interface Project {
 	id: string
 	name: string
 	images: Image[]
-	latest_version: string
-	release_year: string
+	latest_version?: string
+	release_year?: string
 	featured?: boolean
 	skills: string[]
 	github: string
 	type: Type
-	url: string
+	url?: string
 	active: boolean
 }
 
