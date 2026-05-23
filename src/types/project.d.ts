@@ -1,4 +1,4 @@
-export type Type = 'web' | 'mobile' | 'desktop' | 'cli'
+export type Type = 'web' | 'mobile' | 'desktop' | 'cli' | 'plugin'
 
 export interface Skill {
 	id: string
