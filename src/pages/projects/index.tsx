@@ -23,6 +23,16 @@ export default function ProjectsPage() {
 		return PROJECTS.filter((p) => p.type === filterBy && deepSearch(p, query))
 	}, [filterBy, query])
 
+	const sortedProjects = useMemo(() => {
+		return filteredProjects.sort((a, b) => {
+			if (a.featured !== b.featured) {
+				return Number(b.featured) - Number(a.featured)
+			}
+
+			return Number(b.active) - Number(a.active)
+		})
+	}, [filteredProjects])
+
 	useEffect(() => {
 		setActive('/#projects')
 	}, [setActive])
@@ -97,7 +107,7 @@ export default function ProjectsPage() {
 					</div>
 
 					<section className="flex flex-col md:flex-row gap-6 flex-wrap items-center md:items-baseline">
-						{!filteredProjects.length && (
+						{!sortedProjects.length && (
 							<NoProjectsFound
 								handleReset={() => {
 									setQuery('')
@@ -105,7 +115,7 @@ export default function ProjectsPage() {
 								}}
 							/>
 						)}
-						{filteredProjects.map((p) => {
+						{sortedProjects.map((p) => {
 							return (
 								<div
 									key={p.id}
