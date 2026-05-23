@@ -21,6 +21,41 @@ export default function Layout() {
 	const lastPath = useRef(location.pathname)
 
 	useEffect(() => {
+		const options = {
+			rootMargin: '0px',
+			scrollMargin: '0px',
+			threshold: 0.3
+		}
+
+		const sectionsIds = ['home', 'projects', 'me', 'contact']
+		const sections = sectionsIds
+			.map((id) => document.getElementById(id))
+			.filter(Boolean) as HTMLElement[]
+
+		function callback(entries: IntersectionObserverEntry[]) {
+			entries.forEach((entry) => {
+				if (!entry.isIntersecting) return
+
+				const id = entry.target.getAttribute('id')
+				if (!id) return
+
+				history.replaceState(null, '', `#${id}`)
+
+				setActive(`/#${id}`)
+			})
+		}
+
+		const observer = new IntersectionObserver(callback, options)
+
+		sections.forEach((el) => {
+			observer.observe(el)
+		})
+
+
+		return () => observer.disconnect()
+	}, [setActive])
+
+	useEffect(() => {
 		if (lastPath.current === location.pathname) return
 		lastPath.current = location.pathname
 
