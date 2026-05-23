@@ -1,13 +1,18 @@
-export type Type = 'web' | 'mobile' | 'desktop' | 'cli' | 'plugin'
+export type Type =
+	| 'web'
+	| 'mobile'
+	| 'desktop'
+	| 'cli'
+	| 'plugin'
+	| 'extension'
+	| 'api'
 
 export interface Skill {
 	id: string
 	name: string
 }
 
-export interface Image {
-	src: string
-}
+export type Image = string
 
 export interface Project {
 	id: string

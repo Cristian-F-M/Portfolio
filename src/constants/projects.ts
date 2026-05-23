@@ -4,7 +4,10 @@ export const TypeObj = {
 	web: 'web',
 	mobile: 'mobile',
 	desktop: 'desktop',
-	cli: 'cli'
+	cli: 'cli',
+	plugin: 'plugin',
+	extension: 'extension',
+	api: 'api'
 } satisfies Record<Type, Type>
 
 export const PROJECTS = [
@@ -12,24 +15,12 @@ export const PROJECTS = [
 		id: 'todo-cm',
 		name: 'todo-cm',
 		images: [
-			{
-				src: '/images/projects/todo-cm/todo-cm-1.avif'
-			},
-			{
-				src: '/images/projects/todo-cm/todo-cm-2.avif'
-			},
-			{
-				src: '/images/projects/todo-cm/todo-cm-3.avif'
-			},
-			{
-				src: '/images/projects/todo-cm/todo-cm-4.avif'
-			},
-			{
-				src: '/images/projects/todo-cm/todo-cm-5.avif'
-			},
-			{
-				src: '/images/projects/todo-cm/todo-cm-6.avif'
-			}
+			'/images/projects/todo-cm/todo-cm-1.avif',
+			'/images/projects/todo-cm/todo-cm-2.avif',
+			'/images/projects/todo-cm/todo-cm-3.avif',
+			'/images/projects/todo-cm/todo-cm-4.avif',
+			'/images/projects/todo-cm/todo-cm-5.avif',
+			'/images/projects/todo-cm/todo-cm-6.avif'
 		],
 		latest_version: '1.21.2',
 		release_year: '2026',
@@ -43,11 +34,7 @@ export const PROJECTS = [
 	{
 		id: 'touch',
 		name: 'touch',
-		images: [
-			{
-				src: '/images/projects/touch/touch.avif'
-			}
-		],
+		images: ['/images/projects/touch/touch.avif'],
 		latest_version: '1.2.5',
 		release_year: '2026',
 		featured: true,
@@ -61,18 +48,10 @@ export const PROJECTS = [
 		id: 'fast-emoji',
 		name: 'fast-emoji',
 		images: [
-			{
-				src: '/images/projects/fast-emoji/fast-emoji-1.png'
-			},
-			{
-				src: '/images/projects/fast-emoji/fast-emoji-2.png'
-			},
-			{
-				src: '/images/projects/fast-emoji/fast-emoji-3.png'
-			},
-			{
-				src: '/images/projects/fast-emoji/fast-emoji-4.png'
-			}
+			'/images/projects/fast-emoji/fast-emoji-1.png',
+			'/images/projects/fast-emoji/fast-emoji-2.png',
+			'/images/projects/fast-emoji/fast-emoji-3.png',
+			'/images/projects/fast-emoji/fast-emoji-4.png'
 		],
 		latest_version: '1.0.1',
 		release_year: '2026',
@@ -87,18 +66,10 @@ export const PROJECTS = [
 		id: 'solitario',
 		name: 'solitario',
 		images: [
-			{
-				src: '/images/projects/solitario/solitario-1.avif'
-			},
-			{
-				src: '/images/projects/solitario/solitario-2.avif'
-			},
-			{
-				src: '/images/projects/solitario/solitario-3.avif'
-			},
-			{
-				src: '/images/projects/solitario/solitario-4.avif'
-			}
+			'/images/projects/solitario/solitario-1.avif',
+			'/images/projects/solitario/solitario-2.avif',
+			'/images/projects/solitario/solitario-3.avif',
+			'/images/projects/solitario/solitario-4.avif'
 		],
 		latest_version: '1.0.0',
 		release_year: '2026',
