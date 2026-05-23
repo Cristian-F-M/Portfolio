@@ -6,6 +6,7 @@ import { IconMenu2 } from '@tabler/icons-react'
 import { useTranslation } from 'react-i18next'
 import { useCallback, useEffect, useRef } from 'react'
 import useNav from '@/state/nav'
+import { useLanguage } from '@/state/language'
 
 export default function DesktopHeader({
 	className,
@@ -13,6 +14,7 @@ export default function DesktopHeader({
 }: React.ComponentProps<'header'>) {
 	const { t } = useTranslation()
 	const { active } = useNav()
+	const { language } = useLanguage()
 	const navRef = useRef<HTMLElement>(null)
 	const navIndicatorRef = useRef<HTMLSpanElement>(null)
 	let activeLinkTimeout: NodeJS.Timeout | undefined
@@ -84,6 +86,11 @@ export default function DesktopHeader({
 	useEffect(() => {
 		moveAnchorIndicator()
 	}, [active, moveAnchorIndicator])
+
+	// biome-ignore lint/correctness/useExhaustiveDependencies: It is necessary to move indicator every time active changes
+	useEffect(() => {
+		moveAnchorIndicator()
+	}, [language, moveAnchorIndicator])
 
 	return (
 		<header
