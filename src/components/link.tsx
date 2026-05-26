@@ -25,9 +25,14 @@ export function Link({ className, onClick, ...props }: LinkProps) {
 			const href = target.getAttribute('href') ?? ''
 			const [_, hash] = href.split('#')
 
-			const el = document.getElementById(hash)
+			if (!hash) {
+				window.scrollTo({
+					top: 0
+				})
+				return
+			}
 
-			console.log(el)
+			const el = document.getElementById(hash)
 
 			if (!el) return
 
