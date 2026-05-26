@@ -21,7 +21,7 @@ export default function SplashScreen() {
 	}, [onAnimationEnd])
 
 	useEffect(() => {
-		document.body.style.overflow = isShowing ? 'none' : 'auto'
+		document.documentElement.style.overflow = isShowing ? 'hidden' : 'auto'
 	}, [isShowing])
 
 	return (
