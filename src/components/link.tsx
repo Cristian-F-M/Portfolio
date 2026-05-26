@@ -43,18 +43,21 @@ export function Link({ className, onClick, ...props }: LinkProps) {
 		[onClick]
 	)
 
-	if (!props.router)
+	if (!props.router) {
+		const { router, ...restProps } = props
 		return (
 			<a
 				onClick={onClick}
 				className={twMerge(commonClassNames, cn)}
 				rel="noopener noreferrer"
 				href={props.href}
-				{...props}>
+				{...restProps}>
 				{props.children}
 			</a>
 		)
+	}
 
+	const { router, ...restProps } = props
 	return (
 		<NavLink
 			onClick={handleClick}
@@ -64,7 +67,7 @@ export function Link({ className, onClick, ...props }: LinkProps) {
 				return twMerge(commonClassNames, cn)
 			}}
 			end
-			{...props}>
+			{...restProps}>
 			{props.children}
 		</NavLink>
 	)
