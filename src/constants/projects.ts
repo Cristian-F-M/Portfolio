@@ -38,7 +38,7 @@ export const PROJECTS = [
 		release_year: '2026',
 		featured: true,
 		skills: ['Node.js', 'npm'],
-		github: 'touch-npm',
+		github: 'touch',
 		type: 'cli',
 		url: 'https://www.npmjs.com/package/@cmorales_/touch',
 		active: true
